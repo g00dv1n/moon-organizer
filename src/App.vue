@@ -96,6 +96,7 @@
         position: absolute;
         right: 15px;
         bottom: 15px;
+        z-index: 999;
     }
 
 

@@ -6,71 +6,71 @@ const calendarTypes = [
   {
     name: 'default',
     text: {
-      ru: 'Лунный календарь всего',
-      en: 'Lunniy kalendar vsego'
+      ru: 'Лунный календарь 2017',
+      en: 'Lunar calendar 2017'
     }
   },
   {
     name: 'relationship',
     text: {
       ru: 'Лунный календарь отношений',
-      en: 'Lunniy kalendar othosheniy'
+      en: 'Couples lunar calendar'
     }
   },
   {
     name: 'beauty',
     text: {
       ru: 'Лунный календарь красоты',
-      en: 'Lunniy kalendar krasoty'
+      en: 'Beauty lunar calendar'
     }
   },
   {
     name: 'business',
     text: {
       ru: 'Лунный календарь бизнеса',
-      en: 'Lunniy kalendar biznesa'
+      en: 'Business lunar calendar'
     }
   },
   {
     name: 'fishing',
     text: {
       ru: 'Лунный календарь рыбалки',
-      en: 'Lunniy kalendar ribalky'
+      en: 'Fishing lunar calendar'
     }
   },
   {
     name: 'garden',
     text: {
       ru: 'Лунный календарь садовода',
-      en: 'Lunniy kalendar sadovoda'
+      en: 'Gardening lunar calendar'
     }
   },
   {
     name: 'health',
     text: {
       ru: 'Лунный календарь здоровья',
-      en: 'Lunniy kalendar zdorovia'
+      en: 'Health lunar calendar'
     }
   },
   {
     name: 'house',
     text: {
       ru: 'Лунный календарь хозяйки',
-      en: 'Lunniy kalendar hozyaki'
+      en: 'Housekeeping lunar calendar'
     }
   },
   {
     name: 'lucky',
     text: {
       ru: 'Лунный календарь удачи',
-      en: 'Lunniy kalendar udachi'
+      en: 'Lucky days lunar calendar'
     }
   },
   {
     name: 'shopping',
     text: {
       ru: 'Лунный календарь покупок',
-      en: 'Lunniy kalendar pokupok'
+      en: 'Shopping lunar calendar'
     }
   }
 ]
