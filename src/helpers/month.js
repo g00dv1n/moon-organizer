@@ -5,7 +5,8 @@ import ru from 'moment/locale/ru'
 export default class Month {
   constructor (date = moment(), locale = 'ru') {
     // setup locale
-    moment.locale(locale)
+    // moment.locale(locale)
+    this.locale = locale
     this.date = moment(date).locale(locale)
     // get month name using locale
     this.monthName = moment(this.date).format('MMMM')

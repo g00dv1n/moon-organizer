@@ -3,6 +3,7 @@
  */
 
 import Vue from 'vue'
+import month from 'helpers/month.fp'
 
 export default {
   name: 'app',
@@ -44,7 +45,6 @@ export default {
   },
   mounted () {
     Vue.material.setCurrentTheme('default')
-    let types = this.$store.getters.calendarTypes
-    console.log(types)
+    console.log(month(new Date(), 'ru'))
   }
 }

@@ -7,14 +7,18 @@
         </div>
 
         <div class="weekdays-container text-capitalize">
-            <div class="weekday" v-for="w in month.getWeekDays()">
+            <div class="weekday" v-for="w in month.weekDays">
                 {{w}}
             </div>
         </div>
 
         <div id="calendar-container" ref="container">
-            <div :class="['cell', {today:c.isToday}]" v-for="c in month.getMonthData()" :style="c.style">
-                <div class="date">{{c.day}}</div>
+            <div :class="['cell', {today:d.isToday}]" v-for="d in month.days" :style="d.style">
+                <div class="date">{{d.day}}</div>
+                <div class="lunar-date">{{d.lunarDaysStr}}</div>
+                <div class="moon-phase">
+                    <img :src="moonPhasePath(d.moonPhase)">
+                </div>
             </div>
         </div>
     </div>
@@ -113,8 +117,27 @@
         margin: 0;
     }
 
+    .lunar-date {
+        font-size: 15px;
+        position: absolute;
+        left: 5%;
+        top: 0;
+        padding: 0;
+        margin: 0;
+        color: indigo;
+    }
+    .moon-phase {
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        right: 5%;
+        top: 3%;
+        padding: 0;
+        margin: 0;
+    }
+
     .today {
-        outline: solid 3px red !important;
+        outline: solid 3px deeppink !important;
     }
 
 
