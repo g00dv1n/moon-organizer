@@ -3,7 +3,6 @@
         <div class="container" id="calendar-container">
             <calendar :locale="locale"></calendar>
         </div>
-
     </div>
 </template>
 

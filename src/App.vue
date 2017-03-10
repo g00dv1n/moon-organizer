@@ -20,7 +20,7 @@
             </md-button>
             <h1 class="md-title main-title">Moon Organizer</h1>
         </md-toolbar>
-        <md-button-toggle id="lang-switcher" md-single class="md-accent">
+        <md-button-toggle id="lang-switcher" md-single class="md-primary">
             <md-button v-for="l in locales" :class="{'md-toggle': isLocale(l)}" @click.native="setLocale(l)">
                 {{l}}
             </md-button>
@@ -42,7 +42,10 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-        background-color: #fafafa;
+    }
+
+    body {
+        background-color: #fafafa !important;
     }
 
     @media (min-width: 1281px) {
@@ -93,7 +96,7 @@
     }
 
     #lang-switcher {
-        position: absolute;
+        position: fixed;
         right: 15px;
         bottom: 15px;
         z-index: 2;
