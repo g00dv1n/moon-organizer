@@ -21,11 +21,8 @@
             <h1 class="md-title main-title">Moon Organizer</h1>
         </md-toolbar>
         <md-button-toggle id="lang-switcher" md-single class="md-primary">
-            <md-button v-for="l in locales" :class="{'md-toggle': isLocale(l)}" @click.native="setLocale(l)">
-                {{l}}
-            </md-button>
+            <md-button v-for="l in locales" :class="{'md-toggle': isLocale(l)}" @click.native="setLocale(l)">{{l}}</md-button>
         </md-button-toggle>
-
         <router-view></router-view>
     </div>
 </template>
@@ -42,6 +39,7 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
+        overflow: hidden;
     }
 
     body {
@@ -61,7 +59,7 @@
         }
 
         #app {
-            padding-left: 300px;
+            margin-left: 300px !important;
         }
     }
 
@@ -97,8 +95,8 @@
 
     #lang-switcher {
         position: fixed;
-        right: 15px;
-        bottom: 15px;
+        right: 0px;
+        bottom: 5px;
         z-index: 2;
     }
 

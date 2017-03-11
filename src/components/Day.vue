@@ -1,14 +1,17 @@
 <template>
-    <div class="day-info-container">
-        <div class="day-info"></div>
-        <div class="category" v-for="c in categories">
-            <div class="img-container">
-                <img :src="c.path">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="day-info col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"></div>
+        </div>
+        <div class="row">
+            <div class="day-category col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1" v-for="c in categories">
+                <div class="img-container">
+                    <img :src="c.path">
+                </div>
+                <div class="color-block">
+                    <div class="category-name text-capitalize">{{c.name}}</div>
+                </div>
             </div>
-            <div class="color-block">
-                <div class="category-name text-capitalize">{{c.name}}</div>
-            </div>
-
         </div>
     </div>
 
@@ -27,25 +30,19 @@
     }
 
     .day-info {
-        width: 600px;
-        margin-top: 25px;
         height: 300px;
         background-color: white;
-        display: inline-block;
         box-shadow: 0 2px 8px gray;
+        margin-top: 25px;
+        padding-left: 25px;
     }
-    .day-info-container {
-        width: 100%;
-        text-align: center;
-    }
-    .category {
-        width: 600px;
-        margin-top: 25px !important;
+
+    .day-category {
         height: 200px;
         background-color: white;
-        display: inline-block;
         box-shadow: 0 2px 8px gray;
         position: relative;
+        margin-top: 25px;
     }
     .img-container {
         width: 60px;
@@ -69,9 +66,8 @@
         font-size: 20px;
         width: 100%;
         height: 100%;
-        position: absolute;
-        top: 0;
-        left: 80px;
+        text-align: left;
+        padding-left: 80px;
     }
 
 </style>
