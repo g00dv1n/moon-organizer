@@ -1,9 +1,15 @@
-/**
- * Created by g00dv1n on 01.03.17.
- */
+import clientGeo from 'helpers/clientgeo'
 
 const actions = {
-
+  loadClientInfo ({commit}) {
+    clientGeo()
+      .then(({data}) => {
+        commit('SET_CLIENT_GEO', data)
+      })
+      .catch((err) => {
+        throw err.message
+      })
+  }
 }
 
 export default actions

@@ -1,4 +1,5 @@
 import moment from 'moment'
+import _ from 'lodash'
 import lunarDays from './lunardays'
 import moonPhase from './moonphase'
 /* eslint-disable no-unused-vars */
@@ -33,6 +34,20 @@ const style = (d) => {
   }
 }
 
+const maxDurationDay = (date, ld) => {
+  const dateStart = moment(date).startOf('day')
+  const dateEnd = moment(date).endOf('day')
+
+  let newLd = _.map(ld, (d) => {
+    let s = moment.max(moment(d.start), moment(dateStart))
+    let e = moment.min(moment(d.end), moment(dateEnd))
+    let diff = moment(e).diff(moment(s))
+    let duration = moment.duration(diff).asMilliseconds()
+    return _.extend(d, {duration})
+  })
+  return _.maxBy(ld, d => d.duration).number
+}
+
 const month = (date = moment(), locale = 'ru', latitude = 50, longitude = 30) => {
   // init data block
   const localeMoment = moment().locale(locale)
@@ -62,7 +77,7 @@ const month = (date = moment(), locale = 'ru', latitude = 50, longitude = 30) =>
       date: currentDay.toDate(),
       isToday: isToday(currentDay),
       lunarDays: ld,
-      lunarDaysStr: ld[0].number,
+      lunarDaysStr: maxDurationDay(currentDay, ld),
       moonPhase: moonPhase(ld[0].number),
       style: style(currentDay)
     }

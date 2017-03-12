@@ -1,12 +1,4 @@
-import calendarTypes from 'src/store/calendar-types'
-import getters from 'src/store/getters'
+import zodiacSign from 'src/helpers/zodiacsign'
 
-const locale = 'ru'
-
-const store = {
-  calendarTypes,
-  locale
-}
-
-let res = getters.calendarTypes(store)
-console.log(res)
+let date = new Date()
+console.log(zodiacSign(date))

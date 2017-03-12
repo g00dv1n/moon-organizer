@@ -3,7 +3,6 @@
  */
 
 import Vue from 'vue'
-import clientGeo from 'helpers/clientgeo'
 
 export default {
   name: 'app',
@@ -46,12 +45,6 @@ export default {
   mounted () {
     Vue.material.setCurrentTheme('default')
     // init client geo async
-    clientGeo()
-      .then((info) => {
-        this.$store.commit('SET_CLIENT_GEO', info.data)
-      })
-      .catch((err) => {
-        throw err.message
-      })
+    this.$store.dispatch('loadClientInfo')
   }
 }

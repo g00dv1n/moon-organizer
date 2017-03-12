@@ -26,7 +26,10 @@ export default {
   computed: {
     month () {
       let {latitude, longitude} = this.geo
-      return this.geo ? month(this.date, this.locale, latitude, longitude) : false
+      let res = this.geo ? month(this.date, this.locale, latitude, longitude) : null
+      console.log('Calendar month')
+      console.log(res)
+      return res
     }
   }
 }
