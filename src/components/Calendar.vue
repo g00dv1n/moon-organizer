@@ -1,5 +1,5 @@
 <template>
-    <div id="main-container">
+    <div id="main-container" v-if="month">
         <div class="month-container">
             <div class="glyphicon glyphicon-arrow-left month-changer" @click="prev()"></div>
             <div class="month text-capitalize">{{ month.monthName }} {{month.year}}</div>

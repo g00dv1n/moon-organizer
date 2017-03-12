@@ -11,12 +11,14 @@ export default {
     Calendar
   },
   data () {
-    return {
-    }
+    return {}
   },
   computed: {
     locale () {
       return this.$store.state.locale
+    },
+    geo () {
+      return this.$store.state.geo
     }
   },
   mounted () {

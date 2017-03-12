@@ -2,7 +2,7 @@
     <div id="app">
         <md-sidenav class="main-sidenav md-left md-fixed" md-swipeable ref="leftSidenav">
             <md-toolbar md-theme="white">
-                <img class="logo" v-for="t in types" :src="logoPath(t.name)" v-if="isCurrentType(t.name)">
+                <img class="logo" :src="logoPath">
             </md-toolbar>
             <div class="categories">
                 <md-button @click.native="setCurrentType(t.name)"

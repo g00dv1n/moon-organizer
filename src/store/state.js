@@ -7,6 +7,7 @@ const state = {
   locale: 'ru',
   LOCALES: ['ru', 'en'],
   currentType: 'default',
+  geo: null,
   calendarTypes
 }
 

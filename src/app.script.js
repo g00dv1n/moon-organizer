@@ -3,7 +3,7 @@
  */
 
 import Vue from 'vue'
-import month from 'helpers/month.fp'
+import clientGeo from 'helpers/clientgeo'
 
 export default {
   name: 'app',
@@ -19,9 +19,6 @@ export default {
     },
     setLocale (locale) {
       this.$store.commit('SET_LOCALE', locale)
-    },
-    logoPath (type) {
-      return require(`./assets/category-icons/${type}.png`)
     },
     isCurrentType (type) {
       return type === this.currentType
@@ -41,10 +38,20 @@ export default {
     },
     locales () {
       return this.$store.state.LOCALES
+    },
+    logoPath () {
+      return require(`./assets/category-icons/${this.currentType}.png`)
     }
   },
   mounted () {
     Vue.material.setCurrentTheme('default')
-    console.log(month(new Date(), 'ru'))
+    // init client geo async
+    clientGeo()
+      .then((info) => {
+        this.$store.commit('SET_CLIENT_GEO', info.data)
+      })
+      .catch((err) => {
+        throw err.message
+      })
   }
 }

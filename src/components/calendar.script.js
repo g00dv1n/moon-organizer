@@ -11,7 +11,7 @@ export default {
       date: new Date()
     }
   },
-  props: ['locale'],
+  props: ['locale', 'geo'],
   methods: {
     next () {
       this.date = moment(this.date).add(1, 'M').toDate()
@@ -25,7 +25,8 @@ export default {
   },
   computed: {
     month () {
-      return month(this.date, this.locale)
+      let {latitude, longitude} = this.geo
+      return this.geo ? month(this.date, this.locale, latitude, longitude) : false
     }
   }
 }
