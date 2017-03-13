@@ -4,7 +4,7 @@
 import axios from 'axios'
 
 const getClientGeo = () => {
-  return axios.get('http://ipinfo.io/json')
+  return axios.get('https://ipinfo.io/json')
 }
 
 export default getClientGeo
