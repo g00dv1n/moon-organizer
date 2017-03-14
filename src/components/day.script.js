@@ -1,4 +1,4 @@
-import categoriesConfig from '../themes.config'
+import getDayContent from 'helpers/daypicker'
 
 export default {
   name: 'day',
@@ -7,13 +7,19 @@ export default {
   },
   computed: {
     categories () {
-      return Object.keys(categoriesConfig).map((k) => {
-        return {
-          name: k,
-          colorStyle: {'background-color': categoriesConfig[k].primary.color},
-          path: require(`../assets/category-icons/${k}.png`)
-        }
-      })
+      const dayNumber = this.$route.params.dayNumber
+      const day = getDayContent(dayNumber, this.locale)
+      return day.categories
+    },
+    locale () {
+      return this.$store.state.locale
+    },
+    constants () {
+      return this.$store.getters.constants
     }
+  },
+  mounted () {
+    const day = getDayContent(17, 'ru')
+    console.log(day)
   }
 }

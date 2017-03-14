@@ -9,6 +9,15 @@ const getters = {
       let name = type.name
       return {name, text}
     })
+  },
+  constants (state) {
+    const constants = state.constants
+    const locale = state.locale
+    const res = {}
+    Object.keys(constants).forEach((k) => {
+      res[k] = constants[k][locale]
+    })
+    return res
   }
 }
 

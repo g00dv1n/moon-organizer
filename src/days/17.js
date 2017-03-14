@@ -123,7 +123,7 @@ const shopping = {
   minus: []
 }
 
-const day = {
+const categories = {
   relationship,
   beauty,
   business,
@@ -134,4 +134,6 @@ const day = {
   shopping
 }
 
-export default day
+export {
+  categories
+}

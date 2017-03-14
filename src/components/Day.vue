@@ -3,13 +3,23 @@
         <div class="row">
             <div class="day-info col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"></div>
         </div>
-        <div class="row">
+        <div class="row day-raw">
             <div class="day-category col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1" v-for="c in categories">
                 <div class="img-container">
                     <img :src="c.path">
                 </div>
                 <div class="color-block">
-                    <div class="category-name text-capitalize">{{c.name}}</div>
+                    <div class="category-name text-capitalize">{{constants[c.name]}}</div>
+                </div>
+                <div class="category-content">
+                    <div class="plus" v-for="p in c.plus">
+                        <div class="category-icon"><i class="material-icons">add_circle</i></div>
+                        <div>{{p}}</div>
+                    </div>
+                    <div class="minus" v-for="m in c.minus">
+                        <div class="category-icon"><i class="material-icons">remove_circle</i></div>
+                        <div>{{m}}</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -34,15 +44,16 @@
         background-color: white;
         box-shadow: 0 2px 8px gray;
         margin-top: 25px;
-        padding-left: 25px;
+        margin-bottom: 25px;
     }
 
     .day-category {
-        height: 200px;
+        height: auto;
         background-color: white;
         box-shadow: 0 2px 8px gray;
         position: relative;
-        margin-top: 25px;
+        margin-bottom: 25px;
+        text-align: left;
     }
     .img-container {
         width: 60px;
@@ -69,5 +80,51 @@
         text-align: left;
         padding-left: 80px;
     }
+    .category-content {
+        margin-top: 50px;
+        word-break: normal;
+        text-align: left;
+        margin-bottom: 20px;
+        margin-left: 60px;
+        font-size: 18px;
+        color: black;
+
+    }
+    .category-content > * {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .category-icon {
+        position: absolute;
+        left: -30px;
+        top: 2px;
+    }
+
+
+    .material-icons {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;  /* Preferred icon size */
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+
+        /* Support for IE. */
+        font-feature-settings: 'liga';
+    }
+
 
 </style>
