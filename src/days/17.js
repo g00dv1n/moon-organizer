@@ -134,6 +134,42 @@ const categories = {
   shopping
 }
 
+const main = {
+  symbol: {
+    ru: 'Виноградная гроздь',
+    en: 'Grape bunch'
+  },
+  energetics: {
+    ru: 'активная',
+    en: 'active'
+  },
+  keywords: {
+    ru: 'отдых, расслабление, радость, веселье, праздник, внутренняя свобода, позитивное восприятие реальности, раскрепощение',
+    en: 'rest, relaxation, joy, fun, holiday, inner freedom, positive perception of reality, liberation'
+  },
+  element: {
+    ru: 'Земля',
+    en: 'Earth'
+  },
+  direction: {
+    ru: 'Северо-Восток',
+    en: 'Northeast'
+  },
+  shape: {
+    ru: 'квадрат, горизонтальный прямоугольник',
+    en: 'square, horizontal rectangle'
+  },
+  stone: {
+    ru: 'гематит, циркон',
+    en: 'hematite, zircon'
+  },
+  сolor: {
+    ru: 'желтый, золотой',
+    en: 'yellow, gold'
+  }
+}
+
 export {
-  categories
+  categories,
+  main
 }

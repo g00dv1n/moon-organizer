@@ -6,7 +6,7 @@ const processCatagoryContent = (contentArray, locale) => {
 
 const getDayContent = (numberOfDay, locale) => {
   const _categories = require(`../days/${numberOfDay}`).categories
-  const main = require(`../days/${numberOfDay}`).main
+  const _main = require(`../days/${numberOfDay}`).main
   const categories = _.chain(_categories)
     .keys()
     .map((k) => {
@@ -15,6 +15,15 @@ const getDayContent = (numberOfDay, locale) => {
         plus: processCatagoryContent(_categories[k].plus, locale),
         minus: processCatagoryContent(_categories[k].minus, locale),
         path: require(`../assets/category-icons/${k}.png`)
+      }
+    })
+    .value()
+  const main = _.chain(_main)
+    .keys()
+    .map((k) => {
+      return {
+        name: k,
+        text: _main[k][locale]
       }
     })
     .value()

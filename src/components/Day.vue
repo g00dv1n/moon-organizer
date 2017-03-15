@@ -1,7 +1,14 @@
 <template>
     <div class="container-fluid">
         <div class="row">
-            <div class="day-info col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"></div>
+            <div class="day-info col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                <div class="color-block">
+                    <div class="day-title text-capitalize">{{title}}</div>
+                </div>
+                <div class="category-content main">
+                    <div v-for="m in main"><b class="text-capitalize">{{constants[m.name]}}: </b> {{m.text}}</div>
+                </div>
+            </div>
         </div>
         <div class="row day-raw">
             <div class="day-category col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1" v-for="c in categories">
@@ -40,11 +47,16 @@
     }
 
     .day-info {
-        height: 300px;
+        height: auto;
         background-color: white;
         box-shadow: 0 2px 8px gray;
         margin-top: 25px;
         margin-bottom: 25px;
+    }
+
+    .day-title {
+        font-size: 24px;
+        font-weight: 500;
     }
 
     .day-category {
@@ -88,8 +100,12 @@
         margin-left: 60px;
         font-size: 18px;
         color: black;
-
     }
+
+    .category-content.main {
+        margin-left: 30px;
+    }
+
     .category-content > * {
         position: relative;
         margin-bottom: 10px;

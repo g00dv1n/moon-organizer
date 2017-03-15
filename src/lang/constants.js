@@ -34,6 +34,42 @@ const lang = {
   shopping: {
     ru: 'покупки',
     en: 'shopping'
+  },
+  symbol: {
+    ru: 'символ',
+    en: 'symbol'
+  },
+  energetics: {
+    ru: 'энергетика',
+    en: 'energetics'
+  },
+  keywords: {
+    ru: 'ключевые слова',
+    en: 'keywords'
+  },
+  element: {
+    ru: 'элемент',
+    en: 'element'
+  },
+  direction: {
+    ru: 'направление',
+    en: 'direction'
+  },
+  shape: {
+    ru: 'форма',
+    en: 'shape'
+  },
+  stone: {
+    ru: 'камень',
+    en: 'stone'
+  },
+  сolor: {
+    ru: 'цвет',
+    en: 'сolor'
+  },
+  moonDay: {
+    ru: 'лунный день',
+    en: 'moon day'
   }
 }
 
