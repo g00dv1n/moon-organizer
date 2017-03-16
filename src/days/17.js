@@ -1,5 +1,4 @@
 const relationship = {
-  name: 'relationship',
   plus: [
     {
       ru: 'сходите вместе на вечеринку, мероприятие (веселое!), оторвитесь!',

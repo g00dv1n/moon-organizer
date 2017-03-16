@@ -2,6 +2,7 @@ import moment from 'moment'
 import _ from 'lodash'
 import lunarDays from './lunardays'
 import moonPhase from './moonphase'
+import zodiacSign from './zodiacsign'
 /* eslint-disable no-unused-vars */
 import ru from 'moment/locale/ru'
 
@@ -45,7 +46,7 @@ const maxDurationDay = (date, ld) => {
     let duration = moment.duration(diff).asMilliseconds()
     return _.extend(d, {duration})
   })
-  return _.maxBy(ld, d => d.duration).number
+  return _.maxBy(ld, d => d.duration)
 }
 
 const month = (date = moment(), locale = 'ru', latitude = 50, longitude = 30) => {
@@ -77,9 +78,10 @@ const month = (date = moment(), locale = 'ru', latitude = 50, longitude = 30) =>
       date: currentDay.toDate(),
       isToday: isToday(currentDay),
       lunarDays: ld,
-      lunarDaysStr: maxDurationDay(currentDay, ld),
+      maxLunarDay: maxDurationDay(currentDay, ld),
       moonPhase: moonPhase(ld[0].number),
-      style: style(currentDay)
+      style: style(currentDay),
+      zodiac: zodiacSign(currentDay.toDate())
     }
 
     days.push(dayInfo)

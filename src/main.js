@@ -7,8 +7,11 @@ import store from './store'
 import router from './router'
 import themesConfig from './themes.config'
 import 'vue-material/dist/vue-material.css'
+import capitalize from 'filters/capitalize'
 
 Vue.use(VueMaterial)
+
+Vue.filter('capitalize', capitalize)
 
 Vue.material.registerTheme(themesConfig)
 

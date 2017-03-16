@@ -1,9 +1,6 @@
-/**
- * Created by g00dv1n on 25.02.17.
- */
-
 import Calendar from './Calendar'
 import { calculateCalendarHeight } from 'helpers/calculator'
+import dayClickHandler from 'helpers/dayhandler'
 
 export default {
   name: 'main',
@@ -11,7 +8,7 @@ export default {
     Calendar
   },
   data () {
-    return {}
+    return {dayClickHandler}
   },
   computed: {
     locale () {

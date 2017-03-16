@@ -3,20 +3,35 @@
         <div class="row">
             <div class="day-info col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                 <div class="color-block">
-                    <div class="day-title text-capitalize">{{title}}</div>
+                    <div class="day-title">{{title | capitalize}}</div>
                 </div>
                 <div class="category-content main">
-                    <div v-for="m in main"><b class="text-capitalize">{{constants[m.name]}}: </b> {{m.text}}</div>
+
+                    <div class="dynamic-info" v-if="day">
+                        <div>
+                            <b>{{constants.start | capitalize}}: </b>
+                            {{lunarDay.start}}
+                            <b>{{constants.end | capitalize}}: </b>
+                            {{lunarDay.end}}
+                        </div>
+                        <img :src="zodiacSignPath">
+                        <div>
+                            <b>{{constants.zodiacSign | capitalize }}: </b>{{constants[day.zodiac] | capitalize}}
+                            <b>{{constants.moonPhase | capitalize }}: </b>{{day.moonPhase | capitalize}}
+                        </div>
+                    </div>
+                    <div v-for="m in main"><b>{{constants[m.name] | capitalize}}: </b> {{m.text}}</div>
                 </div>
             </div>
         </div>
         <div class="row day-raw">
-            <div class="day-category col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1" v-for="c in categories">
+            <div class="day-category col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1"
+                 v-for="c in categories">
                 <div class="img-container">
                     <img :src="c.path">
                 </div>
                 <div class="color-block">
-                    <div class="category-name text-capitalize">{{constants[c.name]}}</div>
+                    <div class="category-name">{{constants[c.name] | capitalize}}</div>
                 </div>
                 <div class="category-content">
                     <div class="plus" v-for="p in c.plus">
@@ -46,6 +61,13 @@
         box-sizing: border-box;
     }
 
+    .dynamic-info img {
+        width: 128px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        display: inline-block;
+    }
+
     .day-info {
         height: auto;
         background-color: white;
@@ -67,6 +89,7 @@
         margin-bottom: 25px;
         text-align: left;
     }
+
     .img-container {
         width: 60px;
         height: 50px;
@@ -75,6 +98,7 @@
         left: -10px;
         z-index: 2;
     }
+
     .color-block {
         position: absolute;
         top: 0;
@@ -85,6 +109,7 @@
         z-index: 1;
 
     }
+
     .category-name {
         font-size: 20px;
         width: 100%;
@@ -92,6 +117,7 @@
         text-align: left;
         padding-left: 80px;
     }
+
     .category-content {
         margin-top: 50px;
         word-break: normal;
@@ -117,12 +143,11 @@
         top: 2px;
     }
 
-
     .material-icons {
         font-family: 'Material Icons';
         font-weight: normal;
         font-style: normal;
-        font-size: 24px;  /* Preferred icon size */
+        font-size: 24px; /* Preferred icon size */
         line-height: 1;
         text-transform: none;
         letter-spacing: normal;

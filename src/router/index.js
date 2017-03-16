@@ -15,7 +15,8 @@ export default new Router({
     {
       path: '/days/:dayNumber',
       name: 'day',
-      component: Day
+      component: Day,
+      props: true
     }
   ]
 })

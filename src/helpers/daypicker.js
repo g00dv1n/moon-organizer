@@ -12,8 +12,8 @@ const getDayContent = (numberOfDay, locale) => {
     .map((k) => {
       return {
         name: k,
-        plus: processCatagoryContent(_categories[k].plus, locale),
-        minus: processCatagoryContent(_categories[k].minus, locale),
+        plus: processCatagoryContent(_categories[k].plus || [], locale),
+        minus: processCatagoryContent(_categories[k].minus || [], locale),
         path: require(`../assets/category-icons/${k}.png`)
       }
     })

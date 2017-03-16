@@ -1,7 +1,7 @@
 <template>
     <div class="hello">
         <div class="container" id="calendar-container">
-            <calendar :locale="locale" :geo="geo" v-if="geo"></calendar>
+            <calendar :locale="locale" :geo="geo" :day-click-handler="dayClickHandler" v-if="geo"></calendar>
         </div>
     </div>
 </template>

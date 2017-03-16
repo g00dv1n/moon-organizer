@@ -13,9 +13,10 @@
         </div>
 
         <div id="calendar-container" ref="container">
-            <div :class="['cell', {today:d.isToday}]" v-for="d in month.days" :style="d.style">
+            <div :class="['cell', {today:d.isToday}]" v-for="d in month.days" :style="d.style"
+                 @click="dayClickHandler(d)">
                 <div class="date">{{d.day}}</div>
-                <div class="lunar-date">{{d.lunarDaysStr}}</div>
+                <div class="lunar-date">{{d.maxLunarDay.number}}</div>
                 <div class="moon-phase">
                     <img :src="moonPhasePath(d.moonPhase)">
                 </div>
@@ -38,13 +39,13 @@
         margin-left: 4px;
 
     }
+
     .month-container {
         width: 100%;
         margin-bottom: 1%;
         height: 10%;
         overflow: hidden;
     }
-
 
     .month-changer {
         width: 10%;
@@ -77,6 +78,7 @@
         width: 100%;
         height: 100%;
     }
+
     .month {
         width: 80%;
         text-align: center;
@@ -95,6 +97,7 @@
         padding: 0;
         background-color: white;
         transition: all 0.3s ease-in 0.0s;
+        cursor: pointer;
     }
 
     .cell:hover {
@@ -124,6 +127,7 @@
         margin: 0;
         color: indigo;
     }
+
     .moon-phase {
         height: 20px;
         width: 20px;

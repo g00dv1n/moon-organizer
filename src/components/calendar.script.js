@@ -11,7 +11,7 @@ export default {
       date: new Date()
     }
   },
-  props: ['locale', 'geo'],
+  props: ['locale', 'geo', 'dayClickHandler'],
   methods: {
     next () {
       this.date = moment(this.date).add(1, 'M').toDate()

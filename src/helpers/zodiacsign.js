@@ -43,31 +43,31 @@ const getMoonInformations = (date) => {
   let longitude = 360 * rp + 6.3 * Math.sin(dp) + 1.3 * Math.sin(2 * ip - dp) + 0.7 * Math.sin(2 * ip)
 
   if (longitude < 33.18) {
-    zodiac = 'Aries'
+    zodiac = 'aries'
   } else if (longitude < 51.16) {
-    zodiac = 'Taurus'
+    zodiac = 'taurus'
   } else if (longitude < 93.44) {
-    zodiac = 'Gemini'
+    zodiac = 'gemini'
   } else if (longitude < 119.48) {
-    zodiac = 'Cancer'
+    zodiac = 'cancer'
   } else if (longitude < 135.30) {
-    zodiac = 'Leo'
+    zodiac = 'leo'
   } else if (longitude < 173.34) {
-    zodiac = 'Virgo'
+    zodiac = 'virgo'
   } else if (longitude < 224.17) {
-    zodiac = 'Libra'
+    zodiac = 'libra'
   } else if (longitude < 242.57) {
-    zodiac = 'Scorpio'
+    zodiac = 'scorpio'
   } else if (longitude < 271.26) {
-    zodiac = 'Sagittarius'
+    zodiac = 'sagittarius'
   } else if (longitude < 302.49) {
-    zodiac = 'Capricorn'
+    zodiac = 'capricorn'
   } else if (longitude < 311.72) {
-    zodiac = 'Aquarius'
+    zodiac = 'aquarius'
   } else if (longitude < 348.58) {
-    zodiac = 'Pisces'
+    zodiac = 'pisces'
   } else {
-    zodiac = 'Aries'
+    zodiac = 'aries'
   }
 
   return zodiac

@@ -70,7 +70,72 @@ const lang = {
   moonDay: {
     ru: 'лунный день',
     en: 'moon day'
+  },
+  aries: {
+    ru: 'овен',
+    en: 'aries'
+  },
+  taurus: {
+    ru: 'телец',
+    en: 'taurus'
+  },
+  gemini: {
+    ru: 'близнецы',
+    en: 'gemini'
+  },
+  cancer: {
+    ru: 'рак',
+    en: 'cancer'
+  },
+  leo: {
+    ru: 'лев',
+    en: 'leo'
+  },
+  virgo: {
+    ru: 'дева',
+    en: 'virgo'
+  },
+  libra: {
+    ru: 'весы',
+    en: 'libra'
+  },
+  scorpio: {
+    ru: 'скорпион',
+    en: 'scorpio'
+  },
+  sagittarius: {
+    ru: 'стрелец',
+    en: 'sagittarius'
+  },
+  capricorn: {
+    ru: 'козерог',
+    en: 'capricorn'
+  },
+  aquarius: {
+    ru: 'водолей',
+    en: 'aquarius'
+  },
+  pisces: {
+    ru: 'рыбы',
+    en: 'pisces'
+  },
+  start: {
+    ru: 'начало',
+    en: 'start'
+  },
+  end: {
+    ru: 'конец',
+    en: 'end'
+  },
+  moonPhase: {
+    ru: 'фаза луны',
+    en: 'moon phase'
+  },
+  zodiacSign: {
+    ru: 'знак зодиака',
+    en: 'zodiac sign'
   }
+
 }
 
 export default lang
