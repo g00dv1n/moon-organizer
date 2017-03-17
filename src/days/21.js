@@ -1,15 +1,14 @@
 const lucky = {
-  name: 'luck',
   plus: [
     {
       ru: 'Удачный день! Риск и активные шаги навстречу мечте',
       en: 'Lucky day! Risk and active steps towards the dream'
     }
-  ]
+  ],
+  minus: []
 }
 
 const relationship = {
-  name: 'relationship',
   plus: [
     {
       ru: 'день активных и стремительных действий, переход отношений на новый уровень',

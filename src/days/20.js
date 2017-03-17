@@ -4,7 +4,8 @@ const lucky = {
       ru: 'Удачный день! Риск и активные шаги навстречу мечте',
       en: 'Lucky day! Risk and active steps towards the dream'
     }
-  ]
+  ],
+  minus: []
 }
 
 const relationship = {
@@ -272,3 +273,4 @@ export {
   categories,
   main
 }
+

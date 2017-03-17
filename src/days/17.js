@@ -115,8 +115,8 @@ const house = {
 const shopping = {
   plus: [
     {
-      ru: 'совершенно любые покупки, особенно игрушки (елочные, детские, розыгрыши, эротические), цветы, коньяк, вино; путевки на отдых и все радостное и праздничное.',
-      en: 'any purchases, especially toys (Christmas, erotic, children\'s), flowers, brandy, wine; tickets to vacation and all joyous and festive.'
+      ru: 'совершенно любые покупки, особенно игрушки (елочные, детские, розыгрыши, эротические), цветы, коньяк, вино; путевки на отдых и все радостное и праздничное',
+      en: 'any purchases, especially toys (Christmas, erotic, children\'s), flowers, brandy, wine; tickets to vacation and all joyous and festive'
     }
   ],
   minus: []

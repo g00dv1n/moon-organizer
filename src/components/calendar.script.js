@@ -20,7 +20,7 @@ export default {
       this.date = moment(this.date).subtract(1, 'M').toDate()
     },
     moonPhasePath (p) {
-      return require(`../assets/moon-phases/${p.replace(' ', '_').toLowerCase()}.png`)
+      return require(`../assets/moon-phases-color/${p.replace(' ', '_').toLowerCase()}.png`)
     }
   },
   computed: {

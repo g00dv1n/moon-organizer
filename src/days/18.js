@@ -1,5 +1,4 @@
 const relationship = {
-  name: 'relationship',
   plus: [
     {
       ru: 'анализ своего поведения, партнер - как зеркало, разговор о недостатках',

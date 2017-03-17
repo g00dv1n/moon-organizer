@@ -20,6 +20,7 @@ export default {
       const day = getDayContent(dayNumber, this.locale)
       return day.categories
     },
+    // get main day info using day number
     main () {
       const dayNumber = this.$route.params.dayNumber
       const day = getDayContent(dayNumber, this.locale)
@@ -46,6 +47,9 @@ export default {
     },
     zodiacSignPath () {
       return require(`../assets/zodiac-signs/${this.day.zodiac}.png`)
+    },
+    moonPhasePath () {
+      return require(`../assets/moon-phases-color/${this.day.moonPhase.replace(' ', '_').toLowerCase()}.png`)
     }
   },
   mounted () {

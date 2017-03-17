@@ -1,5 +1,4 @@
 const relationship = {
-  name: 'relationship',
   plus: [
     {
       ru: 'развод, разрыв отягощающих отношений',
@@ -44,7 +43,6 @@ const beauty = {
       ru: 'медитации',
       en: 'meditation'
     }
-
   ],
   minus: [
     {

@@ -90,7 +90,7 @@ const garden = {
   plus: [
     {
       ru: 'посев и посадка корнеплодов, картофеля, луковичных, бобовых',
-      en: 'sowing and planting of root vegetables, potatoes, onion, beans '
+      en: 'sowing and planting of root vegetables, potatoes, onion, beans'
     },
     {
       ru: 'прореживание всходов',

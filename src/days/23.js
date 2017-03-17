@@ -1,5 +1,4 @@
 const relationship = {
-  name: 'relationship',
   plus: [],
   minus: [
     {

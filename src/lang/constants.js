@@ -72,52 +72,52 @@ const lang = {
     en: 'moon day'
   },
   aries: {
-    ru: 'овен',
-    en: 'aries'
+    ru: 'луна в Овне',
+    en: 'moon in Aries'
   },
   taurus: {
-    ru: 'телец',
-    en: 'taurus'
+    ru: 'луна в Тельце',
+    en: 'moon in Taurus'
   },
   gemini: {
-    ru: 'близнецы',
-    en: 'gemini'
+    ru: 'луна в Близнецах',
+    en: 'moon in Gemini'
   },
   cancer: {
-    ru: 'рак',
-    en: 'cancer'
+    ru: 'луна в Раке',
+    en: 'moon in Cancer'
   },
   leo: {
-    ru: 'лев',
-    en: 'leo'
+    ru: 'луна во Льве',
+    en: 'moon in Leo'
   },
   virgo: {
-    ru: 'дева',
-    en: 'virgo'
+    ru: 'луна в Деве',
+    en: 'moon in Virgo'
   },
   libra: {
-    ru: 'весы',
-    en: 'libra'
+    ru: 'луна в Весах',
+    en: 'moon in Libra'
   },
   scorpio: {
-    ru: 'скорпион',
-    en: 'scorpio'
+    ru: 'луна в Скорпионе',
+    en: 'moon in Scorpio'
   },
   sagittarius: {
-    ru: 'стрелец',
-    en: 'sagittarius'
+    ru: 'луна в Стрельце',
+    en: 'moon in Sagittarius'
   },
   capricorn: {
-    ru: 'козерог',
-    en: 'capricorn'
+    ru: 'луна в Козероге',
+    en: 'moon in Capricorn'
   },
   aquarius: {
-    ru: 'водолей',
-    en: 'aquarius'
+    ru: 'луна в Водолее',
+    en: 'moon in Aquarius'
   },
   pisces: {
-    ru: 'рыбы',
-    en: 'pisces'
+    ru: 'луна в Рыбах',
+    en: 'moon in Pisces'
   },
   start: {
     ru: 'начало',

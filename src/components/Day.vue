@@ -11,13 +11,16 @@
                         <div>
                             <b>{{constants.start | capitalize}}: </b>
                             {{lunarDay.start}}
+                        </div>
+                        <div>
                             <b>{{constants.end | capitalize}}: </b>
                             {{lunarDay.end}}
                         </div>
-                        <img :src="zodiacSignPath">
-                        <div>
-                            <b>{{constants.zodiacSign | capitalize }}: </b>{{constants[day.zodiac] | capitalize}}
-                            <b>{{constants.moonPhase | capitalize }}: </b>{{day.moonPhase | capitalize}}
+                        <div class="dynamic-icons-block">
+                            <div><img  :src="moonPhasePath"></div>
+                            <div>{{day.moonPhase | capitalize}}</div>
+                            <div><img :src="zodiacSignPath"></div>
+                            <div>{{constants[day.zodiac] | capitalize}}</div>
                         </div>
                     </div>
                     <div v-for="m in main"><b>{{constants[m.name] | capitalize}}: </b> {{m.text}}</div>
@@ -61,12 +64,41 @@
         box-sizing: border-box;
     }
 
-    .dynamic-info img {
-        width: 128px;
-        margin-top: 25px;
-        margin-bottom: 25px;
+    .dynamic-info div {
         display: inline-block;
     }
+    .dynamic-info div:first-child {
+        margin-right: 20px;
+    }
+
+    .plus .category-icon i {
+        color: #AED581;
+    }
+
+    .minus .category-icon i {
+        color: #FF8A65;
+    }
+
+    .dynamic-icons-block img {
+        width: 45px;
+    }
+    .dynamic-icons-block {
+        position: relative;
+        margin-top: 9px;
+        margin-bottom: 10px;
+    }
+
+    .dynamic-icons-block > * {
+        display: inline-block;
+    }
+
+    .dynamic-icons-block div:nth-child(2) {
+        margin-right: 50px;
+    }
+    .dynamic-icons-block div:nth-child(2n+1) {
+        margin-right: 10px;
+    }
+
 
     .day-info {
         height: auto;
@@ -124,7 +156,7 @@
         text-align: left;
         margin-bottom: 20px;
         margin-left: 60px;
-        font-size: 18px;
+        font-size: 16px;
         color: black;
     }
 
@@ -140,14 +172,14 @@
     .category-icon {
         position: absolute;
         left: -30px;
-        top: 2px;
+        top: 0px;
     }
 
     .material-icons {
         font-family: 'Material Icons';
         font-weight: normal;
         font-style: normal;
-        font-size: 24px; /* Preferred icon size */
+        font-size: 22px; /* Preferred icon size */
         line-height: 1;
         text-transform: none;
         letter-spacing: normal;
