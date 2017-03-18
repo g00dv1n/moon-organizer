@@ -1,9 +1,3 @@
-/**
- * Created by g00dv1n on 02.03.17.
- */
-
-import Vue from 'vue'
-
 export default {
   name: 'app',
   data () {
@@ -24,7 +18,15 @@ export default {
     },
     setCurrentType (type) {
       this.$store.commit('SET_CURRENT_TYPE', type)
+    },
+    goToCalendar (type) {
+      this.$store.commit('SET_CURRENT_TYPE', type)
       this.$material.setCurrentTheme(type)
+      if (type === 'default') {
+        this.$router.push('/')
+      } else {
+        this.$router.push({name: 'category-calendar', params: {category: type}})
+      }
     }
 
   },
@@ -43,7 +45,6 @@ export default {
     }
   },
   mounted () {
-    Vue.material.setCurrentTheme('default')
     // init client geo async
     this.$store.dispatch('loadClientInfo')
   }

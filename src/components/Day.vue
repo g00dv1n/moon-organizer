@@ -18,7 +18,7 @@
                         </div>
                         <div class="dynamic-icons-block">
                             <div><img  :src="moonPhasePath"></div>
-                            <div>{{day.moonPhase | capitalize}}</div>
+                            <div>{{constants[day.moonPhase] | capitalize}}</div>
                             <div><img :src="zodiacSignPath"></div>
                             <div>{{constants[day.zodiac] | capitalize}}</div>
                         </div>

@@ -69,7 +69,7 @@ const lang = {
   },
   moonDay: {
     ru: 'лунный день',
-    en: 'moon day'
+    en: 'lunar day'
   },
   aries: {
     ru: 'луна в Овне',
@@ -134,6 +134,38 @@ const lang = {
   zodiacSign: {
     ru: 'знак зодиака',
     en: 'zodiac sign'
+  },
+  'waxing crescent': {
+    ru: 'Растущая Луна',
+    en: 'waxing crescent'
+  },
+  'first quarter': {
+    ru: 'Первая Четверть',
+    en: 'first quarter'
+  },
+  'waxing gibbous': {
+    ru: 'Растущая Луна',
+    en: 'Waxing Gibbous'
+  },
+  'full moon': {
+    ru: 'Полнолуние',
+    en: 'Full Moon'
+  },
+  'waning gibbous': {
+    ru: 'Убывающая Луна',
+    en: 'Waning Gibbous'
+  },
+  'last quarter': {
+    ru: 'Последняя Четверть',
+    en: 'Last Quarter'
+  },
+  'waning crescent': {
+    ru: 'Убывающая Луна',
+    en: 'waning crescent'
+  },
+  'new moon': {
+    ru: 'Новолуние',
+    en: 'New Moon'
   }
 
 }

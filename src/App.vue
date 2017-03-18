@@ -5,7 +5,7 @@
                 <img class="logo" :src="logoPath">
             </md-toolbar>
             <div class="categories">
-                <md-button @click.native="setCurrentType(t.name)"
+                <md-button @click.native="goToCalendar(t.name)"
                            :class="['md-primary', 'category', {'active': isCurrentType(t.name)}]" v-for="t in types">
                     {{t.text}}
                 </md-button>

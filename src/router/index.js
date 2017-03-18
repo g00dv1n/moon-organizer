@@ -9,14 +9,19 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'main',
+      name: 'default',
       component: Main
     },
     {
-      path: '/days/:dayNumber',
-      name: 'day',
+      path: '/lunar-day/:dayNumber',
+      name: 'lunar-day',
       component: Day,
       props: true
+    },
+    {
+      path: '/calendar/:category',
+      name: 'category-calendar',
+      component: Main
     }
   ]
 })
