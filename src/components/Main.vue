@@ -13,7 +13,8 @@
             </div>
         </category-modal>
         <div class="container" id="calendar-container">
-            <calendar :locale="locale" :geo="geo" :day-click-handler="dayClickHandler()" v-if="geo"></calendar>
+            <calendar :locale="locale" :geo="geo" :day-click-handler="dayClickHandler()"
+                      :is-colored-handler="isColoredHandler()" v-if="geo"></calendar>
         </div>
     </div>
 </template>
@@ -33,8 +34,6 @@
     html, body {
         height: 100%;
     }
-
-
 
     @media (min-width: 1281px) {
         .container {

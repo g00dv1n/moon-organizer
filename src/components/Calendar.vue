@@ -13,7 +13,7 @@
         </div>
 
         <div id="calendar-container" ref="container">
-            <div :class="['cell', {today:d.isToday}]" v-for="d in month.days" :style="d.style"
+            <div :class="['cell',{colored: isColoredHandler(d)}, {today:d.isToday}]" v-for="d in month.days" :style="d.style"
                  @click="dayClickHandler(d)">
                 <div class="date">{{d.day}}</div>
                 <div class="lunar-date">{{d.maxLunarDay.number}}</div>
@@ -140,6 +140,10 @@
 
     .today {
         outline: solid 3px deeppink !important;
+    }
+
+    .colored {
+        background-color: #AED581;
     }
 
 

@@ -11,7 +11,7 @@ export default {
       date: new Date()
     }
   },
-  props: ['locale', 'geo', 'dayClickHandler'],
+  props: ['locale', 'geo', 'dayClickHandler', 'isColoredHandler'],
   methods: {
     next () {
       this.date = moment(this.date).add(1, 'M').toDate()
@@ -21,6 +21,11 @@ export default {
     },
     moonPhasePath (p) {
       return require(`../assets/moon-phases-color/${p.replace(' ', '_').toLowerCase()}.png`)
+    },
+    isColored (day) {
+      if (!this.isColoredHandler) return false
+
+      return this.isColoredHandler(day)
     }
   },
   computed: {

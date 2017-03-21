@@ -17,6 +17,19 @@ const onCategory = function (self) {
     modal.open()
   }
 }
+
+const extractContentByDayObject = function (type, locale, day) {
+  const number = day.maxLunarDay.number
+  return getDayContent(number, locale).categories.find(c => c.name === type)
+}
+
+const isColored = function (type, locale) {
+  return function (day) {
+    const category = extractContentByDayObject(type, locale, day)
+    return category && category.plus.length > 0 && category.minus.length === 0
+  }
+}
+
 export default {
   name: 'main',
   components: {
@@ -51,9 +64,8 @@ export default {
     category () {
       const day = this.$store.state.lastClickedDay
       if (!day || this.isDefault) return null
-      const number = day.maxLunarDay.number
-      const type = this.currentType
-      return getDayContent(number, this.locale).categories.find(c => c.name === type)
+
+      return extractContentByDayObject(this.currentType, this.locale, day)
     }
   },
   methods: {
@@ -62,11 +74,15 @@ export default {
     },
     dayClickHandler () {
       return this.isDefault ? onDefault(this) : onCategory(this)
+    },
+    isColoredHandler () {
+      const VIEWED_TYPES = ['lucky', 'fishing']
+      return VIEWED_TYPES.includes(this.currentType) ? isColored(this.currentType, this.locale) : () => false
     }
   },
   mounted () {
     calculateCalendarHeight('calendar-container')
-    const type = this.$route.params.category
+    const type = this.$route.params.category || 'default'
     this.$store.dispatch('updateType', type)
     this.$material.setCurrentTheme(type)
   }
