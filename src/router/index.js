@@ -15,8 +15,7 @@ export default new Router({
     {
       path: '/lunar-day/:dayNumber',
       name: 'lunar-day',
-      component: Day,
-      props: true
+      component: Day
     },
     {
       path: '/calendar/:category',

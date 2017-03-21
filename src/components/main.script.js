@@ -1,13 +1,12 @@
 import Calendar from './Calendar'
 import { calculateCalendarHeight } from 'helpers/calculator'
 
-const onDefault = function (day) {
-  this.$router.push({name: 'lunar-day', params: {dayNumber: day.maxLunarDay.number, day: Object.assign({}, day)}})
+const onDefault = function (self) {
+  return function (day) {
+    self.$store.commit('SET_LAST_CLICKED_DAY', day)
+    self.$router.push({name: 'lunar-day', params: {dayNumber: day.maxLunarDay.number}})
+  }
 }
-
-/* const onCategory = function (day) {
-  alert('Some Data')
-} */
 
 export default {
   name: 'main',
@@ -15,9 +14,7 @@ export default {
     Calendar
   },
   data () {
-    return {
-      dayClickHandler: onDefault
-    }
+    return {}
   },
   computed: {
     locale () {
@@ -26,13 +23,16 @@ export default {
     geo () {
       return this.$store.state.geo
     },
-    dayClickHandler: onDefault
-  },
-  methods: {
-    setType () {
+    dayClickHandler () {
+      return onDefault(this)
     }
   },
+  methods: {},
   mounted () {
     calculateCalendarHeight('calendar-container')
+    const type = this.$route.params.category
+    this.$store.dispatch('updateType', type)
+    this.$material.setCurrentTheme(type)
   }
 }
+

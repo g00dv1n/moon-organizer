@@ -1,4 +1,5 @@
 import clientGeo from 'helpers/clientgeo'
+import calendarTypes from 'lang/calendarTypes'
 
 const actions = {
   loadClientInfo ({commit}) {
@@ -9,6 +10,11 @@ const actions = {
       .catch((err) => {
         throw err.message
       })
+  },
+  updateType ({commit, state}, type) {
+    const allTypes = calendarTypes.map(({name}) => name).filter(name => name !== 'default')
+    const newType = allTypes.includes(type) ? type : 'default'
+    commit('SET_CURRENT_TYPE', newType)
   }
 }
 

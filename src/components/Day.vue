@@ -1,11 +1,11 @@
 <template>
     <div class="container-fluid">
         <div class="row">
-            <div class="day-info col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+            <div class="day-info col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" v-if="isDefault">
                 <div class="color-block">
                     <div class="day-title">{{title | capitalize}}</div>
                 </div>
-                <div class="category-content main">
+                <div class="category-content main" >
 
                     <div class="dynamic-info" v-if="day">
                         <div>
@@ -28,13 +28,14 @@
             </div>
         </div>
         <div class="row day-raw">
+            <div class="emty-block" v-if="!isDefault"></div>
             <div class="day-category col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1"
                  v-for="c in categories">
                 <div class="img-container">
                     <img :src="c.path">
                 </div>
                 <div class="color-block">
-                    <div class="category-name">{{constants[c.name] | capitalize}}</div>
+                    <div class="category-name">{{isDefault ? constants[c.name] : title | capitalize}}</div>
                 </div>
                 <div class="category-content">
                     <div class="plus" v-for="p in c.plus">
@@ -58,10 +59,14 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 
     * {
         box-sizing: border-box;
+    }
+
+    .emty-block {
+        height: 30px;
     }
 
     .dynamic-info div {
@@ -198,6 +203,5 @@
         /* Support for IE. */
         font-feature-settings: 'liga';
     }
-
 
 </style>

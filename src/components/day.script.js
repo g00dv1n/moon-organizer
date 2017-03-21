@@ -12,13 +12,19 @@ export default {
   data () {
     return {}
   },
-  props: ['day'],
 
   computed: {
+    day () {
+      return this.$store.state.lastClickedDay
+    },
     categories () {
       const dayNumber = this.$route.params.dayNumber
       const day = getDayContent(dayNumber, this.locale)
-      return day.categories
+      const currentType = this.$store.state.currentType
+      return this.isDefault ? day.categories : day.categories.filter(c => c.name === currentType)
+    },
+    isDefault () {
+      return this.$store.state.currentType === 'default'
     },
     // get main day info using day number
     main () {
@@ -51,9 +57,5 @@ export default {
     moonPhasePath () {
       return require(`../assets/moon-phases-color/${this.day.moonPhase.replace(' ', '_').toLowerCase()}.png`)
     }
-  },
-  mounted () {
-    const day = getDayContent(17, 'ru')
-    console.log(day)
   }
 }

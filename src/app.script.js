@@ -20,7 +20,7 @@ export default {
       this.$store.commit('SET_CURRENT_TYPE', type)
     },
     goToCalendar (type) {
-      this.$store.commit('SET_CURRENT_TYPE', type)
+      this.$store.dispatch('updateType', type)
       this.$material.setCurrentTheme(type)
       if (type === 'default') {
         this.$router.push('/')
