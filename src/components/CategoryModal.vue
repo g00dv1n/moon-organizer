@@ -45,6 +45,9 @@
 </script>
 <style>
     .md-dialog, .md-dialog-content {
-        overflow: visible !important;
+        overflow: auto !important;
+    }
+    .md-dialog-title {
+        text-align: center;
     }
 </style>

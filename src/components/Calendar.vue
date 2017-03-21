@@ -96,7 +96,7 @@
         margin: 0;
         padding: 0;
         background-color: white;
-        transition: all 0.3s ease-in 0.0s;
+        transition: all 0.3s ease-in;
         cursor: pointer;
     }
 

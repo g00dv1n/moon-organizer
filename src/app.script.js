@@ -3,6 +3,11 @@ export default {
   data () {
     return {}
   },
+  head: {
+    meta: [
+     // {property: 'og:image', content: require('./assets/category-icons/default.png')}
+    ]
+  },
   methods: {
     toggleLeftSidenav () {
       this.$refs.leftSidenav.toggle()

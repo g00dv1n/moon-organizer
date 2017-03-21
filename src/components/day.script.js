@@ -17,12 +17,15 @@ export default {
       const createStr = (arr, char) => arr.map(e => `${char} ${e}`).join('\n')
       const plusStr = createStr(category.plus, '+')
       const minusStr = createStr(category.minus, '-')
-      return `${plusStr}\n${minusStr}`
+      return `#moonorganizer\n${plusStr}\n${minusStr}`
     }
   },
   computed: {
     day () {
       return this.$store.state.lastClickedDay
+    },
+    mainLogo () {
+      return window.location.origin + require('../assets/category-icons/default.png')
     },
     categories () {
       const dayNumber = this.$route.params.dayNumber

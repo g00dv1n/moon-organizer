@@ -5,6 +5,22 @@
                  v-if="isDefault">
                 <div class="color-block">
                     <div class="day-title">{{title | capitalize}}</div>
+                    <social-sharing :media="mainLogo" :title="title" inline-template>
+                        <div class="social-sharing">
+                            <network network="facebook">
+                                <i class="fa fa-facebook fa-lg"></i>
+                            </network>
+                            <network network="googleplus">
+                                <i class="fa fa-google-plus fa-lg"></i>
+                            </network>
+                            <network network="twitter">
+                                <i class="fa fa-twitter fa-lg"></i>
+                            </network>
+                            <network network="vk">
+                                <i class="fa fa-vk fa-lg"></i>
+                            </network>
+                        </div>
+                    </social-sharing>
                 </div>
                 <div class="category-content main">
 
@@ -37,23 +53,6 @@
                 </div>
                 <div class="color-block">
                     <div class="category-name">{{isDefault ? constants[c.name] : title | capitalize}}</div>
-                    <social-sharing :title="title" :description="processCategoryForSharing(c)"  inline-template>
-                        <div class="social-sharing">
-                            <network network="facebook">
-                                <i class="fa fa-facebook fa-lg"></i>
-                            </network>
-                            <network network="googleplus">
-                                <i class="fa fa-google-plus fa-lg"></i>
-                            </network>
-                            <network network="twitter">
-                                <i class="fa fa-twitter fa-lg"></i>
-                            </network>
-                            <network network="vk">
-                                <i class="fa fa-vk fa-lg"></i>
-                            </network>
-                        </div>
-                    </social-sharing>
-
                 </div>
                 <div class="category-content">
                     <div class="plus" v-for="p in c.plus">
@@ -88,11 +87,11 @@
         top: 5px;
         right: 15px;
     }
-    .social-sharing span {
+    .social-sharing .fa {
         padding-left: 10px;
         cursor: pointer;
     }
-    .social-sharing span:hover {
+    .social-sharing .fa:hover {
         color: #0074D9;
     }
 

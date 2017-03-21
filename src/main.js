@@ -9,8 +9,11 @@ import themesConfig from './themes.config'
 import 'vue-material/dist/vue-material.css'
 import capitalize from 'filters/capitalize'
 import SocialSharing from 'vue-social-sharing'
+import VueHead from 'vue-head'
 
 Vue.use(SocialSharing)
+
+Vue.use(VueHead)
 
 Vue.use(VueMaterial)
 
