@@ -12,7 +12,14 @@ export default {
   data () {
     return {}
   },
-
+  methods: {
+    processCategoryForSharing (category) {
+      const createStr = (arr, char) => arr.map(e => `${char} ${e}`).join('\n')
+      const plusStr = createStr(category.plus, '+')
+      const minusStr = createStr(category.minus, '-')
+      return `${plusStr}\n${minusStr}`
+    }
+  },
   computed: {
     day () {
       return this.$store.state.lastClickedDay

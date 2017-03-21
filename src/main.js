@@ -8,6 +8,9 @@ import router from './router'
 import themesConfig from './themes.config'
 import 'vue-material/dist/vue-material.css'
 import capitalize from 'filters/capitalize'
+import SocialSharing from 'vue-social-sharing'
+
+Vue.use(SocialSharing)
 
 Vue.use(VueMaterial)
 

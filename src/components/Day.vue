@@ -1,11 +1,12 @@
 <template>
     <div class="container-fluid">
         <div class="row">
-            <div class="day-info col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" v-if="isDefault">
+            <div class="day-info col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"
+                 v-if="isDefault">
                 <div class="color-block">
                     <div class="day-title">{{title | capitalize}}</div>
                 </div>
-                <div class="category-content main" >
+                <div class="category-content main">
 
                     <div class="dynamic-info" v-if="day">
                         <div>
@@ -17,7 +18,7 @@
                             {{lunarDay.end}}
                         </div>
                         <div class="dynamic-icons-block">
-                            <div><img  :src="moonPhasePath"></div>
+                            <div><img :src="moonPhasePath"></div>
                             <div>{{constants[day.moonPhase] | capitalize}}</div>
                             <div><img :src="zodiacSignPath"></div>
                             <div>{{constants[day.zodiac] | capitalize}}</div>
@@ -36,6 +37,23 @@
                 </div>
                 <div class="color-block">
                     <div class="category-name">{{isDefault ? constants[c.name] : title | capitalize}}</div>
+                    <social-sharing :title="title" :description="processCategoryForSharing(c)"  inline-template>
+                        <div class="social-sharing">
+                            <network network="facebook">
+                                <i class="fa fa-facebook fa-lg"></i>
+                            </network>
+                            <network network="googleplus">
+                                <i class="fa fa-google-plus fa-lg"></i>
+                            </network>
+                            <network network="twitter">
+                                <i class="fa fa-twitter fa-lg"></i>
+                            </network>
+                            <network network="vk">
+                                <i class="fa fa-vk fa-lg"></i>
+                            </network>
+                        </div>
+                    </social-sharing>
+
                 </div>
                 <div class="category-content">
                     <div class="plus" v-for="p in c.plus">
@@ -65,6 +83,19 @@
         box-sizing: border-box;
     }
 
+    .social-sharing {
+        position: absolute;
+        top: 5px;
+        right: 15px;
+    }
+    .social-sharing span {
+        padding-left: 10px;
+        cursor: pointer;
+    }
+    .social-sharing span:hover {
+        color: #0074D9;
+    }
+
     .emty-block {
         height: 30px;
     }
@@ -72,6 +103,7 @@
     .dynamic-info div {
         display: inline-block;
     }
+
     .dynamic-info div:first-child {
         margin-right: 20px;
     }
@@ -87,6 +119,7 @@
     .dynamic-icons-block img {
         width: 45px;
     }
+
     .dynamic-icons-block {
         position: relative;
         margin-top: 9px;
@@ -100,10 +133,10 @@
     .dynamic-icons-block div:nth-child(2) {
         margin-right: 50px;
     }
+
     .dynamic-icons-block div:nth-child(2n+1) {
         margin-right: 10px;
     }
-
 
     .day-info {
         height: auto;

@@ -24,6 +24,7 @@
     "vue": "^2.1.10",
     "vue-material": "^0.7.1",
     "vue-router": "^2.2.0",
+    "vue-social-sharing": "^2.1.5",
     "vuex": "^2.2.1"
   },
   "devDependencies": {
