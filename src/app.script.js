@@ -24,9 +24,17 @@ export default {
     setCurrentType (type) {
       this.$store.commit('SET_CURRENT_TYPE', type)
     },
+    hideSidenav () {
+      const width = document.documentElement.clientWidth
+      const toggle = () => this.toggleLeftSidenav()
+      if (width < 1281) {
+        setTimeout(toggle, 700)
+      }
+    },
     goToCalendar (type) {
       this.$store.dispatch('updateType', type)
       this.$material.setCurrentTheme(type)
+      this.hideSidenav()
       if (type === 'default') {
         this.$router.push('/')
       } else {

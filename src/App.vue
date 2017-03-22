@@ -23,7 +23,10 @@
         <md-button-toggle id="lang-switcher" md-single class="md-primary">
             <md-button v-for="l in locales" :class="{'md-toggle': isLocale(l)}" @click.native="setLocale(l)">{{l}}</md-button>
         </md-button-toggle>
-        <router-view></router-view>
+        <keep-alive>
+            <router-view></router-view>
+        </keep-alive>
+
     </div>
 </template>
 

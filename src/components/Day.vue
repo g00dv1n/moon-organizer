@@ -5,22 +5,6 @@
                  v-if="isDefault">
                 <div class="color-block">
                     <div class="day-title">{{title | capitalize}}</div>
-                    <social-sharing :media="mainLogo" :title="title" inline-template>
-                        <div class="social-sharing">
-                            <network network="facebook">
-                                <i class="fa fa-facebook fa-lg"></i>
-                            </network>
-                            <network network="googleplus">
-                                <i class="fa fa-google-plus fa-lg"></i>
-                            </network>
-                            <network network="twitter">
-                                <i class="fa fa-twitter fa-lg"></i>
-                            </network>
-                            <network network="vk">
-                                <i class="fa fa-vk fa-lg"></i>
-                            </network>
-                        </div>
-                    </social-sharing>
                 </div>
                 <div class="category-content main">
 
@@ -41,6 +25,22 @@
                         </div>
                     </div>
                     <div v-for="m in main"><b>{{constants[m.name] | capitalize}}: </b> {{m.text}}</div>
+                    <social-sharing :media="mainLogo" :title="title" inline-template>
+                        <div class="social-sharing">
+                            <network network="facebook">
+                                <i class="fa fa-facebook fa-lg"></i>
+                            </network>
+                            <network network="googleplus">
+                                <i class="fa fa-google-plus fa-lg"></i>
+                            </network>
+                            <network network="twitter">
+                                <i class="fa fa-twitter fa-lg"></i>
+                            </network>
+                            <network network="vk">
+                                <i class="fa fa-vk fa-lg"></i>
+                            </network>
+                        </div>
+                    </social-sharing>
                 </div>
             </div>
         </div>
@@ -83,9 +83,9 @@
     }
 
     .social-sharing {
-        position: absolute;
-        top: 5px;
-        right: 15px;
+        position: absolute !important;
+        bottom: 5px;
+        right: 25px;
     }
     .social-sharing .fa {
         padding-left: 10px;
@@ -193,12 +193,15 @@
         text-align: left;
         margin-bottom: 20px;
         margin-left: 60px;
+        padding-right: 60px;
         font-size: 16px;
         color: black;
     }
 
     .category-content.main {
-        margin-left: 30px;
+        margin-left: 40px;
+        width: 100%;
+        margin-bottom: 50px;
     }
 
     .category-content > * {

@@ -98,11 +98,12 @@
         background-color: white;
         transition: all 0.3s ease-in;
         cursor: pointer;
+        z-index: 2;
     }
 
     .cell:hover {
         transform: scale(1.2);
-        z-index: 99;
+        z-index: 3;
     }
 
     .cell > * {
@@ -143,7 +144,7 @@
     }
 
     .colored {
-        background-color: #AED581;
+        background-color: rgba(174,213,129,1);
     }
 
 
