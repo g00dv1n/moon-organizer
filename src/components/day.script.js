@@ -30,8 +30,7 @@ export default {
     categories () {
       const dayNumber = this.$route.params.dayNumber
       const day = getDayContent(dayNumber, this.locale)
-      const currentType = this.$store.state.currentType
-      return this.isDefault ? day.categories : day.categories.filter(c => c.name === currentType)
+      return day.categories
     },
     isDefault () {
       return this.$store.state.currentType === 'default'

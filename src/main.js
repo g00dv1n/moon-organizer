@@ -21,6 +21,9 @@ Vue.filter('capitalize', capitalize)
 
 Vue.material.registerTheme(themesConfig)
 
+Vue.config.errorHandler = (err, vm, info) => {
+  console.log(err)
+}
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

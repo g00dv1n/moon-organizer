@@ -20,6 +20,7 @@ const onCategory = function (self) {
 
 const extractContentByDayObject = function (type, locale, day) {
   const number = day.maxLunarDay.number
+  console.log('DAY NUMBER: ' + number)
   return getDayContent(number, locale).categories.find(c => c.name === type)
 }
 

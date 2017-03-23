@@ -1,8 +1,7 @@
 <template>
     <div class="container-fluid">
         <div class="row">
-            <div class="day-info col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"
-                 v-if="isDefault">
+            <div class="day-info col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                 <div class="color-block">
                     <div class="day-title">{{title | capitalize}}</div>
                 </div>
@@ -45,7 +44,6 @@
             </div>
         </div>
         <div class="row day-raw">
-            <div class="emty-block" v-if="!isDefault"></div>
             <div class="day-category col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1"
                  v-for="c in categories">
                 <div class="img-container">
@@ -95,9 +93,6 @@
         color: #0074D9;
     }
 
-    .emty-block {
-        height: 30px;
-    }
 
     .dynamic-info div {
         display: inline-block;
@@ -193,14 +188,12 @@
         text-align: left;
         margin-bottom: 20px;
         margin-left: 60px;
-        padding-right: 60px;
         font-size: 16px;
         color: black;
     }
 
     .category-content.main {
-        margin-left: 40px;
-        width: 100%;
+        margin-left: 30px;
         margin-bottom: 50px;
     }
 

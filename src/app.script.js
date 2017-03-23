@@ -28,7 +28,7 @@ export default {
       const width = document.documentElement.clientWidth
       const toggle = () => this.toggleLeftSidenav()
       if (width < 1281) {
-        setTimeout(toggle, 700)
+        setTimeout(toggle, 1000)
       }
     },
     goToCalendar (type) {

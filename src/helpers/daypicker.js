@@ -29,6 +29,7 @@ const newMainObject = (name, main, locale) => {
 
 // Transform day data to array of categories and array of main info
 const getDayContent = (numberOfDay, locale = 'ru') => {
+  if (!numberOfDay) return null
   const _categories = require(`../days/${numberOfDay}`).categories
   // main day info
   const _main = require(`../days/${numberOfDay}`).main
