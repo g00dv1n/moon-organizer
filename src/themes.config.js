@@ -1,6 +1,4 @@
-/**
- * Created by g00dv1n on 02.03.17.
- */
+// @flow
 
 const config = {
   relationship: {

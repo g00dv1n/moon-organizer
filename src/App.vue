@@ -1,6 +1,9 @@
 <template>
     <div id="app">
         <md-sidenav class="main-sidenav md-left md-fixed" md-swipeable ref="leftSidenav">
+            <div class="closeBtn" v-if="isMobile" @click="toggleLeftSidenav()">
+                <i class="material-icons">clear</i>
+            </div>
             <md-toolbar md-theme="white">
                 <img class="logo" :src="logoPath">
             </md-toolbar>
@@ -11,7 +14,6 @@
                 </md-button>
 
             </div>
-
         </md-sidenav>
 
         <md-toolbar class="header">
@@ -44,6 +46,21 @@
         color: #2c3e50;
         overflow: hidden;
     }
+
+    .closeBtn {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 99;
+        cursor: pointer;
+    }
+    .closeBtn i {
+        font-size: 26px;
+    }
+    .closeBtn:hover {
+        color: #0074D9 !important;
+    }
+
 
     body {
         background-color: #fafafa !important;

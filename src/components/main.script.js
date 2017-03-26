@@ -1,33 +1,37 @@
-import Calendar from './Calendar'
-import { calculateCalendarHeight } from 'helpers/calculator'
-import CategoryModal from './CategoryModal'
-import getDayContent from 'helpers/daypicker'
+// @flow
 
-const onDefault = function (self) {
-  return function (day) {
+import Calendar from './Calendar.vue'
+import { calculateCalendarHeight } from '../helpers/calculator'
+import CategoryModal from './CategoryModal.vue'
+
+const onDefault = function (self: Object): Function {
+  return function (day: Day): void {
     self.$store.commit('SET_LAST_CLICKED_DAY', day)
     self.$router.push({name: 'lunar-day', params: {dayNumber: day.maxLunarDay.number}})
   }
 }
 
-const onCategory = function (self) {
-  const modal = self.$refs['modal']
-  return function (day) {
+const onCategory = function (self: Object): Function {
+  const modal = self.$refs['modal'] || document.getElementById('modal')
+  return function (day: Day): void {
     self.$store.commit('SET_LAST_CLICKED_DAY', day)
-    modal.open()
+    if (modal) {
+      modal.open()
+    } else {
+      throw new Error('Cannot get modal !>?')
+    }
   }
 }
 
-const extractContentByDayObject = function (type, locale, day) {
-  const number = day.maxLunarDay.number
-  console.log('DAY NUMBER: ' + number)
-  return getDayContent(number, locale).categories.find(c => c.name === type)
+const extractCategoryContentByDayObject = function (type: string, locale: string, day: Day): ?Category {
+  const {categories} = day.getContent()
+  return categories ? categories.find(c => c.name === type) : null
 }
 
-const isColored = function (type, locale) {
-  return function (day) {
-    const category = extractContentByDayObject(type, locale, day)
-    return category && category.plus.length > 0 && category.minus.length === 0
+const isColored = function (type: string, locale: string): Function {
+  return function (day: Day): boolean {
+    const category = extractCategoryContentByDayObject(type, locale, day)
+    return !!category && category.plus.length > 0 && category.minus.length === 0
   }
 }
 
@@ -66,7 +70,7 @@ export default {
       const day = this.$store.state.lastClickedDay
       if (!day || this.isDefault) return null
 
-      return extractContentByDayObject(this.currentType, this.locale, day)
+      return extractCategoryContentByDayObject(this.currentType, this.locale, day)
     }
   },
   methods: {
@@ -83,9 +87,6 @@ export default {
   },
   mounted () {
     calculateCalendarHeight('calendar-container')
-    const type = this.$route.params.category || 'default'
-    this.$store.dispatch('updateType', type)
-    this.$material.setCurrentTheme(type)
   }
 }
 

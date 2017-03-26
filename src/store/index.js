@@ -1,6 +1,5 @@
-/**
- * Created by g00dv1n on 27.02.17.
- */
+// @flow
+
 import Vue from 'vue'
 import Vuex from 'vuex'
 import actions from './actions'

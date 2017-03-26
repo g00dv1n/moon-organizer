@@ -1,4 +1,7 @@
+// @flow
+
 import _ from 'lodash'
+import days from '../days'
 
 const processCategoryContent = (contentArray, locale) => {
   return _.map([...contentArray], (c) => c[locale])
@@ -28,11 +31,10 @@ const newMainObject = (name, main, locale) => {
 }
 
 // Transform day data to array of categories and array of main info
-const getDayContent = (numberOfDay, locale = 'ru') => {
-  if (!numberOfDay) return null
-  const _categories = require(`../days/${numberOfDay}`).categories
+const getDayContent = (numberOfDay: number, locale: string = 'ru'): DayContent => {
+  const _categories = days[numberOfDay].categories
   // main day info
-  const _main = require(`../days/${numberOfDay}`).main
+  const _main = days[numberOfDay].main
   const categories = _.chain(_categories)
     .keys()
     .map(k => newCategoryObject(k, _categories, locale))

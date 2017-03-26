@@ -1,11 +1,14 @@
+// @flow
+
 import Vue from 'vue'
 import Router from 'vue-router'
-import Main from 'components/Main'
-import Day from 'components/Day'
+import Main from '../components/Main'
+import Day from '../components/Day'
+import store from '../store'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -24,3 +27,11 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  store.dispatch('updateType', to.params.category)
+  next()
+})
+
+export default router
+

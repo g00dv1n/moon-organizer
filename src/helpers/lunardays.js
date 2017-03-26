@@ -1,3 +1,5 @@
+// @flow
+
 import suncalc from 'suncalc'
 import lune from 'lune'
 import moment from 'moment'
@@ -30,7 +32,7 @@ const moonRises = (days, latitude, longitude) => {
     .value()
 }
 
-const lunarDays = (date, latitude, longitude) => {
+const lunarDays = (date: moment$Moment, latitude: number, longitude: number) => {
   let newMoon = recentNewMoon(date)
   let diffDays = daysBetween(newMoon, date)
   let initDate = moment(newMoon).startOf('day')

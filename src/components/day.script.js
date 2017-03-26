@@ -1,11 +1,6 @@
-import getDayContent from 'helpers/daypicker'
+// @flow
+
 import moment from 'moment'
-
-const getCurrentLunarDay = (day) => {
-  if (!day.isToday) return day.maxLunarDay
-
-  return moment().isBetween(day.lunarDays[0].start, day.lunarDays[0].end) ? day.lunarDays[0] : day.lunarDays[1]
-}
 
 export default {
   name: 'day',
@@ -13,7 +8,7 @@ export default {
     return {}
   },
   methods: {
-    processCategoryForSharing (category) {
+    processCategoryForSharing (category: Category) {
       const createStr = (arr, char) => arr.map(e => `${char} ${e}`).join('\n')
       const plusStr = createStr(category.plus, '+')
       const minusStr = createStr(category.minus, '-')
@@ -24,22 +19,34 @@ export default {
     day () {
       return this.$store.state.lastClickedDay
     },
+    dayContent () {
+      const day: Day = this.day
+      if (!day) {
+        // throw new Error('Cannot get day from lastClickedDay. lastClickedDay probably null.')
+        return
+      }
+      return day.getContent()
+    },
     mainLogo () {
       return window.location.origin + require('../assets/category-icons/default.png')
     },
     categories () {
-      const dayNumber = this.$route.params.dayNumber
-      const day = getDayContent(dayNumber, this.locale)
-      return day.categories
+      const categories: Array<Category> = this.dayContent.categories
+      if (!categories) {
+        throw new Error('Cannot get categories from lastClickedDay. lastClickedDay probably null.')
+      }
+      return categories
     },
     isDefault () {
       return this.$store.state.currentType === 'default'
     },
     // get main day info using day number
     main () {
-      const dayNumber = this.$route.params.dayNumber
-      const day = getDayContent(dayNumber, this.locale)
-      return day.main
+      const main: Array<DayMainInfo> = this.dayContent.main
+      if (!main) {
+        throw new Error('Cannot get main lunar day info from lastClickedDay. lastClickedDay probably null.')
+      }
+      return main
     },
     locale () {
       return this.$store.state.locale
@@ -48,23 +55,17 @@ export default {
       return this.$store.getters.constants
     },
     title () {
-      const dayNumber = this.$route.params.dayNumber
+      const dayNumber: number = this.$route.params.dayNumber
       return `${dayNumber} ${this.constants['moonDay']}`
     },
     lunarDay () {
       if (!this.day) return null
-      const ld = getCurrentLunarDay(this.day)
+      const ld: LunarDay = this.day.showedLunarDay
       const formatStr = 'hh:mm DD-MM-YYYY'
       return {
         start: moment(ld.start).format(formatStr),
         end: moment(ld.end).format(formatStr)
       }
-    },
-    zodiacSignPath () {
-      return require(`../assets/zodiac-signs/${this.day.zodiac}.png`)
-    },
-    moonPhasePath () {
-      return require(`../assets/moon-phases-color/${this.day.moonPhase.replace(' ', '_').toLowerCase()}.png`)
     }
   }
 }

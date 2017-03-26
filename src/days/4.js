@@ -219,8 +219,7 @@ const main = {
   }
 }
 
-export {
+export default {
   categories,
   main
 }
-

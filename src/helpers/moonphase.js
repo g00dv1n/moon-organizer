@@ -1,3 +1,5 @@
+// @flow
+
 const phases = [
   {
     days: [29, 30, 1],
@@ -33,12 +35,13 @@ const phases = [
   }
 ]
 
-const moonPhase = (dayNumber) => {
+const moonPhase = (dayNumber: number): string | null => {
   for (let p of phases) {
     if (p.days.indexOf(dayNumber) !== -1) {
       return p.name
     }
   }
+  return null
 }
 
 export default moonPhase

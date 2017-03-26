@@ -1,3 +1,5 @@
+// @flow
+
 const lang = {
   relationship: {
     ru: 'отношения',
@@ -63,7 +65,7 @@ const lang = {
     ru: 'камень',
     en: 'stone'
   },
-  сolor: {
+  'сolor': {
     ru: 'цвет',
     en: 'сolor'
   },
@@ -166,6 +168,10 @@ const lang = {
   'new moon': {
     ru: 'Новолуние',
     en: 'New Moon'
+  },
+  tryAgain: {
+    ru: 'Попробуйте еще раз!',
+    en: 'Try again!'
   }
 
 }

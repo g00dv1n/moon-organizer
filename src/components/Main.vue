@@ -11,6 +11,9 @@
                     <div>{{m}}</div>
                 </div>
             </div>
+            <div class="try-again" v-else>
+                <div class="text-center">{{constants['tryAgain']}}</div>
+            </div>
         </category-modal>
         <div class="container" id="calendar-container">
             <calendar :locale="locale" :geo="geo" :day-click-handler="dayClickHandler()"
@@ -29,6 +32,7 @@
 
     * {
         box-sizing: border-box;
+        font-size: 16px;
     }
 
     html, body {
@@ -51,13 +55,18 @@
         margin-top: 25px;
     }
 
+    .try-again {
+        width: 100%;
+        padding: 0;
+        margin-top: 15px;
+    }
+
     .category-content {
         margin-top: 10px;
         word-break: normal;
         text-align: left;
         margin-bottom: 10px;
         margin-left: 30px;
-        font-size: 16px;
         color: black;
         max-width: 500px;
     }

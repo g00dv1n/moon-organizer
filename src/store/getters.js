@@ -1,16 +1,14 @@
-/**
- * Created by g00dv1n on 01.03.17.
- */
+// @flow
 
 const getters = {
-  calendarTypes (state) {
+  calendarTypes (state: Object) {
     return state.calendarTypes.map((type) => {
       let text = type.text[state.locale]
       let name = type.name
       return {name, text}
     })
   },
-  constants (state) {
+  constants (state: Object) {
     const constants = state.constants
     const locale = state.locale
     const res = {}

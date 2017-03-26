@@ -1,7 +1,6 @@
-/**
- * Created by g00dv1n on 25.02.17.
- */
-import month from 'helpers/month.fp'
+// @flow
+
+import month from '../helpers/month.fp'
 import moment from 'moment'
 
 export default {
@@ -19,10 +18,7 @@ export default {
     prev () {
       this.date = moment(this.date).subtract(1, 'M').toDate()
     },
-    moonPhasePath (p) {
-      return require(`../assets/moon-phases-color/${p.replace(' ', '_').toLowerCase()}.png`)
-    },
-    isColored (day) {
+    isColored (day: Day) {
       if (!this.isColoredHandler) return false
 
       return this.isColoredHandler(day)

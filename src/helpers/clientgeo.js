@@ -1,6 +1,5 @@
-/**
- * Created by g00dv1n on 12.03.17.
- */
+// @flow
+
 import axios from 'axios'
 
 const getClientGeo = () => {

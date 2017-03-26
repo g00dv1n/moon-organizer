@@ -1,3 +1,5 @@
+// @flow
+
 export default {
   name: 'app',
   data () {
@@ -5,35 +7,36 @@ export default {
   },
   head: {
     meta: [
-     // {property: 'og:image', content: require('./assets/category-icons/default.png')}
+      // {property: 'og:image', content: require('./assets/category-icons/default.png')}
     ]
   },
   methods: {
     toggleLeftSidenav () {
       this.$refs.leftSidenav.toggle()
     },
-    isLocale (locale) {
+    isLocale (locale: string) {
       return this.$store.state.locale === locale
     },
-    setLocale (locale) {
+    setLocale (locale: string) {
       this.$store.commit('SET_LOCALE', locale)
     },
-    isCurrentType (type) {
+    isCurrentType (type: string) {
       return type === this.currentType
     },
-    setCurrentType (type) {
+    setCurrentType (type: string) {
       this.$store.commit('SET_CURRENT_TYPE', type)
     },
     hideSidenav () {
-      const width = document.documentElement.clientWidth
+      // $FlowIgnore
+
       const toggle = () => this.toggleLeftSidenav()
-      if (width < 1281) {
-        setTimeout(toggle, 1000)
+      if (this.isMobile) {
+        setTimeout(toggle, 1500)
       }
     },
-    goToCalendar (type) {
+    goToCalendar (type: string) {
       this.$store.dispatch('updateType', type)
-      this.$material.setCurrentTheme(type)
+      // this.$material.setCurrentTheme(type)
       this.hideSidenav()
       if (type === 'default') {
         this.$router.push('/')
@@ -44,6 +47,13 @@ export default {
 
   },
   computed: {
+    isMobile () {
+      if (document.documentElement) {
+        return document.documentElement.clientWidth < 1281
+      } else {
+        return false
+      }
+    },
     types () {
       return this.$store.getters.calendarTypes
     },
@@ -54,7 +64,11 @@ export default {
       return this.$store.state.LOCALES
     },
     logoPath () {
+      // $FlowIgnore
       return require(`./assets/category-icons/${this.currentType}.png`)
+    },
+    geo () {
+      return this.$store.state.geo
     }
   },
   mounted () {

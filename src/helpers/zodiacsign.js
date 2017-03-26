@@ -1,3 +1,5 @@
+// @flow
+
 const normalize = (v) => {
   v = v - Math.floor(v)
   if (v < 0) {
@@ -6,7 +8,7 @@ const normalize = (v) => {
   return v
 }
 
-const getMoonInformations = (date) => {
+const getMoonInformations = (date: Date): string => {
   let zodiac
   let yy, mm, k1, k2, k3, jd
   let ip, dp, rp

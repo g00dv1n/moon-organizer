@@ -17,9 +17,9 @@
                             {{lunarDay.end}}
                         </div>
                         <div class="dynamic-icons-block">
-                            <div><img :src="moonPhasePath"></div>
+                            <div><img :src="day.moonPhaseLogoPath"></div>
                             <div>{{constants[day.moonPhase] | capitalize}}</div>
-                            <div><img :src="zodiacSignPath"></div>
+                            <div><img :src="day.zodiacLogoPath"></div>
                             <div>{{constants[day.zodiac] | capitalize}}</div>
                         </div>
                     </div>

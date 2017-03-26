@@ -16,9 +16,9 @@
             <div :class="['cell',{colored: isColoredHandler(d)}, {today:d.isToday}]" v-for="d in month.days" :style="d.style"
                  @click="dayClickHandler(d)">
                 <div class="date">{{d.day}}</div>
-                <div class="lunar-date">{{d.maxLunarDay.number}}</div>
+                <div class="lunar-date">{{d.showedLunarDay.number}}</div>
                 <div class="moon-phase">
-                    <img :src="moonPhasePath(d.moonPhase)">
+                    <img :src="d.moonPhaseLogoPath">
                 </div>
             </div>
         </div>

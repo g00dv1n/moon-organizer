@@ -6,11 +6,14 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
+    "flow": "./node_modules/.bin/flow",
     "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
+    "flow:typed": "./node_modules/.bin/flow-typed install --overwrite",
+    "flow:watch": "./node_modules/.bin/nodemon --watch ./src/ --exec 'npm -s run flow'"
   },
   "dependencies": {
     "axios": "^0.15.3",
@@ -36,6 +39,7 @@
     "babel-plugin-istanbul": "^3.1.2",
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-es2015": "^6.22.0",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.22.0",
     "bootstrap-sass": "^3.3.7",
@@ -50,6 +54,7 @@
     "eslint-config-standard": "^6.2.1",
     "eslint-friendly-formatter": "^2.0.7",
     "eslint-loader": "^1.6.1",
+    "eslint-plugin-flowtype": "^2.30.4",
     "eslint-plugin-html": "^2.0.0",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
@@ -57,6 +62,8 @@
     "express": "^4.14.1",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "file-loader": "^0.10.0",
+    "flow-bin": "^0.42.0",
+    "flow-typed": "^2.0.0",
     "friendly-errors-webpack-plugin": "^1.1.3",
     "function-bind": "^1.1.0",
     "html-webpack-plugin": "^2.28.0",
