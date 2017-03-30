@@ -4,10 +4,31 @@ import moment from 'moment'
 import getDayContent from '../helpers/daypicker'
 import { mapGetters } from 'vuex'
 
+const isEnableGoTop = (): boolean => {
+  const MAX_HEIGTH_FOR_SCROLL = 500
+  return window.pageYOffset > MAX_HEIGTH_FOR_SCROLL
+}
+
+const onScrollFabric = (self): Function => {
+  return () => {
+    if (self.isEnableGoTop !== undefined) {
+      self.isEnableGoTop = isEnableGoTop()
+    }
+  }
+}
+
 export default {
   name: 'day',
   data () {
-    return {}
+    return {
+      isEnableGoTop: isEnableGoTop(),
+      dayNumber: null
+    }
+  },
+
+  created () {
+    window.addEventListener('scroll', onScrollFabric(this))
+    this.dayNumber = this.$route.params.dayNumber
   },
   methods: {
     processCategoryForSharing (category: Category) {
@@ -20,7 +41,6 @@ export default {
       window.scrollTo(0, 0)
     }
   },
-
   computed: {
     ...mapGetters(['lastClickedDay', 'locale', 'constants']),
     day () {
@@ -30,11 +50,10 @@ export default {
       if (this.day) {
         return this.day.content
       } else {
-        const dayNumber = this.$route.params.dayNumber
-        if (!dayNumber) {
+        if (!this.dayNumber) {
           throw new Error('Cannot get dayNumber from $route.params.dayNumber')
         }
-        const content: DayContent = getDayContent(dayNumber, this.locale)
+        const content: DayContent = getDayContent(this.dayNumber, this.locale)
         return content
       }
     },

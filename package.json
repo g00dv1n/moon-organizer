@@ -13,7 +13,8 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
     "flow:typed": "./node_modules/.bin/flow-typed install --overwrite",
-    "flow:watch": "./node_modules/.bin/nodemon --watch ./src/ --exec 'npm -s run flow'"
+    "flow:watch": "./node_modules/.bin/nodemon --watch ./src/ --exec 'npm -s run flow'",
+    "g00dv1n": "rm -rf ../g00dv1n.github.io/* &&  cp -rf dist/* ../g00dv1n.github.io/ && cd ../g00dv1n.github.io/ && git add -A && git commit -m 'update' && git push -u origin master"
   },
   "dependencies": {
     "axios": "^0.15.3",

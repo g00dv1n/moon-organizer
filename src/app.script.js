@@ -34,7 +34,6 @@ export default {
     },
     goToCalendar (type: string) {
       this.$store.dispatch('updateType', type)
-      // this.$material.setCurrentTheme(type)
       this.hideSidenav()
       if (type === 'default') {
         this.$router.push('/')
