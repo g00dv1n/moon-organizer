@@ -1,5 +1,6 @@
 <template>
     <div class="container-fluid">
+        <div class="up-button" @click="goTop()"><i class="material-icons">expand_less</i></div>
         <div class="row">
             <div class="day-info col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                 <div class="color-block">
@@ -78,6 +79,23 @@
 
     * {
         box-sizing: border-box;
+    }
+
+    .up-button {
+        position: fixed;
+        height: 56px;
+        width: 56px;
+        cursor: pointer;
+        right: 10px;
+    }
+    .up-button i {
+        font-size: 46px;
+        width: 100%;
+        height: 100%;
+    }
+    .up-button:hover {
+        font-size: 46px;
+        background-color: #cccccc;
     }
 
     .social-sharing {

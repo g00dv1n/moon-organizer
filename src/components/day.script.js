@@ -15,8 +15,12 @@ export default {
       const plusStr = createStr(category.plus, '+')
       const minusStr = createStr(category.minus, '-')
       return `#moonorganizer\n${plusStr}\n${minusStr}`
+    },
+    goTop () {
+      window.scrollTo(0, 0)
     }
   },
+
   computed: {
     ...mapGetters(['lastClickedDay', 'locale', 'constants']),
     day () {

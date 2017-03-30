@@ -32,9 +32,6 @@ export default {
         setTimeout(toggle, 1500)
       }
     },
-    goTop () {
-      window.scrollTo(0, 0)
-    },
     goToCalendar (type: string) {
       this.$store.dispatch('updateType', type)
       // this.$material.setCurrentTheme(type)
