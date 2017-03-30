@@ -70,9 +70,10 @@ const calculateDayInfo = (currentDay: moment$Moment, locale: string, latitude: n
   const _style = style(currentDay)
   const _zodiac = zodiacSign(currentDay.toDate())
   const _zodiacLogoPath = require(`../assets/zodiac-signs/${_zodiac}.png`)
+  const _content = getDayContent(_showedLunarDay.number, locale)
 
   const dayInfo: Day = {
-    getContent: () => getDayContent(_showedLunarDay.number, locale),
+    content: _content,
     maxLunarDay: _maxLunarDay,
     showedLunarDay: _showedLunarDay,
     lunarDays: _lunarDays,

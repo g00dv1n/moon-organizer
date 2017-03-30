@@ -27,12 +27,13 @@ export default {
       this.$store.commit('SET_CURRENT_TYPE', type)
     },
     hideSidenav () {
-      // $FlowIgnore
-
       const toggle = () => this.toggleLeftSidenav()
       if (this.isMobile) {
         setTimeout(toggle, 1500)
       }
+    },
+    goTop () {
+      window.scrollTo(0, 0)
     },
     goToCalendar (type: string) {
       this.$store.dispatch('updateType', type)

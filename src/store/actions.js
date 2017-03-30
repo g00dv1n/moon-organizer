@@ -18,7 +18,7 @@ const actions = {
     const allTypes = calendarTypes.map(({name}) => name).filter(name => name !== 'default')
     const newType = allTypes.includes(type) ? type : 'default'
     commit('SET_CURRENT_TYPE', newType)
-    Vue.material.setCurrentTheme(type)
+    Vue.material.setCurrentTheme(newType)
   }
 }
 

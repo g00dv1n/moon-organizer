@@ -22,29 +22,31 @@ declare type DayStyle = {
   left: string
 }
 
-declare interface Day  {
+declare type Day = {
   // Day number. Start from 1..
-  day: number;
+  day: number,
   // Day Date. Standart JS Date object
-  date: Date;
+  date: Date,
   // is today flag
-  isToday: boolean;
+  isToday: boolean,
   // All lunar days for specific date
-  lunarDays: Array<LunarDay>;
+  lunarDays: Array<LunarDay>,
   // Max lunar day for specific date
-  maxLunarDay: LunarDay;
+  maxLunarDay: LunarDay,
   // Moon phase.
-  moonPhase: string|null;
+  moonPhase: string | null,
   // Path to logo
-  moonPhaseLogoPath: string;
+  moonPhaseLogoPath: string,
+  // lunar day fro show
+  showedLunarDay: LunarDay,
   // style for draw in calendar component
-  style: DayStyle;
+  style: DayStyle,
   // Moon in zodiac.
-  zodiac: string;
+  zodiac: string,
   // Zodiac logo path
-  zodiacLogoPath: string;
+  zodiacLogoPath: string,
   // Day content Using Locale
-  getContent(): DayContent;
+  content: DayContent
 }
 
 declare type Month = {

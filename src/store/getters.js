@@ -16,6 +16,12 @@ const getters = {
       res[k] = constants[k][locale]
     })
     return res
+  },
+  locale (state: Object) {
+    return state.locale
+  },
+  lastClickedDay (state: Object) {
+    return state.lastClickedDay
   }
 }
 

@@ -1,6 +1,8 @@
 // @flow
 
 import moment from 'moment'
+import getDayContent from '../helpers/daypicker'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'day',
@@ -16,16 +18,21 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['lastClickedDay', 'locale', 'constants']),
     day () {
-      return this.$store.state.lastClickedDay
+      return this.lastClickedDay
     },
     dayContent () {
-      const day: Day = this.day
-      if (!day) {
-        // throw new Error('Cannot get day from lastClickedDay. lastClickedDay probably null.')
-        return
+      if (this.day) {
+        return this.day.content
+      } else {
+        const dayNumber = this.$route.params.dayNumber
+        if (!dayNumber) {
+          throw new Error('Cannot get dayNumber from $route.params.dayNumber')
+        }
+        const content: DayContent = getDayContent(dayNumber, this.locale)
+        return content
       }
-      return day.getContent()
     },
     mainLogo () {
       return window.location.origin + require('../assets/category-icons/default.png')
@@ -37,9 +44,6 @@ export default {
       }
       return categories
     },
-    isDefault () {
-      return this.$store.state.currentType === 'default'
-    },
     // get main day info using day number
     main () {
       const main: Array<DayMainInfo> = this.dayContent.main
@@ -47,12 +51,6 @@ export default {
         throw new Error('Cannot get main lunar day info from lastClickedDay. lastClickedDay probably null.')
       }
       return main
-    },
-    locale () {
-      return this.$store.state.locale
-    },
-    constants () {
-      return this.$store.getters.constants
     },
     title () {
       const dayNumber: number = this.$route.params.dayNumber

@@ -3,6 +3,7 @@
 import Calendar from './Calendar.vue'
 import { calculateCalendarHeight } from '../helpers/calculator'
 import CategoryModal from './CategoryModal.vue'
+import { mapGetters } from 'vuex'
 
 const onDefault = function (self: Object): Function {
   return function (day: Day): void {
@@ -24,7 +25,7 @@ const onCategory = function (self: Object): Function {
 }
 
 const extractCategoryContentByDayObject = function (type: string, locale: string, day: Day): ?Category {
-  const {categories} = day.getContent()
+  const {categories} = day.content
   return categories ? categories.find(c => c.name === type) : null
 }
 
@@ -45,9 +46,7 @@ export default {
     return {}
   },
   computed: {
-    locale () {
-      return this.$store.state.locale
-    },
+    ...mapGetters(['locale']),
     geo () {
       return this.$store.state.geo
     },

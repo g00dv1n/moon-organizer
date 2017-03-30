@@ -50,7 +50,7 @@
                     <img :src="c.path">
                 </div>
                 <div class="color-block">
-                    <div class="category-name">{{isDefault ? constants[c.name] : title | capitalize}}</div>
+                    <div class="category-name">{{constants[c.name] | capitalize}}</div>
                 </div>
                 <div class="category-content">
                     <div class="plus" v-for="p in c.plus">

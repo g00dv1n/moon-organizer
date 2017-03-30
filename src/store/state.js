@@ -13,6 +13,7 @@ const state = {
   LOCALES: getAllLocales(),
   currentType: 'default',
   lastClickedDay: null,
+  lastClickedLunarNumber: null,
   geo: {}
 }
 
