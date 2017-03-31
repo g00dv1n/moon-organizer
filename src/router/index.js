@@ -21,7 +21,7 @@ const router = new Router({
       component: Day
     },
     {
-      path: '/calendar/:category',
+      path: '/:category',
       name: 'category-calendar',
       component: Main
     }

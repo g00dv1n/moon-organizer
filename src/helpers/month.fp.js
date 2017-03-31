@@ -93,7 +93,6 @@ const calculateDayInfo = (currentDay: moment$Moment, locale: string, latitude: n
       return _isToday ? zodiacSign(new Date()) : _zodiac
     }
   }
-  dayInfo.stringify = JSON.stringify(dayInfo)
   return dayInfo
 }
 
