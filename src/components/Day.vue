@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid">
-        <div class="up-button" @click="goTop()" v-if="isEnableGoTop"><i class="material-icons">expand_less</i></div>
+        <div class="up-button no-select" @click="goTop()" v-if="isEnableGoTop"><i class="material-icons">expand_less</i></div>
         <div class="row">
             <div class="day-info col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                 <div class="color-block">
@@ -79,6 +79,13 @@
 
     * {
         box-sizing: border-box;
+    }
+
+    .no-select {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 
     .up-button {

@@ -46,7 +46,9 @@ declare type Day = {
   // Zodiac logo path
   zodiacLogoPath: string,
   // Day content Using Locale
-  content: DayContent
+  content: DayContent,
+  // exactly lunar day for Today
+  currentLunarDay: LunarDay
 }
 
 declare type Month = {

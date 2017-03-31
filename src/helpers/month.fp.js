@@ -62,7 +62,7 @@ const calculateDayInfo = (currentDay: moment$Moment, locale: string, latitude: n
   const _isToday: boolean = isToday(currentDay)
   const _lunarDays: Array<LunarDay> = lunarDays(currentDay, latitude, longitude)
   const _maxLunarDay: LunarDay = maxDurationDay(currentDay, _lunarDays)
-  const _showedLunarDay: LunarDay = _isToday ? getCurrentLunarDay(_lunarDays) : _maxLunarDay
+  const _showedLunarDay: LunarDay = _maxLunarDay
   const _day = currentDay.date()
   const _date = currentDay.toDate()
   const _moonPhase = moonPhase(_showedLunarDay.number)
@@ -70,10 +70,8 @@ const calculateDayInfo = (currentDay: moment$Moment, locale: string, latitude: n
   const _style = style(currentDay)
   const _zodiac = zodiacSign(currentDay.toDate())
   const _zodiacLogoPath = require(`../assets/zodiac-signs/${_zodiac}.png`)
-  const _content = getDayContent(_showedLunarDay.number, locale)
 
   const dayInfo: Day = {
-    content: _content,
     maxLunarDay: _maxLunarDay,
     showedLunarDay: _showedLunarDay,
     lunarDays: _lunarDays,
@@ -83,9 +81,19 @@ const calculateDayInfo = (currentDay: moment$Moment, locale: string, latitude: n
     moonPhase: _moonPhase,
     moonPhaseLogoPath: _moonPhaseLogoPath,
     style: _style,
-    zodiac: _zodiac,
-    zodiacLogoPath: _zodiacLogoPath
+    zodiacLogoPath: _zodiacLogoPath,
+    // getters for dynamic get props
+    get content () {
+      return getDayContent(_showedLunarDay.number, locale)
+    },
+    get currentLunarDay () {
+      getCurrentLunarDay(_lunarDays)
+    },
+    get zodiac () {
+      return _isToday ? zodiacSign(new Date()) : _zodiac
+    }
   }
+  dayInfo.stringify = JSON.stringify(dayInfo)
   return dayInfo
 }
 

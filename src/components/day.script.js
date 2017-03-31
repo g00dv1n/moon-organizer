@@ -21,14 +21,12 @@ export default {
   name: 'day',
   data () {
     return {
-      isEnableGoTop: isEnableGoTop(),
-      dayNumber: null
+      isEnableGoTop: isEnableGoTop()
     }
   },
 
   created () {
     window.addEventListener('scroll', onScrollFabric(this))
-    this.dayNumber = this.$route.params.dayNumber
   },
   methods: {
     processCategoryForSharing (category: Category) {
@@ -43,19 +41,18 @@ export default {
   },
   computed: {
     ...mapGetters(['lastClickedDay', 'locale', 'constants']),
+    dayNumber () {
+      return this.$route.params.dayNumber
+    },
     day () {
       return this.lastClickedDay
     },
     dayContent () {
-      if (this.day) {
-        return this.day.content
-      } else {
-        if (!this.dayNumber) {
-          throw new Error('Cannot get dayNumber from $route.params.dayNumber')
-        }
-        const content: DayContent = getDayContent(this.dayNumber, this.locale)
-        return content
+      if (!this.dayNumber) {
+        throw new Error('Cannot get dayNumber from $route.params.dayNumber')
       }
+      const content: DayContent = getDayContent(this.dayNumber, this.locale)
+      return content
     },
     mainLogo () {
       return window.location.origin + require('../assets/category-icons/default.png')
@@ -76,7 +73,7 @@ export default {
       return main
     },
     title () {
-      const dayNumber: number = this.$route.params.dayNumber
+      const dayNumber: number = this.dayNumber
       return `${dayNumber} ${this.constants['moonDay']}`
     },
     lunarDay () {
