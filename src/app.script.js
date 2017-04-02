@@ -1,9 +1,23 @@
 // @flow
 
+const isMobile = () => {
+  return document && document.documentElement && document.documentElement.clientWidth < 1024
+}
+
+const onResizeFabric = (self): Function => {
+  return () => {
+    if (self.isMobile !== undefined) {
+      self.isMobile = isMobile()
+    }
+  }
+}
+
 export default {
   name: 'app',
   data () {
-    return {}
+    return {
+      isMobile: isMobile()
+    }
   },
   head: {
     meta: [
@@ -44,13 +58,6 @@ export default {
 
   },
   computed: {
-    isMobile () {
-      if (document.documentElement) {
-        return document.documentElement.clientWidth < 1281
-      } else {
-        return false
-      }
-    },
     types () {
       return this.$store.getters.calendarTypes
     },
@@ -68,8 +75,9 @@ export default {
       return this.$store.state.geo
     }
   },
-  mounted () {
+  created () {
     // init client geo async
     this.$store.dispatch('loadClientInfo')
+    window.addEventListener('resize', onResizeFabric(this))
   }
 }

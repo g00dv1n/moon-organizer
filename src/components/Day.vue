@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div v-for="m in main"><b>{{constants[m.name] | capitalize}}: </b> {{m.text}}</div>
-                    <social-sharing :media="mainLogo" :title="title" inline-template>
+                    <social-sharing :url="sharingUrl" :media="mainLogo" :title="title" inline-template>
                         <div class="social-sharing">
                             <network network="facebook">
                                 <i class="fa fa-facebook fa-lg"></i>
@@ -204,6 +204,7 @@
 
     .category-name {
         font-size: 20px;
+        font-weight: 500;
         width: 100%;
         height: 100%;
         text-align: left;

@@ -17,7 +17,7 @@
         </md-sidenav>
 
         <md-toolbar class="header">
-            <md-button id="menu-btn" class="md-icon-button" @click.native="toggleLeftSidenav">
+            <md-button id="menu-btn" class="md-icon-button" @click.native="toggleLeftSidenav" v-if="isMobile">
                 <md-icon>menu</md-icon>
             </md-button>
             <h1 class="md-title main-title">Moon Organizer</h1>
@@ -66,10 +66,8 @@
         background-color: #fafafa !important;
     }
 
-    @media (min-width: 1281px) {
-        #menu-btn {
-            display: none;
-        }
+    /* костыль */
+    @media (min-width: 1024px) {
 
         .main-sidenav.md-sidenav .md-sidenav-content {
             pointer-events: auto;

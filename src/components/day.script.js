@@ -21,7 +21,8 @@ export default {
   name: 'day',
   data () {
     return {
-      isEnableGoTop: isEnableGoTop()
+      isEnableGoTop: isEnableGoTop(),
+      dayNumber: this.$route.params.dayNumber
     }
   },
 
@@ -42,7 +43,7 @@ export default {
   computed: {
     ...mapGetters(['lastClickedDay', 'locale', 'constants']),
     dayNumber () {
-      return this.$route.params.dayNumber
+      return this.$route.params && this.$route.params.dayNumber
     },
     day () {
       return this.lastClickedDay
@@ -75,6 +76,9 @@ export default {
     title () {
       const dayNumber: number = this.dayNumber
       return `${dayNumber} ${this.constants['moonDay']}`
+    },
+    sharingUrl () {
+      return window.location.href
     },
     lunarDay () {
       if (!this.day) return null
