@@ -51,10 +51,10 @@ const maxDurationDay = (date, ld: Array<LunarDay>) => {
     let s = moment.max(moment(d.start), moment(dateStart))
     let e = moment.min(moment(d.end), moment(dateEnd))
     let diff = moment(e).diff(moment(s))
-    d.duration = moment.duration(diff).asMilliseconds()
-    return d
+    let duration = moment.duration(diff).asMilliseconds()
+    return Object.assign({}, d, {duration})
   })
-  return _.maxBy(ld, d => d.duration)
+  return _.maxBy(newLd, d => d.duration)
 }
 
 const calculateDayInfo = (currentDay: moment$Moment, locale: string, latitude: number, longitude: number): Day => {

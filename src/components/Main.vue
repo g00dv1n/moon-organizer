@@ -39,15 +39,15 @@
         height: 100%;
     }
 
-    @media (min-width: 1281px) {
+    @media (min-width: 720px) {
         .container {
             width: 65%;
         }
     }
 
-    @media (max-width: 1280px) {
+    @media (max-width: 719px) {
         .container {
-            width: 100%;
+            width: 100%
         }
     }
 

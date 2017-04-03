@@ -39,7 +39,6 @@ export default {
       window.scrollTo(0, 0)
     },
     getDayNumber () {
-      console.log('get day')
       return this.$route.params && this.$route.params.dayNumber || this.day.showedLunarDay.number
     }
   },
@@ -83,7 +82,7 @@ export default {
     lunarDay () {
       if (!this.day) return null
       const ld: LunarDay = this.day.showedLunarDay
-      const formatStr = 'hh:mm DD-MM-YYYY'
+      const formatStr = 'HH:mm DD-MM-YYYY'
       return {
         start: moment(ld.start).format(formatStr),
         end: moment(ld.end).format(formatStr)

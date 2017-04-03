@@ -28,6 +28,9 @@ export default {
     toggleLeftSidenav () {
       this.$refs.leftSidenav.toggle()
     },
+    closeLeftSidenav () {
+      this.$refs.leftSidenav.close()
+    },
     isLocale (locale: string) {
       return this.$store.state.locale === locale
     },
@@ -41,7 +44,7 @@ export default {
       this.$store.commit('SET_CURRENT_TYPE', type)
     },
     hideSidenav () {
-      const toggle = () => this.toggleLeftSidenav()
+      const toggle = () => this.closeLeftSidenav()
       if (this.isMobile) {
         setTimeout(toggle, 1500)
       }

@@ -85,7 +85,11 @@ export default {
     }
   },
   mounted () {
-    calculateCalendarHeight('calendar-container')
+    const resizeEl = 'calendar-container'
+    calculateCalendarHeight(resizeEl)
+    window.onresize = () => {
+      calculateCalendarHeight(resizeEl)
+    }
   }
 }
 
