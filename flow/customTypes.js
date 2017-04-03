@@ -42,13 +42,13 @@ declare type Day = {
   // style for draw in calendar component
   style: DayStyle,
   // Moon in zodiac.
-  zodiac: string,
+  zodiac?: string,
   // Zodiac logo path
   zodiacLogoPath: string,
   // Day content Using Locale
-  content: DayContent,
+  content?: DayContent,
   // exactly lunar day for Today
-  currentLunarDay: LunarDay
+  currentLunarDay?: LunarDay
 }
 
 declare type Month = {

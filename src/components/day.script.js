@@ -21,8 +21,7 @@ export default {
   name: 'day',
   data () {
     return {
-      isEnableGoTop: isEnableGoTop(),
-      dayNumber: this.$route.params.dayNumber
+      isEnableGoTop: isEnableGoTop()
     }
   },
 
@@ -38,21 +37,22 @@ export default {
     },
     goTop () {
       window.scrollTo(0, 0)
+    },
+    getDayNumber () {
+      console.log('get day')
+      return this.$route.params && this.$route.params.dayNumber || this.day.showedLunarDay.number
     }
   },
   computed: {
     ...mapGetters(['lastClickedDay', 'locale', 'constants']),
-    dayNumber () {
-      return this.$route.params && this.$route.params.dayNumber
-    },
     day () {
       return this.lastClickedDay
     },
     dayContent () {
-      if (!this.dayNumber) {
+      if (!this.getDayNumber()) {
         throw new Error('Cannot get dayNumber from $route.params.dayNumber')
       }
-      const content: DayContent = getDayContent(this.dayNumber, this.locale)
+      const content: DayContent = getDayContent(this.getDayNumber(), this.locale)
       return content
     },
     mainLogo () {
@@ -74,7 +74,7 @@ export default {
       return main
     },
     title () {
-      const dayNumber: number = this.dayNumber
+      const dayNumber: number = this.getDayNumber()
       return `${dayNumber} ${this.constants['moonDay']}`
     },
     sharingUrl () {
