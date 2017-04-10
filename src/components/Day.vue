@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid" v-if="dayContent">
         <div class="up-button no-select" @click="goTop()" v-if="isEnableGoTop"><i class="material-icons">expand_less</i></div>
         <div class="row">
             <div class="day-info col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">

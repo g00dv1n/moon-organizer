@@ -25,7 +25,12 @@ const onCategory = function (self: Object): Function {
 }
 
 const extractCategoryContentByDayObject = function (type: string, locale: string, day: Day): ?Category {
-  const {categories} = day.content
+  let categories = null
+  if (day && day.content && day.content.categories) {
+    categories = day.content.categories
+  } else {
+    console.warn(`Cannot get categories from day.content.categories in extractCategoryContentByDayObject func`)
+  }
   return categories ? categories.find(c => c.name === type) : null
 }
 

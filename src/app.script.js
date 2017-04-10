@@ -1,4 +1,6 @@
 // @flow
+import { mapGetters } from 'vuex'
+import LoginModal from './components/LoginModal'
 
 const isMobile = () => {
   return document && document.documentElement && document.documentElement.clientWidth < 1024
@@ -19,6 +21,9 @@ export default {
       isMobile: isMobile()
     }
   },
+  components: {
+    LoginModal
+  },
   head: {
     meta: [
       // {property: 'og:image', content: require('./assets/category-icons/default.png')}
@@ -27,6 +32,9 @@ export default {
   methods: {
     toggleLeftSidenav () {
       this.$refs.leftSidenav.toggle()
+    },
+    openLoginModal () {
+      this.$refs.loginModal.open()
     },
     closeLeftSidenav () {
       this.$refs.leftSidenav.close()
@@ -61,6 +69,7 @@ export default {
 
   },
   computed: {
+    ...mapGetters(['constants']),
     types () {
       return this.$store.getters.calendarTypes
     },

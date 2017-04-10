@@ -20,6 +20,10 @@ Vue.use(VueMaterial)
 
 Vue.filter('capitalize', capitalize)
 
+if (process.env.NODE_ENV === 'development') {
+  console.warn('app running in development mode')
+}
+
 Vue.material.registerTheme(themesConfig)
 
 /* eslint-disable no-new */
