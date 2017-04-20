@@ -11,6 +11,7 @@ import 'vue-material/dist/vue-material.css'
 import capitalize from './filters/capitalize'
 import SocialSharing from 'vue-social-sharing'
 import VueHead from 'vue-head'
+import VueAnalytics from 'vue-analytics'
 
 Vue.use(SocialSharing)
 
@@ -21,6 +22,8 @@ Vue.use(VueMaterial)
 Vue.filter('capitalize', capitalize)
 
 Vue.material.registerTheme(themesConfig)
+
+Vue.use(VueAnalytics, {router, id: 'UA-91648464-1'})
 
 /* eslint-disable no-new */
 new Vue({

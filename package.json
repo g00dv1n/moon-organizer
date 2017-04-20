@@ -27,6 +27,7 @@
     "suncalc": "^1.8.0",
     "tween.js": "^16.6.0",
     "vue": "^2.1.10",
+    "vue-analytics": "^3.2.0",
     "vue-head": "^2.0.10",
     "vue-material": "^0.7.1",
     "vue-router": "^2.2.0",
