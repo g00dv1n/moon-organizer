@@ -172,6 +172,10 @@ const lang = {
   tryAgain: {
     ru: 'Попробуйте еще раз!',
     en: 'Try again!'
+  },
+  clickToMe: {
+    ru: 'Нажмите на день, чтобы узнать больше :)',
+    en: 'Click on the day to learn more :)'
   }
 
 }
