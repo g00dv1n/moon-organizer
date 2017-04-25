@@ -20,8 +20,8 @@
                 <div class="moon-phase">
                     <img :src="d.moonPhaseLogoPath">
                 </div>
-                <md-tooltip md-delay="100" md-direction="top" ref="tooltip" v-if="d.isToday && notFirstTime !=='yes'">
-                    <div class="tooltip">{{constants.clickToMe}}</div>
+                <md-tooltip md-delay="100" md-direction="top" ref="tooltip" class="tooltip" v-if="d.isToday && notFirstTime !=='yes'">
+                    <div>{{constants.clickToMe}}</div>
                 </md-tooltip>
             </div>
         </div>
@@ -44,6 +44,21 @@
     }
     .tooltip {
         font-size: 14px;
+    }
+
+
+    @media (max-width: 719px) {
+        .tooltip {
+            font-size: 14px;
+            width: 100px;
+            height: 70px;
+            word-break: normal;
+            white-space: normal;
+            padding: 0;
+            margin: 0;
+            line-height: 1.2;
+            text-align: center;
+        }
     }
 
     .month-container {
