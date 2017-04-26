@@ -118,5 +118,48 @@
         z-index: 2;
     }
 
+    .next-btn {
+        color: white;
+        border-color: hotpink;
+        background-color: hotpink;
+        font-size: 18px;
+        font-weight: 600;
+        width: 150px;
+    }
+    .next-btn:hover {
+        background-color: deeppink;
+    }
+    .next-btn:active {
+        border-color: hotpink
+    }
+
+    .skip-btn {
+        color: white;
+        border-color: darkgray;
+        width: 150px;
+    }
+    .skip-btn:hover {
+        background-color: darkgray;
+    }
+    .skip-btn:active {
+        border-color: darkgray;
+    }
+
+    .enjoyhint_close_btn {
+        border-color: darkgray;
+        color: white;
+    }
+
+    .enjoyhint_close_btn:hover {
+        background-color: darkgray;
+    }
+    .enjoyhint_close_btn:active {
+        border-color: darkgray;
+    }
+
+    .empty-btn {
+        display: none;
+    }
+
 
 </style>

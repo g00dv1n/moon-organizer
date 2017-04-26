@@ -7,7 +7,7 @@
         </md-dialog-content>
 
         <md-dialog-actions>
-            <md-button class="md-primary" @click.native="close()">{{ mdOkText }}</md-button>
+            <md-button id="modal-ok" class="md-primary" @click.native="close()">{{ mdOkText }}</md-button>
         </md-dialog-actions>
     </md-dialog>
 </template>
