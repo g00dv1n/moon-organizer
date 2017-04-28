@@ -20,9 +20,6 @@
                 <div class="moon-phase">
                     <img :src="d.moonPhaseLogoPath">
                 </div>
-                <md-tooltip md-delay="100" md-direction="top" ref="tooltip" class="tooltip" v-if="d.isToday && notFirstTime !=='yes'">
-                    <div>{{constants.clickToMe}}</div>
-                </md-tooltip>
             </div>
         </div>
     </div>

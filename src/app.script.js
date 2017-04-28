@@ -79,8 +79,14 @@ export default {
     }
   },
   created () {
-    // init client geo async
-    this.$store.dispatch('loadClientInfo')
     window.addEventListener('resize', onResizeFabric(this))
+
+    // START STEP-BY-STEP TUTORIAL
+    const firstTime = this.$store.state.notFirstTime === 'no'
+    const isRoot = this.$route.path === '/'
+    const isNoMobile = !isMobile()
+    if (firstTime && isRoot && isNoMobile) {
+      this.$store.dispatch('showTooltips')
+    }
   }
 }

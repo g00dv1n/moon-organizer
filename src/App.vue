@@ -118,6 +118,8 @@
         z-index: 2;
     }
 
+    /* Tooltips styles */
+
     .next-btn {
         color: white;
         border-color: hotpink;
@@ -160,6 +162,6 @@
     .empty-btn {
         display: none;
     }
-
+    /* end tooltips styles */
 
 </style>

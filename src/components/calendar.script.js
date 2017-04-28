@@ -12,17 +12,7 @@ export default {
     }
   },
   props: ['locale', 'geo', 'dayClickHandler', 'isColoredHandler'],
-  mounted () {
-    // TODO костыль
-    const ctx = this
-    if (localStorage.getItem('notFirstTime') !== 'yes') {
-      console.log(ctx.$refs.tooltip)
-      setTimeout(() => {
-        ctx.$refs.tooltip[0].open()
-        localStorage.setItem('notFirstTime', 'yes')
-      }, 500)
-    }
-  },
+  mounted () {},
   methods: {
     next () {
       this.date = moment(this.date).add(1, 'M').toDate()
@@ -36,8 +26,6 @@ export default {
       return this.isColoredHandler(day)
     },
     onDayClick (day: number) {
-      // TODO костыль
-      if (this.$refs.tooltip && this.$refs.tooltip[0]) this.$refs.tooltip[0].close()
       this.dayClickHandler(day)
     }
   },
