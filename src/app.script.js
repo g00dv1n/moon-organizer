@@ -1,5 +1,8 @@
 // @flow
 
+import { mapGetters, mapActions } from 'vuex'
+import { onCategory, onDefault } from './helpers/dayclicker'
+
 const isMobile = () => {
   return document && document.documentElement && document.documentElement.clientWidth < 1024
 }
@@ -25,6 +28,7 @@ export default {
     ]
   },
   methods: {
+    ...mapActions(['showTooltips', 'showDayTooltip']),
     toggleLeftSidenav () {
       this.$refs.leftSidenav.toggle()
     },
@@ -57,10 +61,21 @@ export default {
       } else {
         this.$router.push({name: 'category-calendar', params: {category: type}})
       }
-    }
+    },
+    todayClickHandler () {
+      const today = this.$store.state.today
+      if (!today) return
 
+      if (this.currentType === 'default') {
+        onDefault(this)(today)
+      } else {
+        onCategory(this)(today)
+      }
+    },
+    logoClick () {}
   },
   computed: {
+    ...mapGetters(['constants']),
     types () {
       return this.$store.getters.calendarTypes
     },
@@ -76,17 +91,28 @@ export default {
     },
     geo () {
       return this.$store.state.geo
+    },
+    main () {
+      return this.$refs['main'] || document.getElementById('main')
+    },
+    isCalendarView () {
+      return this.$route.name !== 'lunar-day'
     }
   },
   created () {
     window.addEventListener('resize', onResizeFabric(this))
 
     // START STEP-BY-STEP TUTORIAL
-    const firstTime = this.$store.state.notFirstTime === 'no'
+    /* const firstTime = this.$store.state.notFirstTime === 'no'
     const isRoot = this.$route.path === '/'
     const isNoMobile = !isMobile()
     if (firstTime && isRoot && isNoMobile) {
-      this.$store.dispatch('showTooltips')
+      this.showTooltips()
+    } */
+    const firstTime = this.$store.state.notFirstTime === 'no'
+    const isCalendarView = this.isCalendarView
+    if (firstTime && isCalendarView) {
+      this.showDayTooltip()
     }
   }
 }

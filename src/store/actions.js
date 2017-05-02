@@ -21,9 +21,10 @@ const actions = {
     commit('SET_CURRENT_TYPE', newType)
     Vue.material.setCurrentTheme(newType)
   },
-  showTooltips ({commit, getters}) {
+  showTooltips ({state, getters}) {
     const EnjoyHint = window.EnjoyHint
     const constants = getters.constants
+    state.router.push({name: 'default'})
 
     const enjoyhint = new EnjoyHint({})
 
@@ -82,9 +83,29 @@ const actions = {
     enjoyhint.set(steps)
 
     enjoyhint.run()
+  },
+  showDayTooltip ({commit, getters}) {
+    const EnjoyHint = window.EnjoyHint
+    const constants = getters.constants
 
-    // end of the game :)
-    commit('SET_NOT_FIRST_TIME', 'yes')
+    const enjoyhint = new EnjoyHint({
+      onEnd () {
+        // end of the game :)
+        commit('SET_NOT_FIRST_TIME', 'yes')
+      }
+    })
+
+    const steps = [
+
+      {
+        'click .cell.today': constants.step2,
+        'showSkip': false
+      }
+    ]
+
+    enjoyhint.set(steps)
+
+    enjoyhint.run()
   }
 
 }

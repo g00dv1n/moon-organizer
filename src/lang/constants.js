@@ -232,6 +232,14 @@ const lang = {
   thanks: {
     ru: 'Спасибо!',
     en: 'Thanks!'
+  },
+  today: {
+    ru: 'Сегодня',
+    en: 'Today'
+  },
+  helpTooltip: {
+    ru: 'Нажмите здесь, чтобы увидеть справку',
+    en: 'Click here to see tooltip'
   }
 
 }

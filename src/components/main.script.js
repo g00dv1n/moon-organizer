@@ -4,25 +4,7 @@ import Calendar from './Calendar.vue'
 import { calculateCalendarHeight } from '../helpers/calculator'
 import CategoryModal from './CategoryModal.vue'
 import { mapGetters } from 'vuex'
-
-const onDefault = function (self: Object): Function {
-  return function (day: Day): void {
-    self.$store.commit('SET_LAST_CLICKED_DAY', day)
-    self.$router.push({name: 'lunar-day', params: {dayNumber: day.showedLunarDay.number}})
-  }
-}
-
-const onCategory = function (self: Object): Function {
-  const modal = self.$refs['modal'] || document.getElementById('modal')
-  return function (day: Day): void {
-    self.$store.commit('SET_LAST_CLICKED_DAY', day)
-    if (modal) {
-      modal.open()
-    } else {
-      throw new Error('Cannot get modal !>?')
-    }
-  }
-}
+import { onCategory, onDefault } from '../helpers/dayclicker'
 
 const extractCategoryContentByDayObject = function (type: string, locale: string, day: Day): ?Category {
   const categories = day.content && day.content.categories
@@ -47,6 +29,10 @@ export default {
   },
   computed: {
     ...mapGetters(['locale']),
+    modal () {
+      const modal = this.$refs['modal'] || document.getElementById('modal')
+      return modal
+    },
     geo () {
       return this.$store.state.geo
     },

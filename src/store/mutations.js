@@ -8,6 +8,8 @@ const SET_CLIENT_GEO = 'SET_CLIENT_GEO'
 const SET_LAST_CLICKED_DAY = 'SET_LAST_CLICKED_DAY'
 const SET_LAST_CLICKED_LUNAR_NUMBER = 'SET_LAST_CLICKED_LUNAR_NUMBER'
 const SET_NOT_FIRST_TIME = 'SET_NOT_FIRST_TIME'
+const SET_TODAY = 'SET_TODAY'
+const SET_MODAL = 'SET_MODAL'
 
 const mutations = {
   [SET_LOCALE]: (state: Object, locale: string): void => {
@@ -31,7 +33,13 @@ const mutations = {
   },
   [SET_NOT_FIRST_TIME]: (state: Object, flag: string) => {
     state.notFirstTime = flag
-    localStorage.setItem('notFirstTime', flag)
+    localStorage.setItem('NOT_FIRST_TIME', flag)
+  },
+  [SET_TODAY]: (state: Object, day: Day) => {
+    state.today = day
+  },
+  [SET_MODAL]: (state: Object, modal: Element) => {
+    state.modal = modal
   }
 }
 
