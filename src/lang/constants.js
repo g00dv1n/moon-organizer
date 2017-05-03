@@ -240,8 +240,31 @@ const lang = {
   helpTooltip: {
     ru: 'Нажмите здесь, чтобы увидеть справку',
     en: 'Click here to see tooltip'
+  },
+  logIn: {
+    ru: 'Войти',
+    en: 'Log In'
+  },
+  enterEmail: {
+    ru: 'Введите email',
+    en: 'Enter email'
+  },
+  enterPassword: {
+    ru: 'Введите пароль',
+    en: 'Enter password'
+  },
+  invalidEmail: {
+    ru: 'Неверный email',
+    en: 'Invalid email'
+  },
+  invalidLogin: {
+    ru: 'Неправильный email или пароль',
+    en: 'Invalid email or password '
+  },
+  invalidPasswordLength: {
+    ru: 'Пароль должен быть хотябы 8 символов',
+    en: 'Password must be at least 8 characters'
   }
-
 }
 
 export default lang

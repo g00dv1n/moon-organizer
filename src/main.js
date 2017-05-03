@@ -28,6 +28,10 @@ Vue.use(VueMaterial)
 
 Vue.filter('capitalize', capitalize)
 
+if (process.env.NODE_ENV === 'development') {
+  console.warn('app running in development mode')
+}
+
 Vue.material.registerTheme(themesConfig)
 
 Vue.use(VueAnalytics, {router, id: 'UA-91648464-1'})

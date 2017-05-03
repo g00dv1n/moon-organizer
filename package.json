@@ -21,6 +21,7 @@
     "axios": "^0.15.3",
     "bootstrap-loader": "^2.0.0-beta.20",
     "element-ui": "^1.2.9",
+    "email-validator": "^1.0.7",
     "enjoyhint": "^1.0.1",
     "lodash": "^4.17.4",
     "lune": "^0.4.0",

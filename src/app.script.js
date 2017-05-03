@@ -1,6 +1,6 @@
 // @flow
-
 import { mapGetters, mapActions } from 'vuex'
+import LoginModal from './components/LoginModal'
 import { onCategory, onDefault } from './helpers/dayclicker'
 import FeedbackModal from './components/modals/FeedbackModal.vue'
 
@@ -23,18 +23,22 @@ export default {
       isMobile: isMobile()
     }
   },
+  components: {
+    LoginModal,
+    FeedbackModal
+  },
   head: {
     meta: [
       // {property: 'og:image', content: require('./assets/category-icons/default.png')}
     ]
   },
-  components: {
-    FeedbackModal
-  },
   methods: {
     ...mapActions(['showTooltips', 'showDayTooltip']),
     toggleLeftSidenav () {
       this.$refs.leftSidenav.toggle()
+    },
+    openLoginModal () {
+      this.$refs.loginModal.open()
     },
     closeLeftSidenav () {
       this.$refs.leftSidenav.close()

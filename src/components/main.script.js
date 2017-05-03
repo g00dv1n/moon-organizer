@@ -7,7 +7,12 @@ import { mapGetters } from 'vuex'
 import { onCategory, onDefault } from '../helpers/dayclicker'
 
 const extractCategoryContentByDayObject = function (type: string, locale: string, day: Day): ?Category {
-  const categories = day.content && day.content.categories
+  let categories = null
+  if (day && day.content && day.content.categories) {
+    categories = day.content.categories
+  } else {
+    console.warn(`Cannot get categories from day.content.categories in extractCategoryContentByDayObject func`)
+  }
   return categories ? categories.find(c => c.name === type) : null
 }
 

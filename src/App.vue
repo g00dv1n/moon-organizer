@@ -1,5 +1,7 @@
 <template>
     <div id="app">
+        <login-modal ref="loginModal" id="login-modal">
+        </login-modal>
         <md-sidenav class="main-sidenav md-left md-fixed" md-swipeable ref="leftSidenav">
             <div class="closeBtn" v-if="isMobile" @click="toggleLeftSidenav()">
                 <i class="material-icons">clear</i>
@@ -38,6 +40,9 @@
             <md-button-toggle id="lang-switcher" md-single class="md-primary">
                 <md-button v-for="l in locales" :class="{'md-toggle': isLocale(l)}" @click.native="setLocale(l)">{{l}}</md-button>
             </md-button-toggle>
+            <div class="login-btn">
+                <md-button class="md-raised" @click.native="openLoginModal">{{constants['logIn']}}</md-button>
+            </div>
         </md-toolbar>
         <md-button @click.native="openFeedbackModal">Feedback</md-button>
         <keep-alive>
@@ -69,13 +74,14 @@
         z-index: 99;
         cursor: pointer;
     }
+
     .closeBtn i {
         font-size: 26px;
     }
+
     .closeBtn:hover {
         color: #0074D9 !important;
     }
-
 
     body {
         background-color: #fafafa !important;
@@ -206,5 +212,20 @@
         display: none;
     }
     /* end tooltips styles */
+
+    .header {
+        position: relative;
+    }
+
+    .login-btn {
+        position: absolute;
+        right: 200px;
+        top: 6px;
+        display: none;
+    }
+
+    .login-modal__content {
+        width: 400px;
+    }
 
 </style>
