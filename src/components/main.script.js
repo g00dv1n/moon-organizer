@@ -2,7 +2,7 @@
 
 import Calendar from './Calendar.vue'
 import { calculateCalendarHeight } from '../helpers/calculator'
-import CategoryModal from './CategoryModal.vue'
+import CategoryModal from './modals/CategoryModal.vue'
 import { mapGetters } from 'vuex'
 import { onCategory, onDefault } from '../helpers/dayclicker'
 

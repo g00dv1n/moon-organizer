@@ -39,10 +39,11 @@
                 <md-button v-for="l in locales" :class="{'md-toggle': isLocale(l)}" @click.native="setLocale(l)">{{l}}</md-button>
             </md-button-toggle>
         </md-toolbar>
+        <md-button @click.native="openFeedbackModal">Feedback</md-button>
         <keep-alive>
             <router-view ref="main"></router-view>
         </keep-alive>
-
+        <feedback-modal ref="feedback"></feedback-modal>
     </div>
 </template>
 

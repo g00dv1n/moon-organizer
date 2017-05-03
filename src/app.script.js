@@ -2,6 +2,7 @@
 
 import { mapGetters, mapActions } from 'vuex'
 import { onCategory, onDefault } from './helpers/dayclicker'
+import FeedbackModal from './components/modals/FeedbackModal.vue'
 
 const isMobile = () => {
   return document && document.documentElement && document.documentElement.clientWidth < 1024
@@ -26,6 +27,9 @@ export default {
     meta: [
       // {property: 'og:image', content: require('./assets/category-icons/default.png')}
     ]
+  },
+  components: {
+    FeedbackModal
   },
   methods: {
     ...mapActions(['showTooltips', 'showDayTooltip']),
@@ -72,7 +76,10 @@ export default {
         onCategory(this)(today)
       }
     },
-    logoClick () {}
+    logoClick () {},
+    openFeedbackModal () {
+      this.$refs.feedback.open()
+    }
   },
   computed: {
     ...mapGetters(['constants']),
@@ -114,5 +121,14 @@ export default {
     if (firstTime && isCalendarView) {
       this.showDayTooltip()
     }
+
+    /* window.onbeforeunload = () => {
+     return 'Оцените наш сайт!!!!!!!!!!!!'
+     }
+     document.documentElement.addEventListener('mouseleave', (e) => {
+     if (e.clientY < -3) {
+     onCategory(this)(this.$store.state.today)
+     }
+     }) */
   }
 }

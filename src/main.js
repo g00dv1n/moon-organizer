@@ -13,6 +13,12 @@ import SocialSharing from 'vue-social-sharing'
 import VueHead from 'vue-head'
 // $FlowIgnore
 import VueAnalytics from 'vue-analytics'
+// $FlowIgnore
+import ElementUI from 'element-ui'
+// $FlowIgnore
+import 'element-ui/lib/theme-default/index.css'
+
+Vue.use(ElementUI)
 
 Vue.use(SocialSharing)
 
