@@ -10,10 +10,13 @@ const state = {
   constants,
   router,
   locale: 'ru',
+  notFirstTime: localStorage.getItem('NOT_FIRST_TIME') || 'no',
   LOCALES: getAllLocales(),
   currentType: 'default',
   lastClickedDay: null,
   lastClickedLunarNumber: null,
+  today: null,
+  modal: null,
   geo: {}
 }
 

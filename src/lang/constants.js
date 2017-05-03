@@ -176,6 +176,70 @@ const lang = {
   clickToMe: {
     ru: 'Нажмите на день, чтобы узнать больше:',
     en: 'Click on the day to learn more:'
+  },
+  step1: {
+    ru: 'Вас приветствует Лунный Календарь!<br/> Позвольте нам рассказать о том, как он устроен',
+    en: 'Welcome to the Moon Organizer!<br/> Let us guide you through its features'
+  },
+  step2: {
+    ru: 'Нажмите левой клавишей мыши на дне,<br/> чтобы узнать о нем больше',
+    en: 'Left-click on the day to learn more about it'
+  },
+  step3: {
+    ru: 'Листайте вниз, чтобы прочесть<br/> все советы на этот день',
+    en: 'Scroll down to read<br/> all tips for this day'
+  },
+  step4: {
+    ru: '<div style="font-size: 18px;">Со знаком "+" - то, чему Луна<br/> благоволит, "-" - то, что лучше<br/> отложить на другой день</div>',
+    en: '<div style="font-size: 18px;">Things marked "+" are good<br/> to make on this day, and "-" things<br/> are better to postpone</div>'
+  },
+  step5: {
+    ru: '<div>Выберите календарь на интересующую Вас тему,<br/> чтобы получить советы только по ней</div>',
+    en: 'Choose a calendar of the topic you are interested in<br/> to get appropriate tips only'
+  },
+  step6: {
+    ru: '<div>Переходите на предыдущий или следующий месяц,<br/> нажимая на стрелках</div>',
+    en: 'Go to the previous or next month<br/> by clicking on the arrows'
+  },
+  step7: {
+    ru: 'Нажмите на дне, чтобы<br/> получить советы на него по выбранной Вами теме',
+    en: 'Click on the day<br/> to get tips on your chosen topic'
+  },
+  step8: {
+    ru: '',
+    en: ''
+  },
+  step9: {
+    ru: '<div>Чтобы вернуться на общий календарь, нажмите сюда</div>',
+    en: 'Click here to return to the general calendar'
+  },
+  step10: {
+    ru: 'Вот и все! Приятного использования!',
+    en: 'That\'s all! Enjoy using!'
+  },
+  ok: {
+    ru: 'Хорошо!',
+    en: 'OK'
+  },
+  skip: {
+    ru: 'Пропустить',
+    en: 'Skip'
+  },
+  gotIt: {
+    ru: 'Понятно',
+    en: 'Got it!'
+  },
+  thanks: {
+    ru: 'Спасибо!',
+    en: 'Thanks!'
+  },
+  today: {
+    ru: 'Сегодня',
+    en: 'Today'
+  },
+  helpTooltip: {
+    ru: 'Нажмите здесь, чтобы увидеть справку',
+    en: 'Click here to see tooltip'
   }
 
 }

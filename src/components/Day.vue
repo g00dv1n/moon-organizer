@@ -46,14 +46,14 @@
         </div>
         <div class="row day-raw">
             <div class="day-category col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1"
-                 v-for="c in categories">
+                 v-for="(c, index) in categories">
                 <div class="img-container">
                     <img :src="c.path">
                 </div>
                 <div class="color-block">
                     <div class="category-name">{{constants[c.name] | capitalize}}</div>
                 </div>
-                <div class="category-content">
+                <div class="category-content" :class="{'pre-last': index === categories.length - 2}">
                     <div class="plus" v-for="p in c.plus">
                         <div class="category-icon"><i class="material-icons">add_circle</i></div>
                         <div>{{p}}</div>
@@ -216,9 +216,10 @@
         word-break: normal;
         text-align: left;
         margin-bottom: 20px;
-        margin-left: 60px;
+        margin-left: 30px;
         font-size: 16px;
         color: black;
+        padding-left: 30px;
     }
 
     .category-content.main {

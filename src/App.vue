@@ -5,14 +5,19 @@
                 <i class="material-icons">clear</i>
             </div>
             <md-toolbar md-theme="white">
-                <img class="logo" :src="logoPath">
+                <div class="logo" v-if="isCalendarView" @click="logoClick">
+                    <img :src="logoPath">
+                </div>
+
+                <router-link class="logo" to="/" v-else>
+                    <img :src="logoPath">
+                </router-link>
             </md-toolbar>
             <div class="categories">
                 <md-button @click.native="goToCalendar(t.name)"
                            :class="['md-primary', 'category', {'active': isCurrentType(t.name)}]" v-for="t in types">
                     {{t.text}}
                 </md-button>
-
             </div>
         </md-sidenav>
 
@@ -20,15 +25,25 @@
             <md-button id="menu-btn" class="md-icon-button" @click.native="toggleLeftSidenav" v-if="isMobile">
                 <md-icon>menu</md-icon>
             </md-button>
-            <h1 class="md-title main-title">Moon Organizer</h1>
+            <div class="today-btn">
+                <md-button class="md-raised" @click.native="todayClickHandler">{{constants.today}}</md-button>
+            </div>
+            <div class="vline" v-if="!isMobile"></div>
+            <div class="help-link" v-if="!isMobile" @click="showTooltips()">
+                <md-icon class="md-size-1x md-raised">help</md-icon>
+                <md-tooltip md-direction="bottom">
+                    <div style="font-size: 15px;">{{constants.helpTooltip}}</div>
+                </md-tooltip>
+            </div>
+            <md-button-toggle id="lang-switcher" md-single class="md-primary">
+                <md-button v-for="l in locales" :class="{'md-toggle': isLocale(l)}" @click.native="setLocale(l)">{{l}}</md-button>
+            </md-button-toggle>
         </md-toolbar>
-        <md-button-toggle id="lang-switcher" md-single class="md-primary">
-            <md-button v-for="l in locales" :class="{'md-toggle': isLocale(l)}" @click.native="setLocale(l)">{{l}}</md-button>
-        </md-button-toggle>
+        <md-button @click.native="openFeedbackModal">Feedback</md-button>
         <keep-alive>
-            <router-view></router-view>
+            <router-view ref="main"></router-view>
         </keep-alive>
-
+        <feedback-modal ref="feedback"></feedback-modal>
     </div>
 </template>
 
@@ -66,6 +81,33 @@
         background-color: #fafafa !important;
     }
 
+    #lang-switcher {
+        position: absolute;
+        right: 15px;
+        text-align: left;
+        z-index: 2;
+    }
+
+    #lang-switcher button {
+        padding: 0 !important;
+        width: 35px;
+        min-width: 0;
+    }
+
+    .help-link {
+        cursor: pointer;
+    }
+
+    .vline {
+        border-left: 1px solid white;
+        width: 1px;
+        padding: 0;
+        margin-left: 5px;
+        margin-right: 10px;
+        height: 40px;
+    }
+
+
     /* костыль */
     @media (min-width: 1024px) {
 
@@ -79,9 +121,17 @@
         #app {
             margin-left: 300px !important;
         }
+
+        #lang-switcher button {
+            width: 50px;
+        }
+        .today-btn {
+            margin-left: 80px;
+        }
+
     }
 
-    img.logo {
+    .logo {
         width: 150px;
         display: block;
         margin: 5px auto 10px;
@@ -111,12 +161,50 @@
         margin-left: 30px !important;
     }
 
-    #lang-switcher {
-        position: fixed;
-        right: 0px;
-        bottom: 5px;
-        z-index: 2;
+    /* Tooltips styles */
+
+    .next-btn {
+        color: white;
+        border-color: hotpink;
+        background-color: hotpink;
+        font-size: 18px;
+        font-weight: 600;
+        width: 150px;
+    }
+    .next-btn:hover {
+        background-color: deeppink;
+    }
+    .next-btn:active {
+        border-color: hotpink
     }
 
+    .skip-btn {
+        color: white;
+        border-color: darkgray;
+        width: 150px;
+    }
+    .skip-btn:hover {
+        background-color: darkgray;
+    }
+    .skip-btn:active {
+        border-color: darkgray;
+    }
+
+    .enjoyhint_close_btn {
+        border-color: darkgray;
+        color: white;
+    }
+
+    .enjoyhint_close_btn:hover {
+        background-color: darkgray;
+    }
+    .enjoyhint_close_btn:active {
+        border-color: darkgray;
+    }
+
+    .empty-btn {
+        display: none;
+    }
+    /* end tooltips styles */
 
 </style>

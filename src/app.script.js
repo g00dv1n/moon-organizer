@@ -1,5 +1,9 @@
 // @flow
 
+import { mapGetters, mapActions } from 'vuex'
+import { onCategory, onDefault } from './helpers/dayclicker'
+import FeedbackModal from './components/modals/FeedbackModal.vue'
+
 const isMobile = () => {
   return document && document.documentElement && document.documentElement.clientWidth < 1024
 }
@@ -24,7 +28,11 @@ export default {
       // {property: 'og:image', content: require('./assets/category-icons/default.png')}
     ]
   },
+  components: {
+    FeedbackModal
+  },
   methods: {
+    ...mapActions(['showTooltips', 'showDayTooltip']),
     toggleLeftSidenav () {
       this.$refs.leftSidenav.toggle()
     },
@@ -57,10 +65,24 @@ export default {
       } else {
         this.$router.push({name: 'category-calendar', params: {category: type}})
       }
-    }
+    },
+    todayClickHandler () {
+      const today = this.$store.state.today
+      if (!today) return
 
+      if (this.currentType === 'default') {
+        onDefault(this)(today)
+      } else {
+        onCategory(this)(today)
+      }
+    },
+    logoClick () {},
+    openFeedbackModal () {
+      this.$refs.feedback.open()
+    }
   },
   computed: {
+    ...mapGetters(['constants']),
     types () {
       return this.$store.getters.calendarTypes
     },
@@ -76,11 +98,37 @@ export default {
     },
     geo () {
       return this.$store.state.geo
+    },
+    main () {
+      return this.$refs['main'] || document.getElementById('main')
+    },
+    isCalendarView () {
+      return this.$route.name !== 'lunar-day'
     }
   },
   created () {
-    // init client geo async
-    this.$store.dispatch('loadClientInfo')
     window.addEventListener('resize', onResizeFabric(this))
+
+    // START STEP-BY-STEP TUTORIAL
+    /* const firstTime = this.$store.state.notFirstTime === 'no'
+    const isRoot = this.$route.path === '/'
+    const isNoMobile = !isMobile()
+    if (firstTime && isRoot && isNoMobile) {
+      this.showTooltips()
+    } */
+    const firstTime = this.$store.state.notFirstTime === 'no'
+    const isCalendarView = this.isCalendarView
+    if (firstTime && isCalendarView) {
+      this.showDayTooltip()
+    }
+
+    /* window.onbeforeunload = () => {
+     return 'Оцените наш сайт!!!!!!!!!!!!'
+     }
+     document.documentElement.addEventListener('mouseleave', (e) => {
+     if (e.clientY < -3) {
+     onCategory(this)(this.$store.state.today)
+     }
+     }) */
   }
 }
