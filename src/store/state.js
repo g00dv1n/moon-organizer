@@ -15,6 +15,7 @@ const state = {
   router,
   locale: 'ru',
   notFirstTime: localStorage.getItem('NOT_FIRST_TIME') || 'no',
+  isLeaveFeedback: {},
   LOCALES: getAllLocales(),
   currentType: 'default',
   lastClickedDay: null,
@@ -37,5 +38,14 @@ const state = {
   }
 
 }
+
+Object.defineProperty(state, 'isLeaveFeedback', {
+  get: () => {
+    return localStorage.getItem('LEAVE_FEEDBACK_1') || 'no'
+  },
+  set: (flag) => {
+    localStorage.setItem('LEAVE_FEEDBACK_1', flag)
+  }
+})
 
 export default state

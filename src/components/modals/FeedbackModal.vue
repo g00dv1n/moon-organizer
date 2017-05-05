@@ -1,7 +1,7 @@
 <template>
     <md-dialog class="md-dialog-alert" ref="dialog" @close="fireCloseEvent()">
         <md-dialog-title>
-            <div class="modal-title">Вам понравился наш Лунный календарь?</div>
+            <div class="modal-title">{{constants.doYouLikeMO}}</div>
         </md-dialog-title>
 
         <md-dialog-content>
@@ -9,12 +9,13 @@
                 <div class="rate">
                     <el-rate
                             v-model="rate"
-                            :texts="['ужасно', 'плохо', 'нормально', 'хорошо', 'отлично']"
+                            :texts="[constants.terrible, constants.bad, constants.normal, constants.good, constants.excellent]"
                             show-text
+                            @change="send()"
                     >
                     </el-rate>
                 </div>
-                <div class="feedback-label">Пожалуйста, оставьте свой отзыв, чтобы мы могли сделать календарь лучше:</div>
+                <div class="feedback-label">{{constants.leaveFeedback}}</div>
                 <div class="feedback">
                     <el-input
                             type="textarea"
@@ -26,7 +27,7 @@
 
         </md-dialog-content>
         <md-dialog-actions>
-            <md-button class="md-raised md-primary submit-btn" @click.native="close()">Отправить</md-button>
+            <md-button class="md-raised md-primary submit-btn" @click.native="send();close()">{{constants.send}}</md-button>
         </md-dialog-actions>
         <div class="closeBtn" @click="close()">
             <i class="material-icons">clear</i>
@@ -39,6 +40,10 @@
     export default script
 </script>
 <style>
+
+    .md-dialog-container {
+        z-index: 9999999 !important;
+    }
 
     .modal-title {
         padding: 5px 20px 15px;

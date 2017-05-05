@@ -1,3 +1,5 @@
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
   props: {
     mdTitle: String,
@@ -8,10 +10,15 @@ export default {
   },
   data: () => ({
     debounce: false,
-    rate: null,
-    feedbackText: ''
+    rate: 0,
+    feedbackText: '',
+    id: null
   }),
+  computed: {
+    ...mapGetters(['constants'])
+  },
   methods: {
+    ...mapActions(['sendReview']),
     fireCloseEvent    () {
       if (!this.debounce) {
         this.$emit('close')
@@ -26,6 +33,15 @@ export default {
       this.fireCloseEvent()
       this.debounce = true
       this.$refs.dialog.close()
+    },
+    send () {
+      this.sendReview({
+        rate: this.rate,
+        feedback: this.feedbackText,
+        id: this.id
+      }).then(review => {
+        this.id = +review.id
+      })
     }
   }
 }

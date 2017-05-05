@@ -44,7 +44,6 @@
                 <md-button class="md-raised" @click.native="openLoginModal">{{constants['logIn']}}</md-button>
             </div>
         </md-toolbar>
-        <md-button @click.native="openFeedbackModal">Feedback</md-button>
         <keep-alive>
             <router-view ref="main"></router-view>
         </keep-alive>

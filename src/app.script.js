@@ -108,18 +108,14 @@ export default {
     },
     isCalendarView () {
       return this.$route.name !== 'lunar-day'
+    },
+    isNoLeaveFeedback () {
+      return this.$store.state.isLeaveFeedback === 'no'
     }
   },
   created () {
     window.addEventListener('resize', onResizeFabric(this))
 
-    // START STEP-BY-STEP TUTORIAL
-    /* const firstTime = this.$store.state.notFirstTime === 'no'
-    const isRoot = this.$route.path === '/'
-    const isNoMobile = !isMobile()
-    if (firstTime && isRoot && isNoMobile) {
-      this.showTooltips()
-    } */
     const firstTime = this.$store.state.notFirstTime === 'no'
     const isCalendarView = this.isCalendarView
     if (firstTime && isCalendarView) {
@@ -129,10 +125,13 @@ export default {
     /* window.onbeforeunload = () => {
      return 'Оцените наш сайт!!!!!!!!!!!!'
      }
-     document.documentElement.addEventListener('mouseleave', (e) => {
-     if (e.clientY < -3) {
-     onCategory(this)(this.$store.state.today)
-     }
-     }) */
+     */
+    if (this.isNoLeaveFeedback) {
+      document.documentElement.addEventListener('mouseleave', (e) => {
+        if (e.clientY < 0 && this.isNoLeaveFeedback) {
+          this.openFeedbackModal()
+        }
+      })
+    }
   }
 }

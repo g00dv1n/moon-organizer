@@ -264,6 +264,38 @@ const lang = {
   invalidPasswordLength: {
     ru: 'Пароль должен быть хотябы 8 символов',
     en: 'Password must be at least 8 characters'
+  },
+  doYouLikeMO: {
+    ru: 'Вам понравился наш Лунный Календарь?',
+    en: 'Do You like Moon Organizer?'
+  },
+  leaveFeedback: {
+    ru: 'Пожалуйста, оставьте свой отзыв, чтобы мы могли сделать календарь лучше:',
+    en: 'Please, leave a feedback to help us to get better:'
+  },
+  terrible: {
+    ru: 'ужасно',
+    en: 'terrible'
+  },
+  bad: {
+    ru: 'плохо',
+    en: 'bad'
+  },
+  normal: {
+    ru: 'нормально',
+    en: 'normal'
+  },
+  good: {
+    ru: 'хорошо',
+    en: 'good'
+  },
+  excellent: {
+    ru: 'отлично',
+    en: 'excellent'
+  },
+  send: {
+    ru: 'отправить',
+    en: 'send'
   }
 }
 

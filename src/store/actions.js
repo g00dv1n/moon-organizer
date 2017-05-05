@@ -15,6 +15,19 @@ const actions = {
         throw err.message
       })
   },
+  sendReview ({state}, {rate, feedback, id}) {
+    const url = 'public/review'
+    return state.axios.post(url, {rate, feedback, id})
+      .then(({data}) => {
+        console.log(data)
+        state.isLeaveFeedback = 'yes'
+        return Promise.resolve(data)
+      })
+      .catch((err) => {
+        console.error(err)
+        return Promise.reject(err)
+      })
+  },
   updateType ({commit}: Function, type: string | void) {
     const allTypes = calendarTypes.map(({name}) => name).filter(name => name !== 'default')
     const newType = allTypes.includes(type) ? type : 'default'
