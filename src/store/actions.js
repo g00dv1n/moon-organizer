@@ -28,6 +28,10 @@ const actions = {
         return Promise.reject(err)
       })
   },
+  getReviews ({state}) {
+    const url = 'public/reviews'
+    return state.axios.get(url)
+  },
   updateType ({commit}: Function, type: string | void) {
     const allTypes = calendarTypes.map(({name}) => name).filter(name => name !== 'default')
     const newType = allTypes.includes(type) ? type : 'default'
