@@ -47,7 +47,7 @@
 
     .modal-title {
         padding: 5px 20px 15px;
-        border-bottom: solid black 1px;
+        border-bottom: solid darkgray 1px;
     }
     .rate {
         text-align: center;

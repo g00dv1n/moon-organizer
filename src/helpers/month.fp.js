@@ -22,7 +22,16 @@ const getWeekDays = (m: moment$Moment) => {
   // transform array
   // first weekDay Must be first in array
   // @$FlowIgnore
-  let weekdays = m.localeData().weekdaysShort()
+  const shortLocales = m.localeData().weekdaysShort()
+  // @$FlowIgnore
+  const fullEn = moment().locale('en').localeData().weekdays()
+  const weekdays = shortLocales
+    .map((short, index) => {
+      return {
+        shortLocale: short,
+        fullEn: fullEn[index].toLowerCase()
+      }
+    })
   // @$FlowIgnore
   let i = m.localeData().firstDayOfWeek()
   let start = weekdays.slice(i)

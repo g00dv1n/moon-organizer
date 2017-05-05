@@ -17,6 +17,25 @@ const getters = {
     })
     return res
   },
+  weekDays (state: Object) {
+    const weekDays = state.weekDays
+    const locale = state.locale
+    const res = {}
+
+    Object.keys(weekDays)
+      .forEach((weekDay) => {
+        res[weekDay] = {}
+        Object.keys(weekDays[weekDay])
+          .forEach((infoField) => {
+            if (typeof weekDays[weekDay][infoField] === 'object' && locale in weekDays[weekDay][infoField]) {
+              res[weekDay][infoField] = weekDays[weekDay][infoField][locale]
+            } else {
+              res[weekDay][infoField] = weekDays[weekDay][infoField]
+            }
+          })
+      })
+    return res
+  },
   locale (state: Object) {
     return state.locale
   },

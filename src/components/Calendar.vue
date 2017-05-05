@@ -1,5 +1,6 @@
 <template>
     <div id="main-container" v-if="month">
+        <week-day-modal ref="weekDayModal" id="weekDayModal"></week-day-modal>
         <div class="month-container">
             <div class="glyphicon glyphicon-arrow-left month-changer" @click="prev()"></div>
             <div class="month text-capitalize">{{ month.monthName }} {{month.year}}</div>
@@ -7,8 +8,8 @@
         </div>
 
         <div class="weekdays-container text-capitalize">
-            <div class="weekday" v-for="w in month.weekDays">
-                {{w}}
+            <div class="weekday" v-for="w in month.weekDays" @click="onWeekDayClick(w.fullEn)">
+                {{w.shortLocale}}
             </div>
         </div>
 
@@ -89,6 +90,7 @@
         font-size: 20px;
         float: left;
         font-weight: 600;
+        cursor: pointer;
     }
 
     #main-container {

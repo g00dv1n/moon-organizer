@@ -2,6 +2,7 @@
 
 import month from '../helpers/month.fp'
 import moment from 'moment'
+import WeekDayModal from './modals/WeekDayModal.vue'
 
 export default {
   name: 'calendar',
@@ -9,6 +10,9 @@ export default {
     return {
       date: new Date()
     }
+  },
+  components: {
+    WeekDayModal
   },
   props: ['locale', 'geo', 'dayClickHandler', 'isColoredHandler'],
   mounted () {},
@@ -26,6 +30,10 @@ export default {
     },
     onDayClick (day: number) {
       this.dayClickHandler(day)
+    },
+    onWeekDayClick (weekDay: string) {
+      const weekDayModal = this.$refs.weekDayModal || document.getElementById('weekDayModal')
+      weekDayModal.open(weekDay)
     }
   },
   computed: {

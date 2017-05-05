@@ -6,12 +6,14 @@ import { getAllLocales } from '../helpers/locales'
 import router from '../router'
 import config from '../config'
 import axios from 'axios'
+import weekDays from '../weekdays/weekDaysInfo'
 
 const TOKEN = 'TOKEN'
 
 const state = {
   calendarTypes,
   constants,
+  weekDays,
   router,
   locale: 'ru',
   notFirstTime: localStorage.getItem('NOT_FIRST_TIME') || 'no',
