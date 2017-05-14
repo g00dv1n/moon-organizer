@@ -38,6 +38,7 @@ Vue.use(VueAnalytics, {router, id: 'UA-91648464-1'})
 
 async function boot () {
   await store.dispatch('loadClientInfo')
+  await store.dispatch('checkAuth')
   /* eslint-disable no-new */
   new Vue({
     el: '#app',

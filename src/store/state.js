@@ -8,8 +8,6 @@ import config from '../config'
 import axios from 'axios'
 import weekDays from '../weekdays/weekDaysInfo'
 
-const TOKEN = 'TOKEN'
-
 const state = {
   calendarTypes,
   constants,
@@ -17,28 +15,17 @@ const state = {
   router,
   locale: 'ru',
   notFirstTime: localStorage.getItem('NOT_FIRST_TIME') || 'no',
-  isLeaveFeedback: {},
+  isLeaveFeedback: '',
+  token: '',
   LOCALES: getAllLocales(),
   currentType: 'default',
   lastClickedDay: null,
-  lastClickedLunarNumber: null,
   today: null,
-  modal: null,
   geo: {},
-  token: null,
   user: null,
   authorized: false,
   config: Object.assign({}, config),
-  axios: axios.create({baseURL: config.API_ROOT}),
-  storageToken: {
-    get  () {
-      return localStorage.getItem(TOKEN)
-    },
-    set (token) {
-      localStorage.setItem(TOKEN, token)
-    }
-  }
-
+  axios: axios.create({baseURL: config.API_ROOT})
 }
 
 Object.defineProperty(state, 'isLeaveFeedback', {
@@ -48,6 +35,29 @@ Object.defineProperty(state, 'isLeaveFeedback', {
   set: (flag) => {
     localStorage.setItem('LEAVE_FEEDBACK_1', flag)
   }
+})
+
+Object.defineProperty(state, 'token', {
+  get: () => {
+    return localStorage.getItem('TOKEN')
+  },
+  set: (token) => {
+    localStorage.setItem('TOKEN', token)
+    // set header
+    state.axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+  }
+})
+
+state.axios.interceptors.response.use((response) => {
+  return response
+}, (error) => {
+  if (error.response.status) {
+    delete state.axios.defaults.headers.common['Authorization']
+    state.authorized = false
+    state.token = ''
+    state.user = null
+  }
+  return Promise.reject(error)
 })
 
 export default state

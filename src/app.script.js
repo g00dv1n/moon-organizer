@@ -1,6 +1,6 @@
 // @flow
 import { mapGetters, mapActions } from 'vuex'
-import LoginModal from './components/LoginModal'
+import LoginModal from './components/modals/LoginModal'
 import { onCategory, onDefault } from './helpers/dayclicker'
 import FeedbackModal from './components/modals/FeedbackModal.vue'
 
@@ -93,6 +93,9 @@ export default {
     currentType () {
       return this.$store.state.currentType
     },
+    authorized () {
+      return this.$store.state.authorized
+    },
     locales () {
       return this.$store.state.LOCALES
     },
@@ -122,10 +125,6 @@ export default {
       this.showDayTooltip()
     }
 
-    /* window.onbeforeunload = () => {
-     return 'Оцените наш сайт!!!!!!!!!!!!'
-     }
-     */
     if (this.isNoLeaveFeedback) {
       document.documentElement.addEventListener('mouseleave', (e) => {
         if (e.clientY < 0 && this.isNoLeaveFeedback) {

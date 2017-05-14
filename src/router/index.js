@@ -4,11 +4,20 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '../components/Main'
 import Day from '../components/Day'
-import Personal from '../components/Personal'
+import Personal from '../components/personal/Personal'
 import Reviews from '../components/Reviews.vue'
 import store from '../store'
 
 Vue.use(Router)
+
+const checkRigths = (to, from, next) => {
+  if (store.state.authorized === false) {
+    router.replace({name: 'default'})
+    console.log('+')
+  } else {
+    next()
+  }
+}
 
 const router = new Router({
   routes: [
@@ -30,7 +39,8 @@ const router = new Router({
     {
       path: '/personal/me',
       name: 'personal',
-      component: Personal
+      component: Personal,
+      beforeEnter: checkRigths
     },
     {
       path: '/reviews/show',
@@ -40,6 +50,7 @@ const router = new Router({
   ]
 })
 
+// update type
 router.beforeEach((to, from, next) => {
   store.dispatch('updateType', to.params.category)
   next()

@@ -40,7 +40,7 @@
             <md-button-toggle id="lang-switcher" md-single class="md-primary">
                 <md-button v-for="l in locales" :class="{'md-toggle': isLocale(l)}" @click.native="setLocale(l)">{{l}}</md-button>
             </md-button-toggle>
-            <div class="login-btn">
+            <div class="login-btn" v-if="!authorized">
                 <md-button class="md-raised" @click.native="openLoginModal">{{constants['logIn']}}</md-button>
             </div>
         </md-toolbar>
@@ -220,11 +220,14 @@
         position: absolute;
         right: 200px;
         top: 6px;
-        display: none;
     }
 
     .login-modal__content {
         width: 400px;
+    }
+
+    .slide {
+        transition: all .3s ease;
     }
 
 </style>

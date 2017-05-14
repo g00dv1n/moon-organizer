@@ -127,23 +127,36 @@ const actions = {
   login ({state}: Object, {email, password}: Object) {
     if (!email || !password) throw new Error('Cannot get email or password in login action')
 
-    async function auth () {
-      const res = await state.axios.post('/api/public/auth', {email, password})
+    return (async () => {
+      const res = await state.axios.post('/public/auth', {email, password})
       const {data} = res
       if (!data) throw new Error('Cannot get data from response in login action')
       if (!data.jwt) throw new Error('Cannot get token (data.jwt) from response.data in login action')
       state.token = data.jwt
       state.authorized = true
-      // set header
-      state.axios.defaults.headers.common['Authorization'] = `Bearer ${data.jwt}`
-      // set token to Local Storage
-      state.storageToken = data.jwt
       return Promise.resolve(res)
-    }
-
-    return auth()
+    })()
+  },
+  getUser ({state}) {
+    return state.axios.get('/private/user/').then(({data}) => Promise.resolve(data))
+  },
+  checkAuth ({state, dispatch}) {
+    return (async () => {
+      const token = state.token
+      state.axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+      try {
+        const user = await dispatch('getUser')
+        if (user) {
+          state.authorized = true
+          state.user = user
+          console.log('User:')
+          console.log(JSON.parse(JSON.stringify(user)))
+        }
+      } catch (err) {
+        console.error(err)
+      }
+    })()
   }
-
 }
 
 export default actions
