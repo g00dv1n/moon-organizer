@@ -51,7 +51,7 @@ Object.defineProperty(state, 'token', {
 state.axios.interceptors.response.use((response) => {
   return response
 }, (error) => {
-  if (error.response.status) {
+  if (error.response.status === 401 || error.response.status === 403) {
     delete state.axios.defaults.headers.common['Authorization']
     state.authorized = false
     state.token = ''

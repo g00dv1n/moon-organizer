@@ -13,7 +13,6 @@ Vue.use(Router)
 const checkRigths = (to, from, next) => {
   if (store.state.authorized === false) {
     router.replace({name: 'default'})
-    console.log('+')
   } else {
     next()
   }
