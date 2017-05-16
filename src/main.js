@@ -17,6 +17,8 @@ import VueAnalytics from 'vue-analytics'
 import ElementUI from 'element-ui'
 // $FlowIgnore
 import 'element-ui/lib/theme-default/index.css'
+// $FlowIgnore
+import 'croppie/croppie.css'
 
 Vue.use(ElementUI)
 

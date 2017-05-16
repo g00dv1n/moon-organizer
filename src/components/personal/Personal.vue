@@ -1,6 +1,6 @@
 <template>
-    <div>
-        TEST
+    <div class="main-container">
+        <avatar-uploader></avatar-uploader>
     </div>
 </template>
 
@@ -10,5 +10,9 @@
 </script>
 
 <style lang="css" scoped>
-
+    .main-container {
+        margin-top: 50px;
+        margin-left: 50px;
+        text-align: left;
+    }
 </style>
