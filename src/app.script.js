@@ -125,12 +125,15 @@ export default {
       this.showDayTooltip()
     }
 
-    if (this.isNoLeaveFeedback) {
+    /* if (this.isNoLeaveFeedback) {
       document.documentElement.addEventListener('mouseleave', (e) => {
         if (e.clientY < 0 && this.isNoLeaveFeedback) {
           this.openFeedbackModal()
         }
       })
+     } */
+    if (this.isNoLeaveFeedback) {
+      setTimeout(() => this.openFeedbackModal(), 60000)
     }
   }
 }

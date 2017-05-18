@@ -220,6 +220,7 @@
         position: absolute;
         right: 200px;
         top: 6px;
+        display: none;
     }
 
     .login-modal__content {
