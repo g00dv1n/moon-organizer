@@ -149,6 +149,7 @@ const actions = {
         if (user) {
           state.authorized = true
           state.user = user
+          state.personal = true
           console.log('User:')
           console.log(JSON.parse(JSON.stringify(user)))
         }
@@ -156,6 +157,19 @@ const actions = {
         console.error(err)
       }
     })()
+  },
+  putAvatar ({state, getters}, file: any) {
+    const data = new FormData()
+    const axios = state.axios
+    data.append('file', file)
+    return axios.put('/private/avatar', data)
+      .then(({data}) => {
+        if (!data || !data.avatarUrl) {
+          throw new Error('cannot get avatarUrl')
+        }
+        state.user.avatarUrl = data.avatarUrl
+        return Promise.resolve(getters.userAvatar)
+      })
   }
 }
 

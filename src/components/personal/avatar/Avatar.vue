@@ -5,12 +5,16 @@
                 action="https://jsonplaceholder.typicode.com/posts/"
                 :show-file-list="false"
                 :on-change="onChange"
-                :auto-upload="true">
+                :auto-upload="false"
+                accept="image/*"
+                ref="uploader"
+                >
             <i v-if="!imageUrl" class="el-icon-plus avatar-uploader-icon"></i>
         </el-upload>
         <div class="avatar" v-if="imageUrl">
             <img :src="imageUrl" id="avatar">
         </div>
+        <el-button style="margin-left: 10px;" size="small" type="success" @click="sendToServer()">upload to server</el-button>
     </div>
 
 </template>

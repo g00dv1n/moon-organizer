@@ -86,7 +86,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['constants']),
+    ...mapGetters(['constants', 'userAvatar']),
     types () {
       return this.$store.getters.calendarTypes
     },
@@ -125,12 +125,15 @@ export default {
       this.showDayTooltip()
     }
 
-    if (this.isNoLeaveFeedback) {
+    /* if (this.isNoLeaveFeedback) {
       document.documentElement.addEventListener('mouseleave', (e) => {
         if (e.clientY < 0 && this.isNoLeaveFeedback) {
           this.openFeedbackModal()
         }
       })
+     } */
+    if (this.isNoLeaveFeedback) {
+      setTimeout(() => this.openFeedbackModal(), 60000)
     }
   }
 }

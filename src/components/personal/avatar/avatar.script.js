@@ -1,16 +1,19 @@
-// @flow
 import Croppie from 'croppie'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'avatar',
   data () {
     return {
-      imageUrl: ''
+      imageUrl: '',
+      crop: {},
+      avatartUrl: ''
     }
   },
   methods: {
+    ...mapActions(['putAvatar']),
     imgOnload () {
-      const crop = new Croppie(document.getElementById('avatar'), {
+      this.crop = new Croppie(document.getElementById('avatar'), {
         enableExif: true,
         viewport: {
           width: 200,
@@ -22,11 +25,19 @@ export default {
           height: 300
         }
       })
-      crop.bind()
+      this.crop.bind()
     },
-    onChange (file, fileList) {
-      this.imageUrl = URL.createObjectURL(file.raw)
+    onChange (file) {
+      this.imageUrl = file.url
       setTimeout(this.imgOnload, 1)
+    },
+    sendToServer () {
+      this.crop
+        .result({type: 'blob', circle: true, size: {width: 512, height: 512}})
+        .then((file) => {
+          this.putAvatar(file)
+        })
+        .catch((err) => console.error(err))
     }
   }
 }

@@ -24,6 +24,7 @@ const state = {
   geo: {},
   user: null,
   authorized: false,
+  personal: false,
   config: Object.assign({}, config),
   axios: axios.create({baseURL: config.API_ROOT})
 }
