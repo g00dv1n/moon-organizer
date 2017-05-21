@@ -1,4 +1,5 @@
 // @flow
+import config from '../config'
 
 const getters = {
   calendarTypes (state: Object) {
@@ -41,6 +42,9 @@ const getters = {
   },
   lastClickedDay (state: Object) {
     return state.lastClickedDay
+  },
+  userAvatar (state) {
+    return state.user.avatarUrl ? config.API_ROOT + 'public/avatar/' + state.user.avatarUrl : ''
   }
 }
 

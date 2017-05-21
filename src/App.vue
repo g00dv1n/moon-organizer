@@ -6,20 +6,31 @@
             <div class="closeBtn" v-if="isMobile" @click="toggleLeftSidenav()">
                 <i class="material-icons">clear</i>
             </div>
-            <md-toolbar md-theme="white">
+            <div v-if="$store.state.personal">
                 <div class="logo" v-if="isCalendarView" @click="logoClick">
-                    <img :src="logoPath">
+                    <img :src="userAvatar">
                 </div>
 
                 <router-link class="logo" to="/" v-else>
-                    <img :src="logoPath">
+                    <img :src="userAvatar">
                 </router-link>
-            </md-toolbar>
-            <div class="categories">
-                <md-button @click.native="goToCalendar(t.name)"
-                           :class="['md-primary', 'category', {'active': isCurrentType(t.name)}]" v-for="t in types">
-                    {{t.text}}
-                </md-button>
+            </div>
+            <div v-else>
+                <md-toolbar md-theme="white">
+                    <div class="logo" v-if="isCalendarView" @click="logoClick">
+                        <img :src="logoPath">
+                    </div>
+
+                    <router-link class="logo" to="/" v-else>
+                        <img :src="logoPath">
+                    </router-link>
+                </md-toolbar>
+                <div class="categories">
+                    <md-button @click.native="goToCalendar(t.name)"
+                               :class="['md-primary', 'category', {'active': isCurrentType(t.name)}]" v-for="t in types">
+                        {{t.text}}
+                    </md-button>
+                </div>
             </div>
         </md-sidenav>
 

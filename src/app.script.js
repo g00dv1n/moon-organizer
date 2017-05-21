@@ -86,7 +86,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['constants']),
+    ...mapGetters(['constants', 'userAvatar']),
     types () {
       return this.$store.getters.calendarTypes
     },
