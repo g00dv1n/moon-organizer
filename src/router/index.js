@@ -36,7 +36,7 @@ const router = new Router({
       component: Main
     },
     {
-      path: '/personal/me',
+      path: '/me/profile',
       name: 'personal',
       component: Personal,
       beforeEnter: checkRigths
