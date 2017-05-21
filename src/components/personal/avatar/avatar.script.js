@@ -1,19 +1,28 @@
 import Croppie from 'croppie'
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'avatar',
   data () {
     return {
-      imageUrl: '',
       crop: {},
-      avatartUrl: ''
+      file: {},
+      isSuccesUpload: false,
+      showedCancel: false,
+      errorMsg: ''
     }
+  },
+  computed: {
+    ...mapGetters(['constants'])
   },
   methods: {
     ...mapActions(['putAvatar']),
+    cancelCrop () {
+      this.file = {}
+    },
     imgOnload () {
-      this.crop = new Croppie(document.getElementById('avatar'), {
+      const avatar = this.$refs.avatar || document.getElementById('avatar')
+      this.crop = new Croppie(avatar, {
         enableExif: true,
         viewport: {
           width: 200,
@@ -25,19 +34,28 @@ export default {
           height: 300
         }
       })
-      this.crop.bind()
+      // this.crop.bind()
     },
     onChange (file) {
-      this.imageUrl = file.url
-      setTimeout(this.imgOnload, 1)
+      if (file.name.match(/.(jpg|jpeg|png|gif)$/i)) {
+        this.file = file
+        this.isSuccesUpload = false
+        setTimeout(this.imgOnload, 1)
+      } else {
+        this.errorMsg = this.constants.mustBeImage
+      }
     },
-    sendToServer () {
-      this.crop
-        .result({type: 'blob', circle: true, size: {width: 512, height: 512}})
-        .then((file) => {
-          this.putAvatar(file)
-        })
-        .catch((err) => console.error(err))
+    async sendToServer () {
+      try {
+        const file = await this.crop
+          .result({type: 'blob', circle: true, size: {width: 512, height: 512}})
+        await this.putAvatar(file)
+        this.isSuccesUpload = true
+        this.file = {}
+      } catch (err) {
+        this.isSuccesUpload = false
+        this.errorMsg = this.constants.uploadingError
+      }
     }
   }
 }

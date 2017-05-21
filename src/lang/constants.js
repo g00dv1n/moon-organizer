@@ -296,6 +296,30 @@ const lang = {
   send: {
     ru: 'отправить',
     en: 'send'
+  },
+  cancel: {
+    ru: 'отмена',
+    en: 'cancel'
+  },
+  upload: {
+    ru: 'загрузить',
+    en: 'upload'
+  },
+  mustBeImage: {
+    ru: 'Файл должен быть изображеним. Пожалуйста, попробуйте еще раз.',
+    en: 'File must be image. Please, try again.'
+  },
+  uploadingError: {
+    ru: 'Ошибка загрузки. Пожалуйста, попробуйте еще раз.',
+    en: 'Uploading error. Please, try again.'
+  },
+  uploadPhoto: {
+    ru: 'Загрузите фото для вашего аватара.',
+    en: 'Upload photo for your avatar'
+  },
+  uploadingSucces: {
+    ru: 'Ваше фото успешно загружено.',
+    en: 'Your photo has been uploaded successful.'
   }
 }
 

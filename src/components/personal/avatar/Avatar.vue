@@ -1,20 +1,40 @@
 <template>
     <div>
-        <el-upload
-                class="avatar-uploader"
-                action="https://jsonplaceholder.typicode.com/posts/"
-                :show-file-list="false"
-                :on-change="onChange"
-                :auto-upload="false"
-                accept="image/*"
-                ref="uploader"
+        <div class="avatar-container">
+            <el-upload
+                    class="avatar-uploader"
+                    action="https://jsonplaceholder.typicode.com/posts/"
+                    :show-file-list="false"
+                    :on-change="onChange"
+                    :auto-upload="false"
+                    accept="image/*"
+                    ref="uploader"
                 >
-            <i v-if="!imageUrl" class="el-icon-plus avatar-uploader-icon"></i>
-        </el-upload>
-        <div class="avatar" v-if="imageUrl">
-            <img :src="imageUrl" id="avatar">
+                <i v-if="!file.url || isSuccesUpload" class="el-icon-plus avatar-uploader-icon"></i>
+            </el-upload>
+            <div class="alert-container">
+                <el-alert
+                        :title="constants.uploadingSucces"
+                        type="success"
+                        show-icon
+                        v-if="isSuccesUpload">
+                </el-alert>
+                <el-alert
+                        :title="errorMsg"
+                        type="error"
+                        show-icon
+                        v-if="errorMsg">
+                </el-alert>
+            </div>
+
+            <div v-if="file.url && !isSuccesUpload">
+                <img :src="file.url" id="avatar" ref="avatar">
+            </div>
         </div>
-        <el-button style="margin-left: 10px;" size="small" type="success" @click="sendToServer()">upload to server</el-button>
+        <md-button class="md-raised md-primary" v-if="file.url" @click.native="sendToServer()">{{constants.upload}}</md-button>
+        <md-button class="md-raised md-warn" v-if="file.url && !isSuccesUpload" @click.native="cancelCrop()">
+            {{constants.cancel}}
+        </md-button>
     </div>
 
 </template>
@@ -51,9 +71,15 @@
     .avatar-uploader-icon:before {
         line-height: 178px;
     }
-    .avatar {
-        text-align: left;
+
+    .avatar-container {
         width: 300px;
+        margin: 6px;
+    }
+
+    .alert-container {
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
 </style>
