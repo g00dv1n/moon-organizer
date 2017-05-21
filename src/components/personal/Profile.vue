@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import script from './personal.script'
+  import script from './profile.script'
   export default script
 </script>
 

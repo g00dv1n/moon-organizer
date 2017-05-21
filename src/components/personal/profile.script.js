@@ -2,7 +2,7 @@
 import AvatarUploader from './avatar/Avatar.vue'
 
 export default {
-  name: 'personal',
+  name: 'profile',
   components: {
     AvatarUploader
   },

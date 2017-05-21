@@ -4,7 +4,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '../components/Main'
 import Day from '../components/Day'
-import Personal from '../components/personal/Personal'
+import Profile from '../components/personal/Profile'
 import Reviews from '../components/Reviews.vue'
 import store from '../store'
 
@@ -37,8 +37,8 @@ const router = new Router({
     },
     {
       path: '/me/profile',
-      name: 'personal',
-      component: Personal,
+      name: 'profile',
+      component: Profile,
       beforeEnter: checkRigths
     },
     {
