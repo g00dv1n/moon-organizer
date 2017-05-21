@@ -1,14 +1,22 @@
 // @flow
 import AvatarUploader from './avatar/Avatar.vue'
+import CategoriesPicker from './categories-picker/CategoriesPicker.vue'
 
 export default {
   name: 'profile',
   components: {
-    AvatarUploader
+    AvatarUploader,
+    CategoriesPicker
   },
   data () {
     return {
-      imageUrl: ''
+      name: '',
+      surname: '',
+      birthday: '',
+      email: ''
     }
+  },
+  created () {
+    console.log(this)
   }
 }

@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h3 class="profile__input">{{title || constants.uploadPhoto}}</h3>
         <div class="avatar-container">
             <el-upload
                     class="avatar-uploader"
@@ -31,10 +32,10 @@
                 <img :src="file.url" id="avatar" ref="avatar">
             </div>
         </div>
-        <md-button class="md-raised md-primary" v-if="file.url" @click.native="sendToServer()">{{constants.upload}}</md-button>
-        <md-button class="md-raised md-warn" v-if="file.url && !isSuccesUpload" @click.native="cancelCrop()">
+        <md-button class="md-raised" v-if="file.url && !isSuccesUpload" @click.native="cancelCrop()">
             {{constants.cancel}}
         </md-button>
+        <md-button class="md-raised md-primary" v-if="file.url" @click.native="sendToServer()">{{constants.upload}}</md-button>
     </div>
 
 </template>
@@ -74,12 +75,17 @@
 
     .avatar-container {
         width: 300px;
-        margin: 6px;
     }
 
     .alert-container {
         margin-top: 15px;
         margin-bottom: 15px;
+    }
+    .alert-container .el-alert.el-alert--success {
+        background-color: #AED581;
+    }
+    .alert-container .el-alert.el-alert--error {
+        background-color: #FF8A65;
     }
 
 </style>

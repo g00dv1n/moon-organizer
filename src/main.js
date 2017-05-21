@@ -19,8 +19,10 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 // $FlowIgnore
 import 'croppie/croppie.css'
-
-Vue.use(ElementUI)
+// $FlowIgnore
+import en from 'element-ui/lib/locale/lang/en'
+// $FlowIgnore
+import ru from 'element-ui/lib/locale/lang/ru-RU'
 
 Vue.use(SocialSharing)
 
@@ -39,8 +41,13 @@ Vue.material.registerTheme(themesConfig)
 Vue.use(VueAnalytics, {router, id: 'UA-91648464-1'})
 
 async function boot () {
+  const locales = {en, ru}
   await store.dispatch('loadClientInfo')
   await store.dispatch('checkAuth')
+
+  // install ELEMENT UI WITH LOCALE
+  Vue.use(ElementUI, {locale: locales[store.state.locale] || en})
+
   /* eslint-disable no-new */
   new Vue({
     el: '#app',

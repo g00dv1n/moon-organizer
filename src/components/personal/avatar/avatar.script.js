@@ -12,6 +12,7 @@ export default {
       errorMsg: ''
     }
   },
+  props: ['title'],
   computed: {
     ...mapGetters(['constants'])
   },

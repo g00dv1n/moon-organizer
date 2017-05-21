@@ -314,8 +314,8 @@ const lang = {
     en: 'Uploading error. Please, try again.'
   },
   uploadPhoto: {
-    ru: 'Загрузите фото для вашего аватара.',
-    en: 'Upload photo for your avatar'
+    ru: 'Загрузите фото для вашего аватара:',
+    en: 'Upload photo for your avatar:'
   },
   uploadingSucces: {
     ru: 'Ваше фото успешно загружено.',
