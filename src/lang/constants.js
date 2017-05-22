@@ -320,6 +320,26 @@ const lang = {
   uploadingSucces: {
     ru: 'Ваше фото успешно загружено.',
     en: 'Your photo has been uploaded successful.'
+  },
+  day: {
+    ru: 'День',
+    en: 'Day'
+  },
+  month: {
+    ru: 'Месяц',
+    en: 'Month'
+  },
+  year: {
+    ru: 'Год',
+    en: 'Year'
+  },
+  time: {
+    ru: 'Время',
+    en: 'Time'
+  },
+  save: {
+    ru: 'Сохранить',
+    en: 'Save'
   }
 }
 
