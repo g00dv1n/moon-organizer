@@ -58,7 +58,16 @@
         <keep-alive>
             <router-view ref="main"></router-view>
         </keep-alive>
-        <feedback-modal ref="feedback"></feedback-modal>
+        <feedback-modal ref="feedback" :on-close="openBookmarksModal"></feedback-modal>
+        <md-dialog-alert
+                :md-title="constants.addToBookmarks"
+                :md-content-html="constants.addToBookmarksText"
+                ref="bookmarks">
+        </md-dialog-alert>
+        <!-- for modals tests
+        <md-button class="md-raised" @click.native="openBookmarksModal">bookmarks</md-button>
+        <md-button class="md-raised" @click.native="openFeedbackModal">reviews</md-button>
+        -->
     </div>
 </template>
 
@@ -238,8 +247,20 @@
         width: 400px;
     }
 
-    .slide {
-        transition: all .3s ease;
+    .bookmarks-modal {
+        font-size: 18px;
+        text-align: center;
     }
+    .bookmarks-modal strong {
+        font-weight: 900;
+        font-size: 20px;
+    }
+    .bookmarks-modal__thanks {
+        margin-top: 10px;
+    }
+    .bookmarks-modal__thanks i {
+        color: rgb(255, 142, 50)
+    }
+
 
 </style>

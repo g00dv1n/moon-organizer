@@ -6,6 +6,10 @@ export default {
     mdOkText: {
       type: String,
       default: 'Ok'
+    },
+    onClose: {
+      type: Function,
+      default: () => {}
     }
   },
   data: () => ({
@@ -22,6 +26,7 @@ export default {
     fireCloseEvent    () {
       if (!this.debounce) {
         this.$emit('close')
+        this.onClose()
       }
     },
     open  () {

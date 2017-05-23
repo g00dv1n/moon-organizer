@@ -338,6 +338,32 @@ const lang = {
   save: {
     ru: 'Сохранить',
     en: 'Save'
+  },
+  addToBookmarks: {
+    ru: 'ДОБАВЬТЕ КАЛЕНДАРЬ В ЗАКЛАДКИ',
+    en: 'ADD CALENDAR TO THE BOOKMARKS'
+  },
+  addToBookmarksText: {
+    ru: `
+        <div class="bookmarks-modal">
+            <div>
+                Нажмите <strong>Ctrl + D</strong>,<br/> чтобы не потерять Лунный Календарь.
+            </div> 
+            <div class="bookmarks-modal__thanks">
+                Мы будем рады увидеть Вас снова! <i class="fa fa-smile-o" aria-hidden="true"></i>
+            </div>
+        </div>
+    `,
+    en: `
+        <div class="bookmarks-modal">
+            <div>
+                Press <strong>Ctrl + D</strong>,<br/> to save Lunar Calendar.
+            </div> 
+            <div class="bookmarks-modal__thanks">
+                We will be glad to see You again! <i class="fa fa-smile-o" aria-hidden="true"></i>
+            </div>
+        </div>
+    `
   }
 }
 

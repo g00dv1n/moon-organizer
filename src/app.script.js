@@ -82,6 +82,9 @@ export default {
     logoClick () {},
     openFeedbackModal () {
       this.$refs.feedback.open()
+    },
+    openBookmarksModal () {
+      this.$refs.bookmarks.open()
     }
   },
   computed: {
