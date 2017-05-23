@@ -1,5 +1,3 @@
-// @flow
-
 const calendarTypes = [
   {
     name: 'default',

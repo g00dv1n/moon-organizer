@@ -1,11 +1,10 @@
-// @flow
 import { mapGetters } from 'vuex'
 import _ from 'lodash'
 import moment from 'moment'
 
 export default {
   name: 'daytimePicker',
-  props: ['title'],
+  props: ['title', 'birthday'],
   data () {
     return {
       year: null,
@@ -61,5 +60,10 @@ export default {
     }
   },
   created () {
+    const m = moment.unix(parseInt(this.birthday))
+    this.year = m.year()
+    this.month = m.month() + 1
+    this.day = m.day()
+    this.time = moment(m).format('hh:mm')
   }
 }

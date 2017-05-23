@@ -1,11 +1,9 @@
-// @flow
-
 import clientGeo from '../helpers/clientgeo'
 import calendarTypes from '../lang/calendarTypes'
 import Vue from 'vue'
 
 const actions = {
-  loadClientInfo ({commit}: Function) {
+  loadClientInfo ({commit}) {
     return clientGeo()
       .then(({data}) => {
         commit('SET_CLIENT_GEO', data)
@@ -32,7 +30,7 @@ const actions = {
     const url = 'public/reviews'
     return state.axios.get(url)
   },
-  updateType ({commit}: Function, type: string | void) {
+  updateType ({commit}, type) {
     const allTypes = calendarTypes.map(({name}) => name).filter(name => name !== 'default')
     const newType = allTypes.includes(type) ? type : 'default'
     commit('SET_CURRENT_TYPE', newType)
@@ -124,7 +122,7 @@ const actions = {
 
     enjoyhint.run()
   },
-  login ({state}: Object, {email, password}: Object) {
+  login ({state}, {email, password}) {
     if (!email || !password) throw new Error('Cannot get email or password in login action')
 
     return (async () => {
@@ -158,7 +156,7 @@ const actions = {
       }
     })()
   },
-  putAvatar ({state, getters}, file: any) {
+  putAvatar ({state, getters}, file) {
     const data = new FormData()
     const axios = state.axios
     data.append('file', file)

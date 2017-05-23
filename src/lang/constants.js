@@ -1,5 +1,3 @@
-// @flow
-
 const lang = {
   relationship: {
     ru: 'отношения',

@@ -13,7 +13,6 @@
             <el-select class="dtm-container__month" v-model="month" :placeholder="constants.month">
                 <el-option
                         v-for="m in months"
-
                         :label="m.number"
                         :value="m.number">
                 </el-option>

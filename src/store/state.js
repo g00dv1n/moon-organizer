@@ -1,5 +1,3 @@
-// @flow
-
 import calendarTypes from '../lang/calendarTypes'
 import constants from '../lang/constants'
 import { getAllLocales } from '../helpers/locales'
@@ -13,6 +11,7 @@ const state = {
   constants,
   weekDays,
   router,
+  CATEGORIES: ['lucky', 'beauty', 'relationship', 'business', 'health', 'house', 'shopping', 'garden', 'shopping'],
   locale: 'ru',
   notFirstTime: localStorage.getItem('NOT_FIRST_TIME') || 'no',
   isLeaveFeedback: '',

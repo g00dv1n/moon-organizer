@@ -14,9 +14,9 @@
                 </el-input>
                 <h3 class="profile__input">Дата и время рождения</h3>
                 <div class="profile__daytime">
-                    <daytime-picker></daytime-picker>
+                    <daytime-picker :birthday="birthday"></daytime-picker>
                 </div>
-                <categories-picker title="Интересующие категории:">
+                <categories-picker title="Интересующие категории:" :categories="categories">
                 </categories-picker>
                 <h3 class="profile__input">Email</h3>
                 <el-input placeholder="" v-model="email">
@@ -27,14 +27,14 @@
                 <h3 class="profile__input">Новый пароль</h3>
                 <el-input placeholder="" v-model="newPassword">
                 </el-input>
+                <div class="profile__btns">
+                    <md-button class="md-raised">{{constants.cancel}}</md-button>
+                    <md-button class="md-raised md-primary">{{constants.save}}</md-button>
+                </div>
             </div>
             <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                 <avatar-uploader></avatar-uploader>
             </div>
-        </div>
-        <div class="profile__btns">
-            <md-button class="md-raised">{{constants.cancel}}</md-button>
-            <md-button class="md-raised md-primary">{{constants.save}}</md-button>
         </div>
     </div>
 </template>

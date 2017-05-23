@@ -1,15 +1,14 @@
-// @flow
 import config from '../config'
 
 const getters = {
-  calendarTypes (state: Object) {
+  calendarTypes (state) {
     return state.calendarTypes.map((type) => {
       let text = type.text[state.locale]
       let name = type.name
       return {name, text}
     })
   },
-  constants (state: Object) {
+  constants (state) {
     const constants = state.constants
     const locale = state.locale
     const res = {}
@@ -18,7 +17,7 @@ const getters = {
     })
     return res
   },
-  weekDays (state: Object) {
+  weekDays (state) {
     const weekDays = state.weekDays
     const locale = state.locale
     const res = {}
@@ -37,14 +36,21 @@ const getters = {
       })
     return res
   },
-  locale (state: Object) {
+  locale (state) {
     return state.locale
   },
-  lastClickedDay (state: Object) {
+  lastClickedDay (state) {
     return state.lastClickedDay
   },
   userAvatar (state) {
     return state.user.avatarUrl ? config.API_ROOT + 'public/avatar/' + state.user.avatarUrl : ''
+  },
+  user (state) {
+    const user = Object.assign({}, state.user)
+    if (!user) return null
+    const {categories} = user
+    user.categories = categories ? categories.split(';') : []
+    return user
   }
 }
 

@@ -3,7 +3,7 @@
         <h3 class="profile__input" v-if="title">{{title}}</h3>
         <el-select v-model="selectedCategories" multiple placeholder="">
             <el-option
-                    v-for="c in categories"
+                    v-for="c in allCategories"
                     :key="c.name"
                     :label="c.text"
                     :value="c.name">

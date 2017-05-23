@@ -1,45 +1,47 @@
-// @flow
-
 import { getLocaleFromCode } from '../helpers/locales'
-
-const SET_LOCALE = 'SET_LOCALE'
-const SET_CURRENT_TYPE = 'SET_CURRENT_TYPE'
-const SET_CLIENT_GEO = 'SET_CLIENT_GEO'
-const SET_LAST_CLICKED_DAY = 'SET_LAST_CLICKED_DAY'
-const SET_LAST_CLICKED_LUNAR_NUMBER = 'SET_LAST_CLICKED_LUNAR_NUMBER'
-const SET_NOT_FIRST_TIME = 'SET_NOT_FIRST_TIME'
-const SET_TODAY = 'SET_TODAY'
-const SET_MODAL = 'SET_MODAL'
+import types from './mutationTypes'
 
 const mutations = {
-  [SET_LOCALE]: (state: Object, locale: string): void => {
+  [types.SET_LOCALE]: (state, locale) => {
     state.locale = locale
   },
-  [SET_CURRENT_TYPE]: (state: Object, type: string): void => {
+  [types.SET_CURRENT_TYPE]: (state, type) => {
     state.currentType = type
   },
-  [SET_CLIENT_GEO]: (state: Object, geo: GeoData): void => {
+  [types.SET_CLIENT_GEO]: (state, geo) => {
     state.geo = Object.assign({}, geo)
     state.geo.latitude = parseFloat(state.geo.loc.split(',')[0])
     state.geo.longitude = parseFloat(state.geo.loc.split(',')[1])
     state.locale = getLocaleFromCode(state.geo.country)
   },
-  [SET_LAST_CLICKED_DAY]: (state: Object, day: Day): void => {
+  [types.SET_LAST_CLICKED_DAY]: (state, day) => {
     // clone day to lastClickedDay
     state.lastClickedDay = {...day}
   },
-  [SET_LAST_CLICKED_LUNAR_NUMBER]: (state: Object, lunarDayNumber: number) => {
+  [types.SET_LAST_CLICKED_LUNAR_NUMBER]: (state, lunarDayNumber) => {
     state.lastClickedLunarNumber = lunarDayNumber
   },
-  [SET_NOT_FIRST_TIME]: (state: Object, flag: string) => {
+  [types.SET_NOT_FIRST_TIME]: (state, flag) => {
     state.notFirstTime = flag
     localStorage.setItem('NOT_FIRST_TIME', flag)
   },
-  [SET_TODAY]: (state: Object, day: Day) => {
+  [types.SET_TODAY]: (state, day) => {
     state.today = day
   },
-  [SET_MODAL]: (state: Object, modal: Element) => {
+  [types.SET_MODAL]: (state, modal) => {
     state.modal = modal
+  },
+  [types.SET_USER]: (state, user) => {
+    const oldUser = Object.assign({}, state.user)
+    const newUser = Object
+      .keys(user)
+      .reduce((result, key) => user[key] ? Object.assign({}, result, {[key]: user[key]}) : result, oldUser)
+    if (newUser.categories) {
+      newUser.categories = newUser.categories
+        .map(c => c.toLowerCase())
+        .join(';')
+    }
+    state.user = newUser
   }
 }
 

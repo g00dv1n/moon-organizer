@@ -1,4 +1,3 @@
-// @flow
 import { mapGetters, mapActions } from 'vuex'
 import LoginModal from './components/modals/LoginModal'
 import { onCategory, onDefault } from './helpers/dayclicker'
@@ -8,7 +7,7 @@ const isMobile = () => {
   return document && document.documentElement && document.documentElement.clientWidth < 1024
 }
 
-const onResizeFabric = (self): Function => {
+const onResizeFabric = (self) => {
   return () => {
     if (self.isMobile !== undefined) {
       self.isMobile = isMobile()
@@ -43,16 +42,16 @@ export default {
     closeLeftSidenav () {
       this.$refs.leftSidenav.close()
     },
-    isLocale (locale: string) {
+    isLocale (locale) {
       return this.$store.state.locale === locale
     },
-    setLocale (locale: string) {
+    setLocale (locale) {
       this.$store.commit('SET_LOCALE', locale)
     },
-    isCurrentType (type: string) {
+    isCurrentType (type) {
       return type === this.currentType
     },
-    setCurrentType (type: string) {
+    setCurrentType (type) {
       this.$store.commit('SET_CURRENT_TYPE', type)
     },
     hideSidenav () {
@@ -61,7 +60,7 @@ export default {
         setTimeout(toggle, 1500)
       }
     },
-    goToCalendar (type: string) {
+    goToCalendar (type) {
       this.$store.dispatch('updateType', type)
       this.hideSidenav()
       if (type === 'default') {
