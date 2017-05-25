@@ -106,6 +106,7 @@
         height: 100%;
         font-size: 34px;
         float: left;
+        line-height: 150%;
     }
 
     .cell {

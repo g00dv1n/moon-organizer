@@ -4,13 +4,27 @@ import moment from 'moment'
 
 export default {
   name: 'daytimePicker',
-  props: ['title', 'birthday'],
+  props: ['title', 'value'],
   data () {
     return {
       year: null,
       day: null,
       month: null,
       time: null
+    }
+  },
+  watch: {
+    year () {
+      this.updateFullDate()
+    },
+    day () {
+      this.updateFullDate()
+    },
+    month () {
+      this.updateFullDate()
+    },
+    time () {
+      this.updateFullDate()
     }
   },
   computed: {
@@ -42,25 +56,26 @@ export default {
         days = _.rangeRight(1, 32)
       }
       return days
-    },
-    fullDate () {
+    }
+  },
+  methods: {
+    updateFullDate () {
       const date = moment({
         years: this.year,
         months: this.month - 1,
         days: this.day,
         hours: parseInt(this.time.split(':')[0] || 0),
         minutes: parseInt(this.time.split(':')[1] || 0)
-      }).toString()
-
+      }).unix().toString()
       if (this.year !== null &&
         this.month !== null &&
         this.day !== null) {
-        this.$emit('selectedDatetime', date)
+        this.$emit('input', date)
       }
     }
   },
   created () {
-    const m = moment.unix(parseInt(this.birthday))
+    const m = moment.unix(parseInt(this.value))
     this.year = m.year()
     this.month = m.month() + 1
     this.day = m.day()

@@ -26,7 +26,10 @@ export default {
     ...mapGetters(['constants', 'user'])
   },
   methods: {
-    ...mapMutations([types.SET_USER])
+    ...mapMutations([types.SET_USER]),
+    save () {
+      this.$refs.daytimePicker.isValid()
+    }
   },
   created () {
     // this[types.SET_USER]({categories: ['lucky']})
@@ -41,7 +44,5 @@ export default {
       .forEach(k => {
         this[k] = user[k]
       })
-  },
-  save () {
   }
 }

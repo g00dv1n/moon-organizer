@@ -171,6 +171,7 @@
     .day-title {
         font-size: 24px;
         font-weight: 500;
+        padding-top: 5px;
     }
 
     .day-category {

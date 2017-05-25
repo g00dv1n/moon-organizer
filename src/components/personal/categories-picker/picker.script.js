@@ -2,10 +2,15 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'categoriesPicker',
-  props: ['title', 'categories'],
+  props: ['title', 'value'],
   data () {
     return {
       selectedCategories: []
+    }
+  },
+  watch: {
+    selectedCategories () {
+      this.$emit('input', this.selectedCategories)
     }
   },
   computed: {
@@ -16,6 +21,6 @@ export default {
     }
   },
   created () {
-    this.selectedCategories = [].concat(this.categories)
+    this.selectedCategories = [].concat(this.value)
   }
 }
