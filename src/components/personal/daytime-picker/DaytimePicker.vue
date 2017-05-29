@@ -30,7 +30,8 @@
             <el-time-select
                     v-model="time"
                     :picker-options="{start: '00:00', step: '00:01', end: '23:59'}"
-                    :placeholder="constants.time">
+                    :placeholder="constants.time"
+                    :editable="false">
             </el-time-select>
         </div>
     </div>

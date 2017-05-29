@@ -7,26 +7,41 @@
         <div class="raw">
             <div class="col-md-4 col-md-offset-2 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                 <h3 class="profile__input">Имя</h3>
-                <el-input placeholder="" v-model="name">
-                </el-input>
+                <div class="profile__field">
+                    <el-input placeholder="" v-model="newUser.name.model" :class="{'is-error': newUser.name.error}">
+                    </el-input>
+                    <div class="el-form-item__error" v-if="newUser.name.error">TEST</div>
+                </div>
                 <h3 class="profile__input">Фамилия</h3>
-                <el-input placeholder="" v-model="surname">
-                </el-input>
+                <div class="profile__field">
+                    <el-input placeholder="" v-model="newUser.surname.model" :class="{'is-error': newUser.surname.error}">
+                    </el-input>
+                    <div class="el-form-item__error" v-if="newUser.surname.error">TEST</div>
+                </div>
                 <h3 class="profile__input">Дата и время рождения</h3>
                 <div class="profile__daytime">
-                    <daytime-picker v-model="birthday" ref="daytimePicker"></daytime-picker>
+                    <daytime-picker v-model="newUser.birthday.model"></daytime-picker>
                 </div>
-                <categories-picker title="Интересующие категории:" v-model="categories" ref="categoriesPicker">
-                </categories-picker>
+                <div class="profile__field">
+                    <categories-picker title="Интересующие категории:" v-model="newUser.categories.model"
+                                       :class="{'is-error': newUser.categories.error}">
+                    </categories-picker>
+                    <div class="el-form-item__error" v-if="newUser.categories.error">TEST</div>
+                </div>
                 <h3 class="profile__input">Email</h3>
-                <el-input placeholder="" v-model="email">
+                <el-input placeholder="" v-model="newUser.email.model" :disabled="true">
                 </el-input>
                 <h3 class="profile__input">Старый пароль</h3>
-                <el-input placeholder="" v-model="oldPassword">
+                <el-input placeholder="" v-model="newUser.password.model" :disabled="true">
                 </el-input>
                 <h3 class="profile__input">Новый пароль</h3>
-                <el-input placeholder="" v-model="newPassword">
-                </el-input>
+                <div class="profile__field">
+                    <el-input placeholder="" v-model="newUser.newPassword.model"
+                              :class="{'is-error': newUser.newPassword.error}">
+                    </el-input>
+                    <div class="el-form-item__error" v-if="newUser.newPassword.error">TEST</div>
+                </div>
+
             </div>
             <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                 <avatar-uploader></avatar-uploader>
@@ -37,7 +52,7 @@
             <div class="col-md-4 col-md-offset-2 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                 <div class="profile__btns">
                     <md-button class="md-raised">{{constants.cancel}}</md-button>
-                    <md-button class="md-raised md-primary" @click.native="save">{{constants.save}}</md-button>
+                    <md-button class="md-raised md-primary" @click.native="submit">{{constants.save}}</md-button>
                 </div>
             </div>
         </div>
@@ -63,7 +78,18 @@
     }
 
     .is-error input {
-        border-color: #880000;
+        border-color: #ff4949;
+    }
+
+    .profile__error {
+        color: #ff4949;
+        font-size: 12px;
+        line-height: 1;
+        padding-top: 6px;
+    }
+
+    .profile__field {
+        position: relative;
     }
 
     .profile-container .el-input
