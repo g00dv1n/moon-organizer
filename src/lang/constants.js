@@ -312,8 +312,8 @@ const lang = {
     en: 'Uploading error. Please, try again.'
   },
   uploadPhoto: {
-    ru: 'Загрузите фото для вашего аватара:',
-    en: 'Upload photo for your avatar:'
+    ru: 'Загрузите Ваше фото:',
+    en: 'Upload your photo'
   },
   uploadingSucces: {
     ru: 'Ваше фото успешно загружено.',
@@ -364,6 +364,66 @@ const lang = {
             </div>
         </div>
     `
+  },
+  name: {
+    ru: 'Имя',
+    en: 'Name'
+  },
+  surname: {
+    ru: 'Фамилия',
+    en: 'Surname'
+  },
+  birthday: {
+    ru: 'Дата и время рождения',
+    en: 'Date and time of birth'
+  },
+  interestCateg: {
+    ru: 'Интересующие категории:',
+    en: 'Interesting categories:'
+  },
+  oldPassword: {
+    ru: 'Старый пароль',
+    en: 'Old password'
+  },
+  newPassword: {
+    ru: 'Новый пароль',
+    en: 'New password'
+  },
+  enterName: {
+    ru: 'Пожалуйста, введите ваше имя.',
+    en: 'Please, enter your name.'
+  },
+  enterBirthday: {
+    ru: 'Пожалуйста, введите введите ваш день рождения.',
+    en: 'Please, enter you birthday.'
+  },
+  enterCategory: {
+    ru: 'Пожалуйста, выберете хоть одну категорию.',
+    en: 'Please, choose at least one category.'
+  },
+  passwordReq: {
+    ru: 'Пароль должен быть не меньше 8 символов.',
+    en: 'Password must be at least 8 characters.'
+  },
+  oopsTitle: {
+    ru: 'Упс!',
+    en: 'Oops!'
+  },
+  oopsMsg: {
+    ru: 'Что-то пошло не так, попробуйте снова!',
+    en: 'Something went wrong, try again! '
+  },
+  successTitle: {
+    ru: 'Готово!',
+    en: 'Success!'
+  },
+  successMsg: {
+    ru: 'Ваши данные успешно сохранены.',
+    en: 'Your data was saved successfully.'
+  },
+  editProfile: {
+    ru: 'Редактирование профиля',
+    en: 'Edit profile'
   }
 }
 

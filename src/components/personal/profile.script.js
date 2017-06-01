@@ -1,7 +1,7 @@
 import AvatarUploader from './avatar/Avatar.vue'
 import CategoriesPicker from './categories-picker/CategoriesPicker.vue'
 import DaytimePicker from './daytime-picker/DaytimePicker.vue'
-import { mapGetters, mapMutations } from 'vuex'
+import { mapGetters, mapMutations, mapActions } from 'vuex'
 import types from '../../store/mutationTypes'
 import moment from 'moment'
 
@@ -40,12 +40,13 @@ export default {
         newPassword: {
           model: '',
           error: false,
-          validator: (model) => model ? model.length > 6 : true
+          validator: (model) => model ? model.length > 7 : true
         },
         categories: {
           model: [],
           error: false,
-          validator: (model) => model.length > 1
+          validator: (model) => model.length > 0,
+          normalizer: (model) => String.prototype.toLowerCase.call(model).replace(/,/g, ';')
         }
       }
     }
@@ -55,6 +56,7 @@ export default {
   },
   methods: {
     ...mapMutations([types.SET_USER]),
+    ...mapActions(['updateUser']),
     save () {
       this.$refs.daytimePicker.isValid()
     },
@@ -68,8 +70,35 @@ export default {
       return res
     },
     submit () {
-      console.log('====')
-      this.validate()
+      if (this.validate()) {
+        this.updateUser(this.newUserUpdated())
+          .then(() => {
+            this.$notify({
+              title: this.constants.successTitle,
+              message: this.constants.successMsg,
+              type: 'success'
+            })
+          })
+          .catch(() => {
+            this.$notify({
+              title: this.constants.oopsTitle,
+              message: this.constants.oopsMsg,
+              type: 'error'
+            })
+          })
+      }
+    },
+    newUserUpdated () {
+      const u = this.newUser
+      const nu = Object
+        .keys(u)
+        .reduce((result, k) => Object
+          .assign(result, {[k]: u[k].normalizer ? u[k].normalizer(u[k].model) : u[k].model}), {})
+      if (nu.newPassword) {
+        nu.password = nu.newPassword
+      }
+      delete nu.newPassword
+      return nu
     }
   },
   created () {

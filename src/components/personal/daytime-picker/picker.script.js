@@ -78,7 +78,7 @@ export default {
     const m = moment.unix(parseInt(this.value))
     this.year = m.year()
     this.month = m.month() + 1
-    this.day = m.day()
+    this.day = m.date()
     this.time = moment(m).format('hh:mm')
   }
 }

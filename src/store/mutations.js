@@ -1,5 +1,6 @@
 import { getLocaleFromCode } from '../helpers/locales'
 import types from './mutationTypes'
+import userNormalizer from '../helpers/userNormalizer'
 
 const mutations = {
   [types.SET_LOCALE]: (state, locale) => {
@@ -32,16 +33,7 @@ const mutations = {
     state.modal = modal
   },
   [types.SET_USER]: (state, user) => {
-    const oldUser = Object.assign({}, state.user)
-    const newUser = Object
-      .keys(user)
-      .reduce((result, key) => user[key] ? Object.assign({}, result, {[key]: user[key]}) : result, oldUser)
-    if (newUser.categories) {
-      newUser.categories = newUser.categories
-        .map(c => c.toLowerCase())
-        .join(';')
-    }
-    state.user = newUser
+    state.user = Object.assign({}, state.user, userNormalizer(user))
   }
 }
 

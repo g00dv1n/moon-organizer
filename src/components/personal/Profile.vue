@@ -2,44 +2,45 @@
     <div class="container profile-container">
         <div class="profile__title">
             <img src="../../assets/edit.png">
-            <div>Редактирование профиля</div>
+            <div>{{constants.editProfile}}</div>
         </div>
         <div class="raw">
             <div class="col-md-4 col-md-offset-2 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
-                <h3 class="profile__input">Имя</h3>
+                <h3 class="profile__input">{{constants.name}}</h3>
                 <div class="profile__field">
                     <el-input placeholder="" v-model="newUser.name.model" :class="{'is-error': newUser.name.error}">
                     </el-input>
-                    <div class="el-form-item__error" v-if="newUser.name.error">TEST</div>
+                    <div class="el-form-item__error" v-if="newUser.name.error">{{constants.enterName}}</div>
                 </div>
-                <h3 class="profile__input">Фамилия</h3>
+                <h3 class="profile__input">{{constants.surname}}</h3>
                 <div class="profile__field">
                     <el-input placeholder="" v-model="newUser.surname.model" :class="{'is-error': newUser.surname.error}">
                     </el-input>
                     <div class="el-form-item__error" v-if="newUser.surname.error">TEST</div>
                 </div>
-                <h3 class="profile__input">Дата и время рождения</h3>
+                <h3 class="profile__input">{{constants.birthday}}</h3>
                 <div class="profile__daytime">
                     <daytime-picker v-model="newUser.birthday.model"></daytime-picker>
                 </div>
+                <div class="el-form-item__error" v-if="newUser.surname.error">{{constants.enterBirthday}}</div>
                 <div class="profile__field">
-                    <categories-picker title="Интересующие категории:" v-model="newUser.categories.model"
+                    <categories-picker :title="constants.interestCateg" v-model="newUser.categories.model"
                                        :class="{'is-error': newUser.categories.error}">
                     </categories-picker>
-                    <div class="el-form-item__error" v-if="newUser.categories.error">TEST</div>
+                    <div class="el-form-item__error" v-if="newUser.categories.error">{{constants.enterCategory}}</div>
                 </div>
                 <h3 class="profile__input">Email</h3>
                 <el-input placeholder="" v-model="newUser.email.model" :disabled="true">
                 </el-input>
-                <h3 class="profile__input">Старый пароль</h3>
+                <h3 class="profile__input">{{constants.oldPassword}}</h3>
                 <el-input placeholder="" v-model="newUser.password.model" :disabled="true">
                 </el-input>
-                <h3 class="profile__input">Новый пароль</h3>
+                <h3 class="profile__input">{{constants.newPassword}}</h3>
                 <div class="profile__field">
                     <el-input placeholder="" v-model="newUser.newPassword.model"
                               :class="{'is-error': newUser.newPassword.error}">
                     </el-input>
-                    <div class="el-form-item__error" v-if="newUser.newPassword.error">TEST</div>
+                    <div class="el-form-item__error" v-if="newUser.newPassword.error">{{constants.passwordReq}}</div>
                 </div>
 
             </div>
