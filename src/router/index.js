@@ -5,6 +5,7 @@ import Day from '../components/Day'
 import Profile from '../components/personal/Profile'
 import Reviews from '../components/Reviews.vue'
 import store from '../store'
+import Calc from '../components/personal/Calc.vue'
 
 Vue.use(Router)
 
@@ -37,6 +38,12 @@ const router = new Router({
       path: '/me/profile',
       name: 'profile',
       component: Profile,
+      beforeEnter: checkRigths
+    },
+    {
+      path: '/me/calc',
+      name: 'profile',
+      component: Calc,
       beforeEnter: checkRigths
     },
     {

@@ -43,9 +43,12 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['lastClickedDay', 'locale', 'constants']),
+    ...mapGetters(['lastClickedDay', 'locale', 'constants', 'user']),
     day () {
       return this.lastClickedDay
+    },
+    isPersonal () {
+      return this.$store.state.personal
     },
     dayContent () {
       if (!this.getDayNumber()) {
@@ -62,7 +65,11 @@ export default {
       if (!categories) {
         throw new Error('Cannot get categories from lastClickedDay. lastClickedDay probably null.')
       }
-      return categories
+      if (this.isPersonal) {
+        return categories.filter((c: Category) => (this.user: User).categories.indexOf(c.name) !== -1)
+      } else {
+        return categories
+      }
     },
     // get main day info using day number
     main () {

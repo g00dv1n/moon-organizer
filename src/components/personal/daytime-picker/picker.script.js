@@ -75,7 +75,7 @@ export default {
     }
   },
   created () {
-    const m = moment.unix(parseInt(this.value))
+    const m = this.value ? moment.unix(parseInt(this.value)) : moment()
     this.year = m.year()
     this.month = m.month() + 1
     this.day = m.date()

@@ -76,3 +76,14 @@ declare type DayContent = {
   categories: Array<Category>,
   main: DayMainInfo
 }
+
+// user
+declare type User = {
+  id: number,
+  name: string,
+  surname: string
+  birthday: string,
+  avatarUrl: string,
+  categories: Array<string>
+  password: string
+}

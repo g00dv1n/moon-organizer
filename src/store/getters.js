@@ -1,3 +1,5 @@
+// @flow
+
 import config from '../config'
 
 const getters = {
@@ -39,13 +41,16 @@ const getters = {
   locale (state) {
     return state.locale
   },
+  axios (state) {
+    return state.axios
+  },
   lastClickedDay (state) {
     return state.lastClickedDay
   },
   userAvatar (state) {
     return state.user.avatarUrl ? config.API_ROOT + 'public/avatar/' + state.user.avatarUrl : ''
   },
-  user (state) {
+  user (state): User {
     const user = Object.assign({}, state.user)
     if (!user) return null
     const {categories} = user
