@@ -427,7 +427,7 @@ const lang = {
   },
   lunarCalc: {
     ru: 'Калькулятор лунных дней',
-    en: 'Lunar days calculator'
+    en: 'Lunar Days Calculator'
   },
   selectLd: {
     ru: 'Выберете дату, чтобы рассчитать лунный день:',
@@ -435,7 +435,7 @@ const lang = {
   },
   selectCity: {
     ru: 'Выберете город:',
-    en: 'Select city'
+    en: 'Select the city:'
   },
   startWriteCity: {
     ru: 'Начните писать название города',
