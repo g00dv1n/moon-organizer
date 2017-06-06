@@ -2,36 +2,37 @@
     <div class="calendar-container">
         <div class="day-info col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
             <div class="color-block">
-                <div class="day-title">Калькулятор лунных дней</div>
+                <div class="day-title">{{constants.lunarCalc}}</div>
             </div>
             <div class="content">
                 <div class="content__logo visible-md-block visible-lg-block">
                     <img src="../../assets/calc.png">
                 </div>
-                <div class="content__text">Выберете дату, чтобы рассчитать лунный день:</div>
+                <div class="content__text">{{constants.selectLd}}</div>
                 <div class="content__datetime">
                     <daytime-picker v-model="day"></daytime-picker>
                 </div>
-                <div class="content__text">Выберете город:</div>
+                <div class="content__text">{{constants.selectCity}}</div>
                 <div class="content__city">
                     <el-select
                             v-model="selectCity"
                             filterable
                             remote
-                            placeholder="Начните писать название города"
+                            :placeholder="constants.startWriteCity"
                             :remote-method="loadCities"
                             :loading="loading">
                         <el-option
                                 v-for="city in cities"
-                                :key="city.defaultName"
+                                :key="city"
                                 :label="city[locale]"
-                                :value="city[locale]">
+                                :value="city">
                         </el-option>
                     </el-select>
+                    <div class="el-form-item__error" v-if="!isCityValid">{{constants.selectCity}}</div>
                 </div>
                 <div class="content__btn">
-                    <md-button class="md-raised md-primary">Расcчитать</md-button>
-                    <div class="info">* После нажатия на эту кнопку Вы перейдете на страницу лунного дня</div>
+                    <md-button class="md-raised md-primary" @click.native="calculate">{{constants.calculate}}</md-button>
+                    <div class="info">{{constants.calcTooltip}}</div>
                 </div>
             </div>
         </div>
@@ -76,6 +77,7 @@
 
     .content .content__city {
         max-width: 300px !important;
+        position: relative;
     }
 
     .content .content__btn {

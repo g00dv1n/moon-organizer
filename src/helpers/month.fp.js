@@ -134,4 +134,7 @@ const month = (date: moment$Moment = moment(),
   return {days, monthName, weekDays, year}
 }
 
-export default month
+export {
+  month,
+  calculateDayInfo
+}

@@ -42,7 +42,7 @@ const router = new Router({
     },
     {
       path: '/me/calc',
-      name: 'profile',
+      name: 'calc',
       component: Calc,
       beforeEnter: checkRigths
     },

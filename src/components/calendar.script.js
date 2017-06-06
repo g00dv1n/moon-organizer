@@ -1,6 +1,5 @@
 // @flow
-
-import month from '../helpers/month.fp'
+import {month} from '../helpers/month.fp'
 import moment from 'moment'
 import WeekDayModal from './modals/WeekDayModal.vue'
 

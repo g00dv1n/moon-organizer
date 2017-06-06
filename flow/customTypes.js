@@ -87,3 +87,14 @@ declare type User = {
   categories: Array<string>
   password: string
 }
+
+// City info
+
+declare type City = {
+  country: string,
+  defaultName: string,
+  en: string,
+  latitude: string,
+  longitude: string,
+  ru: string
+}

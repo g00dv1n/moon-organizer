@@ -424,6 +424,30 @@ const lang = {
   editProfile: {
     ru: 'Редактирование профиля',
     en: 'Edit profile'
+  },
+  lunarCalc: {
+    ru: 'Калькулятор лунных дней',
+    en: 'Lunar days calculator'
+  },
+  selectLd: {
+    ru: 'Выберете дату, чтобы рассчитать лунный день:',
+    en: 'Select the date to calculate the lunar day:'
+  },
+  selectCity: {
+    ru: 'Выберете город:',
+    en: 'Select city'
+  },
+  startWriteCity: {
+    ru: 'Начните писать название города',
+    en: 'Start writing the city name'
+  },
+  calculate: {
+    ru: 'Рассчитать',
+    en: 'Calculate'
+  },
+  calcTooltip: {
+    ru: '* После нажатия на эту кнопку Вы перейдете на страницу лунного дня',
+    en: '* After clicking on this button you will go to the page of the lunar day'
   }
 }
 
