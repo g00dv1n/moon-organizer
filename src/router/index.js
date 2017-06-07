@@ -6,6 +6,7 @@ import Profile from '../components/personal/Profile'
 import Reviews from '../components/Reviews.vue'
 import store from '../store'
 import Calc from '../components/personal/Calc.vue'
+import { Todo } from '../components/personal/todo'
 
 Vue.use(Router)
 
@@ -44,6 +45,12 @@ const router = new Router({
       path: '/me/calc',
       name: 'calc',
       component: Calc,
+      beforeEnter: checkRigths
+    },
+    {
+      path: '/me/todo',
+      name: 'todo',
+      component: Todo,
       beforeEnter: checkRigths
     },
     {
