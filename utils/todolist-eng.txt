@@ -1,0 +1,168 @@
+﻿relationship
+Wedding 24, 20, 21, 22, 17, 12, 10
+Start to live together with the loved one 5, 21
+Tell her (him) about your feelings 15, 21
+Meet the partner's family at the first time 10
+The first sexual contact 27
+Talk with the partner about each other sincerely 4, 18
+Plan the joint future life 1 24
+Joint vacation 6
+Invite her (him) on a date 5, 15, 21
+Try new things in the bed 2, 3, 11, 13, 14, 17, 21
+Refresh in memory your love story details 20
+Talk about sex with the child-teenager 10
+Co-creation, launch joint projects with your partner 24
+Divorce, break the aggravating relations 19
+Arrange a romantic dinner 22
+Visit the family psychologist, take joint tests, trainings for couples 25, 26
+
+Garden
+Sow, plant herbs, leafy and flowering plants 12
+Plant shrubs and trees 12
+Sow, plant the plants with the above ground fruits 3 9
+Sow, plant the plants with the edible underground parts 18 22 25 27
+Plant the seedlings 5
+Transplant the plants 5 6 10
+Harvest the above ground fruits 4 5 6 7 10 11 12 13 14 15
+Dig the underground fruits and flower bulbs 6 7 10 18 19 20 21 23
+Pick the seeds 6 7 9 12 13 
+Harvest the medicinal plants and herbs 7 10
+Root the cuttings 13
+Fight against the weeds and pests 1 16 17 18 19 20 22 23 25 26 29
+Hoe and hill up the ground 15 16
+Fertilize the soil 7 16 19 22 23 24 25 28
+Crop the plants 19 20 23 29
+Thinning the seedlings 20 22 23
+Pick the haulm and leaves 8 20 26
+Garden landscaping 22 24 25 26
+Mow the lawn 7
+
+Fishing
+Go fishing 21 22 23 24
+
+house
+Plan the family budget 1 20
+Transplant the indoor plants 3
+Prepare semi finished goods 3
+Bring order to the closets 5
+Rearrange the furniture 5
+Make canned vegetables and fruits 7
+Arrange the family dinner 10
+Decluttering 19, 29
+Bake something 13
+Cook an exotic unusual dish 13
+Put the papers and documents in order 14
+Make medicinal and cosmetic products 14
+Minor repairs 18
+Wash the refrigerator 19
+Washing windows, mirrors 21
+Clean the carpet, outerwear 21
+Big laundry, ironing 23
+Repair the clothes 23
+Clean the porcelain tableware 23
+Clean the jewelry 25 
+Clean the aquarium, cages, comb the pets wool 27 
+Arrange the general cleaning 24
+
+Health
+Begin the course of medication intake 2, 12
+Begin the vitamin intake course 2, 12
+Treat chronic diseases 12
+Intestinal cleansing 2, 8
+Get a doctor's consultation 2
+Dental treatment 3
+Treat bones and joints 3
+Visit the speech therapist 7
+Treat the lungs and bronchial tubes 7
+Treat infertility 17
+Get rid of harmful habit 18 20 23
+Do a plastic surgery 13
+Cleanse the liver 13
+Surgical operations - chest, breasts, kidneys, bladder, genitals, legs 20
+Surgical operations - lungs, bronchial tubes, hands, arms, abdomen, liver 21
+Surgical operations – stomach 24
+Surgical operations – heart, back, spine 25
+Conceive a child 27
+Surgical operations – head (eyes, etc.) 28
+Treat the eyes 28
+
+shopping
+Purchase the property 5, 10, 24
+A car, bike, boat, horse 10, 20
+Housewares 2, 5
+Hygiene products 4
+Small furniture 18
+Clothes 5, 10, 22, 24, 28
+Stationery 6
+Tickets for trips 6, 17
+Books 7, 12
+Musical instruments 7
+Antiques 8
+Major household appliances 5, 10, 24
+Lighting fixtures, fireplaces, stoves 11
+Festive decoration 17 22
+Products for children 6 10 17 22 17
+Pets 19
+Aquariums with its inhabitants 25
+Sports equipment, gym membership 20
+Trekking equipment 21
+Food  5, 10, 22, 24, 28
+Inflatable pools 25
+Pleasant little things for yourself 25
+Gifts 12 30
+Exchange of goods with the defects 5
+
+Beauty
+Do a haircut 15 20 23 25
+Color the hair 6 8 14 19 20 21
+Do hair styling 3 10 15
+Trim the hair 6 13
+Do perm 7 15 19 20
+Piercing 20 22
+Hair extension 15
+Nail extension 16 28
+Manicure 6 19
+Pedicure 4 9
+Start a diet 20
+Start the fitness classes 2  17
+Change the style 2 8 21 29
+Remove warts and moles 16 26
+Anti-cellulite massage 25
+Skin, hair and entire body rejuvenation 6 13
+Visit the sauna, steam room 3 24
+Take care of the facial skin, make hydrating masks 18 20
+Facial skin cleansing 16 18 28
+Make wraps 20
+Choose the fragrance 24
+Depilation 15 16
+
+lucky
+Take the risk 14 15 20 21
+Play the lottery 11
+Make a wish 1 7
+
+Business
+Develop a concept and strategy for the project 1 24
+Start working on the new post 11 20
+Quit 19 24
+Fire someone 19 24
+Hire new employees 13 21
+Visit corporate party 17
+Conduct an advertising campaign 7 17
+Become a sponsor 2 7 12 27 28
+Find the sources of funding 2 23
+Make rearrange, repair in the office 5
+Try the new methods in work 5
+Motivational talks and trainings 7
+Arrange a brainstorm 21 24
+Present new project 7
+Sign an important contract 11
+Offer discounts and gifts to my customers 12
+Go on a business trip 13 21 28
+Learn, improve my skills 22
+Put documentation in order 14
+Make reports 16
+Make useful acquaintances 20
+Get rid of old non-working schemes, technologies 19, 24
+Solve legal, judicial issues 25
+Purchase materials 25

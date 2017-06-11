@@ -448,6 +448,10 @@ const lang = {
   calcTooltip: {
     ru: '* После нажатия на эту кнопку Вы перейдете на страницу лунного дня',
     en: '* After clicking on this button you will go to the page of the lunar day'
+  },
+  monthPlan: {
+    ru: 'В ближайший месяц я планирую:',
+    en: 'In the nearest month I plan to:'
   }
 }
 

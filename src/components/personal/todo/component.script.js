@@ -1,4 +1,6 @@
 import { MoonCard } from '../../moon-card'
+import todoTasks from '../../../todo-tasks'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'todo',
@@ -11,5 +13,15 @@ export default {
     MoonCard
   },
   methods: {},
-  created () {}
+  computed: {
+    ...mapGetters(['constants', 'locale']),
+    categories () {
+      return Object.keys(todoTasks)
+    },
+    tasks () {
+      return todoTasks
+    }
+  },
+  created () {
+  }
 }
