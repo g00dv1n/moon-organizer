@@ -11,7 +11,18 @@ const state = {
   constants,
   weekDays,
   router,
-  CATEGORIES: ['lucky', 'beauty', 'relationship', 'business', 'health', 'house', 'shopping', 'garden', 'shopping'],
+  CATEGORIES: [
+    'lucky',
+    'beauty',
+    'relationship',
+    'business',
+    'health',
+    'house',
+    'shopping',
+    'garden',
+    'shopping',
+    'fishing'
+  ],
   locale: 'ru',
   notFirstTime: localStorage.getItem('NOT_FIRST_TIME') || 'no',
   isLeaveFeedback: '',
@@ -25,14 +36,14 @@ const state = {
   authorized: false,
   personal: false,
   config: Object.assign({}, config),
-  axios: axios.create({baseURL: config.API_ROOT})
+  axios: axios.create({ baseURL: config.API_ROOT })
 }
 
 Object.defineProperty(state, 'isLeaveFeedback', {
   get: () => {
     return localStorage.getItem('LEAVE_FEEDBACK_1') || 'no'
   },
-  set: (flag) => {
+  set: flag => {
     localStorage.setItem('LEAVE_FEEDBACK_1', flag)
   }
 })
@@ -41,23 +52,26 @@ Object.defineProperty(state, 'token', {
   get: () => {
     return localStorage.getItem('TOKEN')
   },
-  set: (token) => {
+  set: token => {
     localStorage.setItem('TOKEN', token)
     // set header
     state.axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
   }
 })
 
-state.axios.interceptors.response.use((response) => {
-  return response
-}, (error) => {
-  if (error.response.status === 401 || error.response.status === 403) {
-    delete state.axios.defaults.headers.common['Authorization']
-    state.authorized = false
-    state.token = ''
-    state.user = null
+state.axios.interceptors.response.use(
+  response => {
+    return response
+  },
+  error => {
+    if (error.response.status === 401 || error.response.status === 403) {
+      delete state.axios.defaults.headers.common['Authorization']
+      state.authorized = false
+      state.token = ''
+      state.user = null
+    }
+    return Promise.reject(error)
   }
-  return Promise.reject(error)
-})
+)
 
 export default state

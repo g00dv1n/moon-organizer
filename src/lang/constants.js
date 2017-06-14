@@ -452,6 +452,14 @@ const lang = {
   monthPlan: {
     ru: 'В ближайший месяц я планирую:',
     en: 'In the nearest month I plan to:'
+  },
+  myTodoList: {
+    ru: 'Мой список дел',
+    en: 'My To-Do List'
+  },
+  todoListTooltip: {
+    ru: 'Выберите дела из списка ниже, которые Вы планируете сделать в ближайший месяц, и Лунный Календарь подберет лучшие даты специально для Вас!',
+    en: 'Choose the items from the list below, which you plan to do in the nearest month, and Moon Organizer will pick up the best dates especially for you!'
   }
 }
 

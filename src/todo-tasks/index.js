@@ -1,7 +1,4 @@
 import genObjectByCat from './helpers'
+import store from '../store'
 
-const CATEGORIES = ['lucky', 'beauty', 'relationship', 'business', 'health', 'house', 'shopping', 'garden', 'shopping']
-
-const r = genObjectByCat(CATEGORIES)
-
-export default r
+export const todoTasks = () => genObjectByCat(store.state.CATEGORIES)

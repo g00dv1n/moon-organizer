@@ -23,7 +23,7 @@ export default {
     ...mapGetters(['constants', 'locale', 'axios'])
   },
   methods: {
-    loadCities (query) {
+    loadCities (query: string) {
       const _loadCities = () => {
         this.axios.get(`/public/cities/${this.locale}/${query}`)
           .then(({data}) => {

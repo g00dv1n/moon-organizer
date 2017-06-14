@@ -1,7 +1,8 @@
 <template>
     <div class="todo-container row">
         <moon-card class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1"
-                   title="Список моих дел:">
+                   :title="constants.myTodoList">
+            <div class="todo__tooltip">{{constants.todoListTooltip}}</div>
             <div class="todo__title2">{{constants.monthPlan}}</div>
             <el-collapse class="todo-collapse">
                 <el-collapse-item v-for="c in categories" :title="constants[c] | capitalize" :name="c">
@@ -12,6 +13,9 @@
                     </div>
                 </el-collapse-item>
             </el-collapse>
+            <md-button class="md-raised md-primary" @click.native="saveTasks">
+                {{constants.calculate}}
+            </md-button>
         </moon-card>
     </div>
 </template>
@@ -45,6 +49,13 @@
     .todo__task label {
         font-weight: normal;
         white-space: normal;
+    }
+    .todo__tooltip {
+        font-style: italic;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 25px;
+        margin-top: 50px;
     }
 
 </style>

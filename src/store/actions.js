@@ -149,6 +149,13 @@ const actions = {
         return Promise.resolve(data)
       })
   },
+  updateUserPartial ({state, dispatch}, fieldData) {
+    let u = JSON.parse(JSON.stringify(state.user))
+    if (fieldData) {
+      u = Object.assign({}, u, fieldData)
+      dispatch('updateUser', u)
+    }
+  },
   checkAuth ({state, dispatch}) {
     return (async () => {
       const token = state.token
