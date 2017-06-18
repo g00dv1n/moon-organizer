@@ -190,8 +190,8 @@ const main = {
     en: 'circle, spiral'
   },
   stone: {
-    ru: 'spinel, tourmaline, emerald, pearl (other than black)',
-    en: 'agate, jet'
+    ru: 'шпинель, турмалин, изумруд, жемчуг (не черный)',
+    en: 'spinel, tourmaline, emerald, pearl (other than black)'
   },
   сolor: {
     ru: 'оранжевый, каштановый, шоколадный и коричневый; белый, серебристый, голубой',

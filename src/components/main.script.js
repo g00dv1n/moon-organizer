@@ -5,6 +5,7 @@ import { calculateCalendarHeight } from '../helpers/calculator'
 import CategoryModal from './modals/CategoryModal.vue'
 import { mapGetters } from 'vuex'
 import { onCategory, onDefault } from '../helpers/dayclicker'
+import { isTaskInDay } from '../todo-tasks'
 
 const extractCategoryContentByDayObject = function (type: string, locale: string, day: Day): ?Category {
   let categories = null
@@ -16,7 +17,7 @@ const extractCategoryContentByDayObject = function (type: string, locale: string
   return categories ? categories.find(c => c.name === type) : null
 }
 
-const isColored = function (type: string, locale: string): Function {
+const isColoredByCalendarType = function (type: string, locale: string): Function {
   return function (day: Day): boolean {
     const category = extractCategoryContentByDayObject(type, locale, day)
     return !!category && category.plus.length > 0 && category.minus.length === 0
@@ -33,7 +34,7 @@ export default {
     return {}
   },
   computed: {
-    ...mapGetters(['locale']),
+    ...mapGetters(['locale', 'user']),
     modal () {
       const modal = this.$refs['modal'] || document.getElementById('modal')
       return modal
@@ -71,8 +72,13 @@ export default {
       return this.isDefault ? onDefault(this) : onCategory(this)
     },
     isColoredHandler () {
-      const VIEWED_TYPES = ['lucky', 'fishing']
-      return VIEWED_TYPES.includes(this.currentType) ? isColored(this.currentType, this.locale) : () => false
+      if (this.user && this.user.tasksOnCalendar && this.user.tasksOnCalendar.length > 0) {
+        return isTaskInDay
+      } else {
+        const VIEWED_TYPES = ['lucky', 'fishing']
+        return VIEWED_TYPES.includes(this.currentType)
+          ? isColoredByCalendarType(this.currentType, this.locale) : () => false
+      }
     }
   },
   mounted () {

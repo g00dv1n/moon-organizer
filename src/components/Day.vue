@@ -46,6 +46,20 @@
         </div>
         <div class="row day-raw">
             <div class="day-category col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1"
+            v-if="tasks">
+                <div class="img-container">
+                    <img src="../assets/tasks.png">
+                </div>
+                <div class="color-block">
+                    <div class="category-name">{{constants.todoPlanned}}</div>
+                </div>
+                <div class="category-content">
+                    <div v-for="task in tasks">
+                        {{task.text[locale]}}
+                    </div>
+                </div>
+            </div>
+            <div class="day-category col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1"
                  v-for="(c, index) in categories">
                 <div class="img-container">
                     <img :src="c.path">
@@ -210,6 +224,7 @@
         height: 100%;
         text-align: left;
         padding-left: 80px;
+        padding-top: 7px;
     }
 
     .category-content {

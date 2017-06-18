@@ -6,7 +6,8 @@ import Profile from '../components/personal/Profile'
 import Reviews from '../components/Reviews.vue'
 import store from '../store'
 import Calc from '../components/personal/Calc.vue'
-import { Todo } from '../components/personal/todo'
+import { TodoList } from '../components/personal/todo-list'
+import { TodoMy } from '../components/personal/todo-my'
 
 Vue.use(Router)
 
@@ -19,6 +20,7 @@ const checkRigths = (to, from, next) => {
 }
 
 const router = new Router({
+  // mode: 'history',
   routes: [
     {
       path: '/',
@@ -48,9 +50,16 @@ const router = new Router({
       beforeEnter: checkRigths
     },
     {
-      path: '/me/todo',
-      name: 'todo',
-      component: Todo,
+      path: '/me/todo-list',
+      name: 'todo-list',
+      component: TodoList,
+      beforeEnter: checkRigths
+    },
+    {
+      path: '/me/todo-my',
+      name: 'todo-my',
+      component: TodoMy,
+      props: true,
       beforeEnter: checkRigths
     },
     {

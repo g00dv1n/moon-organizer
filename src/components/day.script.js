@@ -3,6 +3,7 @@
 import moment from 'moment'
 import getDayContent from '../helpers/daypicker'
 import { mapGetters } from 'vuex'
+import { getTasksForDay } from '../todo-tasks'
 
 const isEnableGoTop = (): boolean => {
   const MAX_HEIGTH_FOR_SCROLL = 500
@@ -46,6 +47,13 @@ export default {
     ...mapGetters(['lastClickedDay', 'locale', 'constants', 'user']),
     day () {
       return this.lastClickedDay
+    },
+    tasks () {
+      const day = this.day
+      if (!day) {
+        return null
+      }
+      return getTasksForDay(day)
     },
     isPersonal () {
       return this.$store.state.personal

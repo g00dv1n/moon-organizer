@@ -45,8 +45,7 @@ export default {
         categories: {
           model: [],
           error: false,
-          validator: (model) => model.length > 0,
-          normalizer: (model) => String.prototype.toLowerCase.call(model).replace(/,/g, ';')
+          validator: (model) => model.length > 0
         }
       }
     }
@@ -89,6 +88,7 @@ export default {
       }
     },
     newUserUpdated () {
+      console.log('NEW USER')
       const u = this.newUser
       const nu = Object
         .keys(u)
@@ -98,6 +98,7 @@ export default {
         nu.password = nu.newPassword
       }
       delete nu.newPassword
+      console.log(nu)
       return nu
     }
   },

@@ -81,10 +81,12 @@ declare type DayContent = {
 declare type User = {
   id: number,
   name: string,
-  surname: string
+  surname: string,
   birthday: string,
   avatarUrl: string,
-  categories: Array<string>
+  categories: string[],
+  tasks?: TodoTask[],
+  tasksOnCalendar?: TodoTask[],
   password: string
 }
 
@@ -97,4 +99,16 @@ declare type City = {
   latitude: string,
   longitude: string,
   ru: string
+}
+
+// TodoTask 
+declare type TodoTask = {
+  name: string,
+  text: {
+    ru: string,
+    en: string
+  },
+  days?: number[],
+  category?: string,
+  showedDay?: Date
 }

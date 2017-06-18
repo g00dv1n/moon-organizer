@@ -1,16 +1,15 @@
 // @flow
-
 import config from '../config'
 
 const getters = {
-  calendarTypes (state) {
+  calendarTypes (state: any) {
     return state.calendarTypes.map((type) => {
       let text = type.text[state.locale]
       let name = type.name
       return {name, text}
     })
   },
-  constants (state) {
+  constants (state: any) {
     const constants = state.constants
     const locale = state.locale
     const res = {}
@@ -19,7 +18,7 @@ const getters = {
     })
     return res
   },
-  weekDays (state) {
+  weekDays (state: any) {
     const weekDays = state.weekDays
     const locale = state.locale
     const res = {}
@@ -38,24 +37,25 @@ const getters = {
       })
     return res
   },
-  locale (state) {
+  locale (state: any) {
     return state.locale
   },
-  axios (state) {
+  axios (state: any) {
     return state.axios
   },
-  lastClickedDay (state) {
+  lastClickedDay (state: any) {
     return state.lastClickedDay
   },
-  userAvatar (state) {
+  userAvatar (state: any) {
     return state.user.avatarUrl ? config.API_ROOT + 'public/avatar/' + state.user.avatarUrl : ''
   },
-  user (state): User {
+  user (state: any): User | null {
     const user = Object.assign({}, state.user)
     if (!user) return null
-    const {categories} = user
-    user.categories = categories ? categories.split(';') : []
     return user
+  },
+  tasks (state: any): TodoTask[] {
+    return state.user.tasks
   }
 }
 

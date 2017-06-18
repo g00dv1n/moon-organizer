@@ -1,15 +1,4 @@
 // @flow
-
-declare type TodoTask = {
-  category: string,
-  name: string,
-  days: number[],
-  text: {
-    ru: string,
-    en: string
-  }
-}
-
 const todoTasks: TodoTask[] = [
   {
     name: '$1',
@@ -727,8 +716,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [10, 20],
     text: {
-      ru: 'Машину, велосипед, корабль, лошадь',
-      en: 'A car, bike, boat, horse'
+      ru: 'Приобрести машину, велосипед, корабль, лошадь',
+      en: 'Purchase a car, bike, boat, horse'
     }
   },
   {
@@ -736,8 +725,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [2, 5],
     text: {
-      ru: 'Бытовую утварь',
-      en: 'Housewares'
+      ru: 'Приобрести бытовую утварь',
+      en: 'Purchase housewares'
     }
   },
   {
@@ -745,8 +734,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [4],
     text: {
-      ru: 'Предметы гигиены',
-      en: 'Hygiene products'
+      ru: 'Приобрести предметы гигиены',
+      en: 'Purchase hygiene products'
     }
   },
   {
@@ -754,8 +743,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [18],
     text: {
-      ru: 'Мелкую мебель',
-      en: 'Small furniture'
+      ru: 'Приобрести мелкую мебель',
+      en: 'Purchase small furniture'
     }
   },
   {
@@ -763,8 +752,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [5, 10, 22, 24, 28],
     text: {
-      ru: 'Одежду',
-      en: 'Clothes'
+      ru: 'Приобрести одежду',
+      en: 'Purchase clothes'
     }
   },
   {
@@ -772,8 +761,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [6],
     text: {
-      ru: 'Канцелярию',
-      en: 'Stationery'
+      ru: 'Приобрести канцелярию',
+      en: 'Purchase stationery'
     }
   },
   {
@@ -781,8 +770,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [6, 17],
     text: {
-      ru: 'Билеты, путевки',
-      en: 'Tickets for trips'
+      ru: 'Приобрести билеты, путевки',
+      en: 'Purchase tickets for trips'
     }
   },
   {
@@ -790,8 +779,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [7, 12],
     text: {
-      ru: 'Книги',
-      en: 'Books'
+      ru: 'Приобрести книги',
+      en: 'Purchase books'
     }
   },
   {
@@ -799,8 +788,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [7],
     text: {
-      ru: 'Музыкальные инструменты',
-      en: 'Musical instruments'
+      ru: 'Приобрести музыкальные инструменты',
+      en: 'Purchase musical instruments'
     }
   },
   {
@@ -808,8 +797,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [8],
     text: {
-      ru: 'Антиквариат',
-      en: 'Antiques'
+      ru: 'Приобрести антиквариат',
+      en: 'Purchase antiques'
     }
   },
   {
@@ -817,8 +806,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [5, 10, 24],
     text: {
-      ru: 'Крупную бытовую технику',
-      en: 'Major household appliances'
+      ru: 'Приобрести крупную бытовую технику',
+      en: 'Purchase major household appliances'
     }
   },
   {
@@ -826,8 +815,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [11],
     text: {
-      ru: 'Осветительные приборы, камины, печи',
-      en: 'Lighting fixtures, fireplaces, stoves'
+      ru: 'Приобрести осветительные приборы, камины, печи',
+      en: 'Purchase lighting fixtures, fireplaces, stoves'
     }
   },
   {
@@ -835,8 +824,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [17, 22],
     text: {
-      ru: 'Праздничный декор',
-      en: 'Festive decoration'
+      ru: 'Приобрести праздничный декор',
+      en: 'Purchase festive decoration'
     }
   },
   {
@@ -844,8 +833,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [6, 10, 17, 22, 17],
     text: {
-      ru: 'Товары для детей',
-      en: 'Products for children'
+      ru: 'Приобрести товары для детей',
+      en: 'Purchase products for children'
     }
   },
   {
@@ -853,8 +842,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [19],
     text: {
-      ru: 'Домашних животных',
-      en: 'Pets'
+      ru: 'Приобрести домашних животных',
+      en: 'Purchase pets'
     }
   },
   {
@@ -862,8 +851,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [25],
     text: {
-      ru: 'Аквариум с обитателями',
-      en: 'Aquariums with its inhabitants'
+      ru: 'Приобрести аквариум с обитателями',
+      en: 'Purchase aquariums with its inhabitants'
     }
   },
   {
@@ -871,8 +860,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [20],
     text: {
-      ru: 'Спортивный инвентарь, абонемент в спортзал',
-      en: 'Sports equipment, gym membership'
+      ru: 'Приобрести спортивный инвентарь, абонемент в спортзал',
+      en: 'Purchase sports equipment, gym membership'
     }
   },
   {
@@ -880,8 +869,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [21],
     text: {
-      ru: 'Снаряжение для походов',
-      en: 'Trekking equipment'
+      ru: 'Приобрести снаряжение для походов',
+      en: 'Purchase trekking equipment'
     }
   },
   {
@@ -889,8 +878,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [5, 10, 22, 24, 28],
     text: {
-      ru: 'Продукты',
-      en: 'Food'
+      ru: 'Купить продукты',
+      en: 'Buy food'
     }
   },
   {
@@ -898,8 +887,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [25],
     text: {
-      ru: 'Надувные бассейны, акваланги',
-      en: 'Inflatable pools'
+      ru: 'Приобрести надувные бассейны, акваланги',
+      en: 'Purchase inflatable pools'
     }
   },
   {
@@ -907,8 +896,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [25],
     text: {
-      ru: 'Приятные мелочи для себя',
-      en: 'Pleasant little things for yourself'
+      ru: 'Приобрести приятные мелочи для себя',
+      en: 'Purchase pleasant little things for yourself'
     }
   },
   {
@@ -916,8 +905,8 @@ const todoTasks: TodoTask[] = [
     category: 'shopping',
     days: [12, 30],
     text: {
-      ru: 'Подарки',
-      en: 'Gifts'
+      ru: 'Купить подарки',
+      en: 'Buy gifts'
     }
   },
   {
@@ -1186,7 +1175,7 @@ const todoTasks: TodoTask[] = [
     category: 'business',
     days: [19, 24],
     text: {
-      ru: 'Уволить когото',
+      ru: 'Уволить кого-то',
       en: 'Fire someone'
     }
   },

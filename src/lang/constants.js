@@ -460,6 +460,26 @@ const lang = {
   todoListTooltip: {
     ru: 'Выберите дела из списка ниже, которые Вы планируете сделать в ближайший месяц, и Лунный Календарь подберет лучшие даты специально для Вас!',
     en: 'Choose the items from the list below, which you plan to do in the nearest month, and Moon Organizer will pick up the best dates especially for you!'
+  },
+  todoPlanned: {
+    ru: 'Вы запланировали:',
+    en: 'You have planned:'
+  },
+  todoDaysTooltip: {
+    ru: 'Лучшие даты для Ваших дел подобраны! Внесите их в календарь, чтобы не забыть.',
+    en: 'The best dates for your to-dos have been calculated! Add them to the calendar as a reminder.'
+  },
+  createNew: {
+    ru: 'Создать новый',
+    en: 'Create new'
+  },
+  addToCalendar: {
+    ru: 'Внести в Календарь',
+    en: 'Add to Calendar'
+  },
+  yourTaskList: {
+    ru: 'Ваш список дел от:',
+    en: 'Your to-do list from:'
   }
 }
 

@@ -2,7 +2,6 @@ import clientGeo from '../helpers/clientgeo'
 import calendarTypes from '../lang/calendarTypes'
 import Vue from 'vue'
 import mutationTypes from './mutationTypes'
-import userNormalizer from '../helpers/userNormalizer'
 
 const actions = {
   loadClientInfo ({commit}) {
@@ -143,7 +142,7 @@ const actions = {
   updateUser ({state, commit}, newUser) {
     return state
       .axios
-      .post('/private/user/', userNormalizer(newUser))
+      .post('/private/user/', newUser)
       .then(({data}) => {
         commit(mutationTypes.SET_USER, newUser)
         return Promise.resolve(data)
