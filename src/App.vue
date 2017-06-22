@@ -7,13 +7,7 @@
                 <i class="material-icons">clear</i>
             </div>
             <div v-if="$store.state.personal">
-                <div class="logo" v-if="isCalendarView" @click="logoClick">
-                    <img :src="userAvatar">
-                </div>
-
-                <router-link class="logo" to="/" v-else>
-                    <img :src="userAvatar">
-                </router-link>
+                <personal-sidenav></personal-sidenav>
             </div>
             <div v-else>
                 <md-toolbar md-theme="white">
@@ -84,6 +78,14 @@
         text-align: center;
         color: #2c3e50;
         overflow: hidden;
+    }
+
+    #app a:visited {
+        text-decoration: none;
+    }
+
+    #app a:focus {
+        text-decoration: none;
     }
 
     .closeBtn {
@@ -164,7 +166,6 @@
 
     .categories {
         margin-top: 20px;
-
     }
 
     .category {

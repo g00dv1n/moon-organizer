@@ -480,6 +480,42 @@ const lang = {
   yourTaskList: {
     ru: 'Ваш список дел от:',
     en: 'Your to-do list from:'
+  },
+  myCalendar: {
+    ru: 'Мой календарь',
+    en: 'My calendar'
+  },
+  myBiorhythms: {
+    ru: 'Мои биоритмы',
+    en: 'My biorhythms'
+  },
+  lunarDaysCalc: {
+    ru: 'Калькулятор лунных дней',
+    en: 'Lunar days calculator'
+  },
+  lunarBirthday: {
+    ru: 'Лунный день рождения',
+    en: 'Lunar birthday'
+  },
+  lunarZodiacSign: {
+    ru: 'Лунный знак Зодиака',
+    en: 'The lunar Zodiac sign'
+  },
+  lunarBirthdayDescription: {
+    ru: 'Лунный день, в который мы рождаемся, наделяет нас особенностями характера, набором способностей и возможностей, предопределяет здоровье, активность, удачу. Знание лунного дня рождения помогает лучше понять себя и определить свои сильные и слабые стороны, черты, которые стоит развивать, и ситуации, которых стоит избегать.',
+    en: 'The lunar day of our birth endows us with its character traits and a set of abilities and opportunities, predetermines health, activity, and luck. Knowing the lunar birthday helps to better understand yourself and determine your strengths and weaknesses, traits that are worth developing, and situations that you should avoid.'
+  },
+  ruler: {
+    ru: 'Правящая планета',
+    en: 'Rule'
+  },
+  talismans: {
+    ru: 'Талисманы',
+    en: 'Talismans'
+  },
+  character: {
+    ru: 'Характер',
+    en: 'Character'
   }
 }
 

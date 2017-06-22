@@ -2,6 +2,7 @@ import { mapGetters, mapActions } from 'vuex'
 import LoginModal from './components/modals/LoginModal'
 import { onCategory, onDefault } from './helpers/dayclicker'
 import FeedbackModal from './components/modals/FeedbackModal.vue'
+import {PersonalSidenav} from './components/personal/sidenav'
 
 const isMobile = () => {
   return document && document.documentElement && document.documentElement.clientWidth < 1024
@@ -24,7 +25,8 @@ export default {
   },
   components: {
     LoginModal,
-    FeedbackModal
+    FeedbackModal,
+    PersonalSidenav
   },
   head: {
     meta: [

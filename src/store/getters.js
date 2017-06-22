@@ -40,6 +40,9 @@ const getters = {
   locale (state: any) {
     return state.locale
   },
+  geo (state: any) {
+    return state.geo
+  },
   axios (state: any) {
     return state.axios
   },

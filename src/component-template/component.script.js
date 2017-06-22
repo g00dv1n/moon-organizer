@@ -4,6 +4,7 @@ export default {
     return {}
   },
   components: {},
+  computed: {},
   methods: {},
   created () {}
 }
