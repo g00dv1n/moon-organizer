@@ -1,9 +1,11 @@
 // @flow
-
 import moment from 'moment'
 import getDayContent from '../helpers/daypicker'
+import { getGardenZodiacContent } from '../zodiac-garden'
 import { mapGetters } from 'vuex'
 import { getTasksForDay } from '../todo-tasks'
+import { getChildConception } from '../child-conception'
+import {getLunarBirthdayContent} from '../lunar-birthday'
 
 const isEnableGoTop = (): boolean => {
   const MAX_HEIGTH_FOR_SCROLL = 500
@@ -25,7 +27,7 @@ export default {
       isEnableGoTop: isEnableGoTop()
     }
   },
-
+  props: ['isShowBirthday'],
   created () {
     window.addEventListener('scroll', onScrollFabric(this))
   },
@@ -78,6 +80,24 @@ export default {
       } else {
         return categories
       }
+    },
+    zodiac () {
+      return this.lastClickedDay ? this.lastClickedDay.zodiac : null
+    },
+    lunarBirthday () {
+      return this.isShowBirthday && this.day ? getLunarBirthdayContent(this.day.showedLunarDay.number) : null
+    },
+    zodiacGarden () {
+      const main = 'garden'
+      const isSelected = this.categories
+        .some((c: Category) => c.name === main)
+      return this.isPersonal && isSelected ? getGardenZodiacContent(this.zodiac) : null
+    },
+    childConception () {
+      const main = 'health'
+      const isSelected = this.categories
+        .some((c: Category) => c.name === main)
+      return this.isPersonal && isSelected ? getChildConception(this.zodiac) : null
     },
     // get main day info using day number
     main () {

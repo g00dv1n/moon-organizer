@@ -32,7 +32,8 @@ const router = new Router({
     {
       path: '/lunar-day/:dayNumber',
       name: 'lunar-day',
-      component: Day
+      component: Day,
+      props: true
     },
     {
       path: '/:category',

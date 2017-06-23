@@ -516,6 +516,14 @@ const lang = {
   character: {
     ru: 'Характер',
     en: 'Character'
+  },
+  sowingCalendar: {
+    ru: 'Посевной календарь',
+    en: 'Sowing calendar'
+  },
+  childConception: {
+    ru: 'Зачатие ребенка',
+    en: 'Child conception'
   }
 }
 

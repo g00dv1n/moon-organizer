@@ -8,7 +8,7 @@ const processCategoryContent = (contentArray, locale) => {
 }
 
 const getCategoryOrder = (name) => {
-  const CATEGORIES = ['lucky', 'beauty', 'relationship', 'business', 'health', 'house', 'shopping', 'garden', 'shopping']
+  const CATEGORIES = ['lucky', 'beauty', 'relationship', 'business', 'health', 'house', 'shopping', 'garden', 'fishing']
   const index = CATEGORIES.indexOf(name.toLowerCase())
   return index !== -1 ? index : null
 }

@@ -49,7 +49,7 @@ export default {
       const city: City = this.selectCity
       const ld: Day = calculateDayInfo(day, this.locale, parseInt(city.latitude), parseInt(city.longitude))
       ld.showedLunarDay = day.isBetween(ld.lunarDays[0].start, ld.lunarDays[0].end) ? ld.lunarDays[0] : ld.lunarDays[1]
-      onDefault(this)(ld)
+      onDefault(this)(ld, {isShowBirthday: true})
     }
   },
   created () {

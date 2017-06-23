@@ -1,9 +1,9 @@
 // @flow
 
 const onDefault = function (self: Object): Function {
-  return function (day: Day): void {
+  return function (day: Day, params?: any): void {
     self.$store.commit('SET_LAST_CLICKED_DAY', day)
-    self.$router.push({name: 'lunar-day', params: {dayNumber: day.showedLunarDay.number}})
+    self.$router.push({name: 'lunar-day', params: {dayNumber: day.showedLunarDay.number, ...params}})
   }
 }
 

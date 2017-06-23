@@ -46,6 +46,19 @@
         </div>
         <div class="row day-raw">
             <div class="day-category col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1"
+                 v-if="lunarBirthday">
+                <div class="img-container">
+                    <img src="../assets/birthday-cake.png">
+                </div>
+                <div class="color-block">
+                    <div class="category-name">{{constants.lunarBirthday}}</div>
+                </div>
+                <div class="category-content">
+                    <div v-for="p in lunarBirthday" v-html="p[locale]">
+                    </div>
+                </div>
+            </div>
+            <div class="day-category col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1"
             v-if="tasks">
                 <div class="img-container">
                     <img src="../assets/tasks.png">
@@ -56,6 +69,21 @@
                 <div class="category-content">
                     <div v-for="task in tasks">
                         {{task.text[locale]}}
+                    </div>
+                </div>
+            </div>
+            <div class="day-category col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1"
+                 v-if="childConception">
+                <div class="img-container">
+                    <img src="../assets/newborn.png">
+                </div>
+                <div class="color-block">
+                    <div class="category-name">{{constants.childConception}}</div>
+                </div>
+                <div class="category-content">
+                    <div class="plus">
+                        <div class="category-icon"><i class="material-icons">add_circle</i></div>
+                        <div v-html="childConception.title[locale]"></div>
                     </div>
                 </div>
             </div>
@@ -75,6 +103,22 @@
                     <div class="minus" v-for="m in c.minus">
                         <div class="category-icon"><i class="material-icons">remove_circle</i></div>
                         <div>{{m}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-category col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1"
+                 v-if="zodiacGarden">
+                <div class="img-container">
+                    <img src="../assets/sprout.png">
+                </div>
+                <div class="color-block">
+                    <div class="category-name">{{constants.sowingCalendar}}</div>
+                </div>
+                <div class="category-content">
+                    <div v-html="zodiacGarden.title[locale]"></div>
+                    <div class="plus" v-for="p in zodiacGarden.pluses">
+                        <div class="category-icon"><i class="material-icons">add_circle</i></div>
+                        <div v-html="p[locale]"></div>
                     </div>
                 </div>
             </div>
