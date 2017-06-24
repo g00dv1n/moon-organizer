@@ -32,7 +32,7 @@
         </router-link>
       </md-list-item>
       <md-list-item>
-        <router-link to="/">
+        <router-link :to="{ name: 'biorhythms' }">
           <div class="sidenav__item">{{constants.myBiorhythms}}</div>
         </router-link>
       </md-list-item>

@@ -524,6 +524,22 @@ const lang = {
   childConception: {
     ru: 'Зачатие ребенка',
     en: 'Child conception'
+  },
+  physicalBio: {
+    ru: 'Физический',
+    en: 'Physical'
+  },
+  emotionalBio: {
+    ru: 'Эмоциональный',
+    en: 'Emotional'
+  },
+  intellectualBio: {
+    ru: 'Интеллектуальный',
+    en: 'Intellectual'
+  },
+  bioTitle: {
+    ru: 'На графике ниже отображены Ваши биоритмы на ближайший месяц:',
+    en: 'On the chart below, You can see your biorhythms for the nearest month:'
   }
 }
 

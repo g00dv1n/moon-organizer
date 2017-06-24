@@ -44,7 +44,7 @@ const getMoonInformations = (date: Date): string => {
   rp = normalize((jd - 2451555.8) / 27.321582241)
   let longitude = 360 * rp + 6.3 * Math.sin(dp) + 1.3 * Math.sin(2 * ip - dp) + 0.7 * Math.sin(2 * ip)
 
-  if (longitude < 33.18) {
+  /* if (longitude < 33.18) {
     zodiac = 'aries'
   } else if (longitude < 51.16) {
     zodiac = 'taurus'
@@ -67,6 +67,34 @@ const getMoonInformations = (date: Date): string => {
   } else if (longitude < 311.72) {
     zodiac = 'aquarius'
   } else if (longitude < 348.58) {
+    zodiac = 'pisces'
+  } else {
+    zodiac = 'aries'
+  } */
+
+  if (longitude < 30) {
+    zodiac = 'aries'
+  } else if (longitude < 60) {
+    zodiac = 'taurus'
+  } else if (longitude < 90) {
+    zodiac = 'gemini'
+  } else if (longitude < 120) {
+    zodiac = 'cancer'
+  } else if (longitude < 150) {
+    zodiac = 'leo'
+  } else if (longitude < 180) {
+    zodiac = 'virgo'
+  } else if (longitude < 210) {
+    zodiac = 'libra'
+  } else if (longitude < 240) {
+    zodiac = 'scorpio'
+  } else if (longitude < 270) {
+    zodiac = 'sagittarius'
+  } else if (longitude < 300) {
+    zodiac = 'capricorn'
+  } else if (longitude < 330) {
+    zodiac = 'aquarius'
+  } else if (longitude < 360) {
     zodiac = 'pisces'
   } else {
     zodiac = 'aries'

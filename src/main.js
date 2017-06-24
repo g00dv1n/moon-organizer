@@ -23,6 +23,10 @@ import 'croppie/croppie.css'
 import en from 'element-ui/lib/locale/lang/en'
 // $FlowIgnore
 import ru from 'element-ui/lib/locale/lang/ru-RU'
+// $FlowIgnore
+import VueCharts from 'vue-charts'
+
+Vue.use(VueCharts)
 
 Vue.use(SocialSharing)
 

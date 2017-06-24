@@ -10,6 +10,7 @@ import { TodoList } from '../components/personal/todo-list'
 import { TodoMy } from '../components/personal/todo-my'
 import { LunarBirthday } from '../components/personal/lunar-birthday'
 import { ZodiacBirthday } from '../components/personal/zodiac-birthday'
+import { Biorhythms } from '../components/personal/biorhythms'
 
 Vue.use(Router)
 
@@ -76,6 +77,13 @@ const router = new Router({
       path: '/me/zodiac-birthday',
       name: 'zodiac-birthday',
       component: ZodiacBirthday,
+      props: true,
+      beforeEnter: checkRigths
+    },
+    {
+      path: '/me/biorhythms',
+      name: 'biorhythms',
+      component: Biorhythms,
       props: true,
       beforeEnter: checkRigths
     },
