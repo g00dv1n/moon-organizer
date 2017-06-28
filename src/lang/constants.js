@@ -540,6 +540,30 @@ const lang = {
   bioTitle: {
     ru: 'На графике ниже отображены Ваши биоритмы на ближайший месяц:',
     en: 'On the chart below, You can see your biorhythms for the nearest month:'
+  },
+  forgetPassword: {
+    ru: 'Забыли пароль?',
+    en: 'Forgot your password?'
+  },
+  signUp: {
+    ru: 'Зарегистрироваться',
+    en: 'Sign Up'
+  },
+  resetTitle: {
+    ru: 'Введите почту, на которую зарегистрирован Ваш аккаунт:',
+    en: 'Enter the e-mail which is related to your account'
+  },
+  resetTooltip: {
+    ru: 'Мы отправили на Вашу почту Ваш новый пароль. Если не видите письма, проверьте, пожалуйста, папку "Спам" или мы можем отправить Вам его еще раз',
+    en: 'We\'ve sent your new password to your e-mail. If you can\'t find it, please check the "Spam" folder, or we can resend it'
+  },
+  resendPass: {
+    ru: 'отправить еще раз',
+    en: 'resend my password'
+  },
+  notFoundMail: {
+    ru: 'Ваша почта не найдена в нашей базе. Пожалуйста, попробуйте снова.',
+    en: 'Your mail was not found in our database. Please, try again.'
   }
 }
 

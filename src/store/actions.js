@@ -185,6 +185,11 @@ const actions = {
         state.user.avatarUrl = data.avatarUrl
         return Promise.resolve(getters.userAvatar)
       })
+  },
+  resetPassword ({state}, email) {
+    const axios = state.axios
+    const locale = state.locale
+    return axios.post('/public/reset-password', {email, locale})
   }
 }
 

@@ -241,7 +241,7 @@
         position: absolute;
         right: 200px;
         top: 6px;
-        display: none;
+        display: block;
     }
 
     .login-modal__content {
