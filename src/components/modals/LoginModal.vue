@@ -36,7 +36,7 @@
 
         <md-dialog-actions>
             <md-button
-                    class="md-raised md-primary"
+                    class="md-raised md-primary login-submit"
                     @click.native="submit()"
                     :disabled="!isReadyForSubmit"
                     v-if="isNormal">
@@ -51,8 +51,8 @@
             </md-button>
         </md-dialog-actions>
         <div class="some-actions" v-if="isNormal">
-            <div @click="resetPasswordState">{{constants.forgetPassword}}</div>
-            <div>{{constants.signUp}}</div>
+            <div class="reset-link" @click="resetPasswordState">{{constants.forgetPassword}}</div>
+            <div class="singup-link">{{constants.signUp}}</div>
         </div>
     </md-dialog>
 </template>
@@ -149,6 +149,12 @@
   }
 </script>
 <style scoped>
+    .login-submit {
+        position: absolute;
+        right: 15px;
+        bottom: 40px;
+    }
+
     .reset-title {
         font-size: 16px;
         font-weight: 500;
@@ -172,10 +178,16 @@
         text-decoration: underline;
     }
 
-    .some-actions {
+    .some-actions .reset-link{
         position: absolute;
         left: 15px;
-        bottom: 7px;
+        bottom: 10px;
+    }
+
+    .some-actions .singup-link {
+        position: absolute;
+        right: 15px;
+        bottom: 10px;
     }
 
     .some-actions > * {

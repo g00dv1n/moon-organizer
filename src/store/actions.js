@@ -188,8 +188,8 @@ const actions = {
   },
   resetPassword ({state}, email) {
     const axios = state.axios
-    const locale = state.locale
-    return axios.post('/public/reset-password', {email, locale})
+    const lang = state.locale
+    return axios.post('/public/reset-password', {email, lang})
   }
 }
 

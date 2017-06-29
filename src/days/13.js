@@ -19,8 +19,8 @@ const beauty = {
       en: 'skin, hair and entire body rejuvenation. All medicines, ointments, and creams will act more strongly than usual'
     },
     {
-      ru: 'стрижка изменит в лучшую сторону всю вашу жизнь',
-      en: 'haircut will positively change your life'
+      ru: 'стрижка изменит в лучшую сторону всю вашу жизнь! Волосы станут расти быстрее',
+      en: 'haircut will positively change your life! The best day to cut hair for length'
     },
     {
       ru: 'фрукты, овощи, соки, каши из цельных круп, морепродукты. Это время кулинарных поисков и открытий! Пробовать можно все, но понемногу',

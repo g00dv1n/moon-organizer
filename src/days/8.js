@@ -32,8 +32,8 @@ const beauty = {
       en: 'making complex collections of herbs, ointments, salves, which will be used later'
     },
     {
-      ru: 'стрижка к красоте и благополучию',
-      en: 'haircut brings beauty and well-being'
+      ru: 'стрижка к красоте и благополучию! Волосы станут расти быстрее',
+      en: 'haircut brings beauty and well-being! The best day to cut hair for length'
     },
     {
       ru: 'покраска, смена имиджа, эксперименты',

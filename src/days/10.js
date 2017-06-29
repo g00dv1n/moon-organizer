@@ -27,8 +27,8 @@ const beauty = {
       en: 'creating a skin care program'
     },
     {
-      ru: 'стрижка, укладка - к радости и счастью',
-      en: 'haircut brings the joy and happiness'
+      ru: 'стрижка к радости и счастью! Волосы станут расти быстрее',
+      en: 'haircut brings the joy and happiness! The best day to cut hair for length'
     },
     {
       ru: 'окрашивание блондинок и тонирование седых волос',
