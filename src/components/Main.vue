@@ -14,6 +14,14 @@
             <div class="try-again" v-else>
                 <div class="text-center">{{constants['tryAgain']}}</div>
             </div>
+            <div v-if="isLastClickToday" class="promo__modal">
+                <div class="promo__separator"></div>
+                <div v-if="promo.paragraphs" v-for="p in promo.paragraphs" v-html="p[locale]">
+                </div>
+                <div v-if="promo.text" v-html="promo.text[locale]">
+                </div>
+                <div class="promo__link" @click="goToPromo()">{{constants[promo.btn]}} >></div>
+            </div>
         </category-modal>
         <div class="container" id="calendar-container">
             <calendar :locale="locale" :geo="geo" :day-click-handler="dayClickHandler()"
@@ -112,6 +120,34 @@
 
     .minus .category-icon i {
         color: #FF8A65;
+    }
+
+    .promo__separator {
+        border-top: 1px solid darkgray;
+        padding: 0;
+        max-width: 450px;
+        margin-right: 0;
+        margin-left: 0;
+        height: 2px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    .promo__modal {
+        word-break: normal;
+        text-align: left;
+        margin-bottom: 10px;
+        margin-left: 30px;
+        color: black;
+        max-width: 500px;
+    }
+    .promo__modal > * {
+        font-size: 14px;
+    }
+    .promo__link {
+        margin-top: 10px;
+        color: indigo;
+        cursor: pointer;
+        text-decoration: underline;
     }
 
 </style>

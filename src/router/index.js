@@ -11,6 +11,7 @@ import { TodoMy } from '../components/personal/todo-my'
 import { LunarBirthday } from '../components/personal/lunar-birthday'
 import { ZodiacBirthday } from '../components/personal/zodiac-birthday'
 import { Biorhythms } from '../components/personal/biorhythms'
+import { PromoPage } from '../components/promo-page'
 
 Vue.use(Router)
 
@@ -91,6 +92,11 @@ const router = new Router({
       path: '/reviews/show',
       name: 'reviews',
       component: Reviews
+    },
+    {
+      path: '/promo/about',
+      name: 'promo-page',
+      component: PromoPage
     }
   ]
 })

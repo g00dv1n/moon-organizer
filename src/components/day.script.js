@@ -6,6 +6,7 @@ import { mapGetters } from 'vuex'
 import { getTasksForDay } from '../todo-tasks'
 import { getChildConception } from '../child-conception'
 import {getLunarBirthdayContent} from '../lunar-birthday'
+import { getRandomPromo } from '../promo'
 
 const isEnableGoTop = (): boolean => {
   const MAX_HEIGTH_FOR_SCROLL = 500
@@ -43,6 +44,9 @@ export default {
     },
     getDayNumber () {
       return this.$route.params && this.$route.params.dayNumber || this.day.showedLunarDay.number
+    },
+    goToPromo () {
+      this.$router.push({name: 'promo-page'})
     }
   },
   computed: {
@@ -52,10 +56,13 @@ export default {
     },
     tasks () {
       const day = this.day
-      if (!day) {
+      if (!day || !this.isPersonal) {
         return null
       }
       return getTasksForDay(day)
+    },
+    promo () {
+      return getRandomPromo('', this.day)
     },
     isPersonal () {
       return this.$store.state.personal

@@ -564,6 +564,46 @@ const lang = {
   notFoundMail: {
     ru: 'Ваша почта не найдена в нашей базе. Пожалуйста, попробуйте снова.',
     en: 'Your mail was not found in our database. Please, try again.'
+  },
+  promoTitle: {
+    ru: 'Персональный Лунный Календарь - Ваш ЛИЧНЫЙ астролог и помощник на каждый день',
+    en: 'Personal Lunar Calendar is your PERSONAL astrologer and an assistant, ready for work every single day'
+  },
+  promoDesk: {
+    ru: 'Теперь Лунный Календарь учитывает <b>Ваши</b> предпочтения, сам подбирает лучшие даты для <b>Ваших</b> дел и передает <b>Вам</b> советы звезд, основываясь на дате и времени <b>Вашего</b> рождения!',
+    en: 'From now on, Lunar Calendar takes into account <b>Your</b> preferences, selects the best dates for <b>Your</b> plans and passes you the stars\'tips, based on the date and time of <b>Your</b> birth!'
+  },
+  promoBuyText: {
+    ru: 'Активируйте Персональный Календарь всего за 79,99 грн.',
+    en: 'Activate Personal Calendar for $3 only'
+  },
+  activate: {
+    ru: 'Активировать',
+    en: 'Activate'
+  },
+  promoCardTitle: {
+    ru: '8 преимуществ Персонального Лунного Календаря',
+    en: '8 advantages of the Personal Lunar Calendar'
+  },
+  promoCardSubtitle: {
+    ru: 'которых нет у бесплатной версии:',
+    en: 'over the free version:'
+  },
+  supportTeam: {
+    ru: 'Служба Поддержки',
+    en: 'The Support Service'
+  },
+  supportTeamText: {
+    ru: 'с радостью ответит на все Ваши вопросы',
+    en: 'will gladly give answers for all your questions'
+  },
+  learnMore: {
+    ru: 'Узнать больше',
+    en: 'Learn more'
+  },
+  personalLunarCalendar: {
+    ru: 'Персональный Лунный Календарь',
+    en: 'Personal Lunar Calendar'
   }
 }
 

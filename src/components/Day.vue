@@ -88,6 +88,27 @@
                 </div>
             </div>
             <div class="day-category col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1"
+                v-if="!isPersonal">
+                <div class="img-container">
+                    <img :src="promo.icon">
+                </div>
+                <div class="color-block">
+                    <div class="category-name">{{constants[promo.titleConst]}}</div>
+                </div>
+                <div class="category-content">
+                    <div v-if="promo.paragraphs" v-for="p in promo.paragraphs" v-html="p[locale]">
+                    </div>
+                    <div v-if="promo.text" v-html="promo.text[locale]">
+                    </div>
+                    <div class="promo__btn" @click="goToPromo()" v-if="promo.btnLangConst === 'learnMore'">
+                        <md-button class="md-raised md-primary">{{constants[promo.btnLangConst]}}</md-button>
+                    </div>
+                    <div class="promo__link" @click="goToPromo()" v-else>
+                        {{constants[promo.btnLangConst]}} >>
+                    </div>
+                </div>
+            </div>
+            <div class="day-category col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1"
                  v-for="(c, index) in categories">
                 <div class="img-container">
                     <img :src="c.path">
@@ -267,7 +288,7 @@
         width: 100%;
         height: 100%;
         text-align: left;
-        padding-left: 80px;
+        padding-left: 75px;
         padding-top: 7px;
     }
 
@@ -320,6 +341,17 @@
 
         /* Support for IE. */
         font-feature-settings: 'liga';
+    }
+
+    .promo__btn {
+        margin-left: -7px;
+    }
+
+    .promo__link {
+        margin-top: 10px;
+        color: indigo;
+        cursor: pointer;
+        text-decoration: underline;
     }
 
 </style>

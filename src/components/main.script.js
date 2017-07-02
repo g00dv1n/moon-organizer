@@ -6,6 +6,7 @@ import CategoryModal from './modals/CategoryModal.vue'
 import { mapGetters } from 'vuex'
 import { onCategory, onDefault } from '../helpers/dayclicker'
 import { isTaskInDay } from '../todo-tasks'
+import { getRandomPromo } from '../promo'
 
 const extractCategoryContentByDayObject = function (type: string, locale: string, day: Day): ?Category {
   let categories = null
@@ -45,11 +46,20 @@ export default {
     currentType () {
       return this.$store.state.currentType
     },
+    isPersonal () {
+      return this.$store.state.personal
+    },
     isDefault () {
       return this.currentType === 'default'
     },
     constants () {
       return this.$store.getters.constants
+    },
+    isLastClickToday () {
+      return this.$store.state.lastClickedDay ? this.$store.state.lastClickedDay.isToday : false
+    },
+    promo () {
+      return getRandomPromo(this.currentType, this.category)
     },
     title () {
       const day = this.$store.state.lastClickedDay
@@ -62,6 +72,10 @@ export default {
       if (!day || this.isDefault) return null
 
       return extractCategoryContentByDayObject(this.currentType, this.locale, day)
+    },
+    goToPromo () {
+      this.modal.close()
+      this.$router.push({name: 'promo-page'})
     }
   },
   methods: {
