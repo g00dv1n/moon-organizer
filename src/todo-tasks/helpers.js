@@ -96,7 +96,7 @@ const isTaskInDay = (day: Day) => {
 
 const getTasksForDay = (day: Day) => {
   const user = store.getters.user
-  if (!user && user.tasksOnCalendar) {
+  if (!user || !user.tasksOnCalendar) {
     return null
   }
   const d = moment(day.date).startOf('day')

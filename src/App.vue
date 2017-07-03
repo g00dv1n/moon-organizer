@@ -46,7 +46,8 @@
                 <md-button v-for="l in locales" :class="{'md-toggle': isLocale(l)}" @click.native="setLocale(l)">{{l}}</md-button>
             </md-button-toggle>
             <div class="login-btn" v-if="!authorized">
-                <md-button class="md-raised" @click.native="openLoginModal">{{constants['logIn']}}</md-button>
+                <img src="./assets/login.png" @click="openLoginModal()">
+                <md-tooltip md-direction="bottom">{{constants.logIn}}</md-tooltip>
             </div>
         </md-toolbar>
         <keep-alive>
@@ -239,9 +240,11 @@
 
     .login-btn {
         position: absolute;
-        right: 200px;
-        top: 6px;
+        right: 135px;
+        top: 15px;
         display: block;
+        width: 36px;
+        cursor: pointer;
     }
 
     .login-modal__content {

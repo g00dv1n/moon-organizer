@@ -52,7 +52,7 @@
         </md-dialog-actions>
         <div class="some-actions" v-if="isNormal">
             <div class="reset-link" @click="resetPasswordState">{{constants.forgetPassword}}</div>
-            <div class="singup-link">{{constants.signUp}}</div>
+            <div class="singup-link" @click="goToPromo()">{{constants.signUp}}</div>
         </div>
     </md-dialog>
 </template>
@@ -130,6 +130,10 @@
             }
           })
       },
+      goToPromo () {
+        this.close()
+        this.$router.push({name: 'promo-page'})
+      },
       submit () {
         const self = this
         console.warn(this.user)
@@ -137,8 +141,8 @@
           .then((res) => {
             self.isLoginError = false
             self.close()
-            // self.$router.push({name: 'personal'})
-            window.location.href = '/'
+            self.$router.push({name: 'default'})
+            location.reload()
           })
           .catch((err) => {
             console.log(err)
@@ -210,5 +214,6 @@
         padding-top: 10px;
         padding-bottom: 10px;
         background-color: crimson;
+        margin-bottom: 10px;
     }
 </style>

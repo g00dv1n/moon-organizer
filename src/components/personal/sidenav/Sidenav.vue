@@ -1,6 +1,6 @@
 <template>
   <div class="sidenav">
-    <div class="logo">
+    <div class="logo" @click="goToProfile()">
       <img :src="userAvatar">
     </div>
     <md-list class="md-dense sidenav__list">
@@ -21,6 +21,11 @@
             <md-list-item class="sidenav__child">
               <router-link :to="{ name: 'profile' }">
                 <div class="sidenav__item">{{constants.editProfile}}</div>
+              </router-link>
+            </md-list-item>
+            <md-list-item class="sidenav__child">
+              <router-link :to="{ name: 'default' }" @click.native="logOut()">
+                <div class="sidenav__item">{{constants.logOut}}</div>
               </router-link>
             </md-list-item>
           </md-list>
@@ -56,30 +61,33 @@ export default script
 </script>
 
 <style lang="css">
+  .logo {
+    cursor: pointer;
+  }
 
-.sidenav__list {
-  margin-left: 15px;
-}
+  .sidenav__list {
+    margin-left: 15px;
+  }
 
-.sidenav__item {
-  font-size: 14px;
-  font-weight: 500;
-  color: black;
-  text-transform: uppercase;
-}
+  .sidenav__item {
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    text-transform: uppercase;
+  }
 
-.sidenav__child {
-  font-size: 13px;
-  font-weight: 500;
-  padding-left: 10px;
-}
+  .sidenav__child {
+    font-size: 13px;
+    font-weight: 500;
+    padding-left: 10px;
+  }
 
-.sidenav__client {
-  font-size: 16px;
-  font-weight: 700;
-  color: #3f51b5;
-  text-transform: uppercase;
-  width: 100%;
-  text-align: left;
-}
+  .sidenav__client {
+    font-size: 16px;
+    font-weight: 700;
+    color: #3f51b5;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: left;
+  }
 </style>

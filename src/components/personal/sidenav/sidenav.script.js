@@ -9,6 +9,14 @@ export default {
   computed: {
     ...mapGetters(['userAvatar', 'constants', 'user'])
   },
-  methods: {},
+  methods: {
+    goToProfile () {
+      this.$router.push({name: 'profile'})
+    },
+    logOut () {
+      localStorage.setItem('TOKEN', '')
+      location.reload()
+    }
+  },
   created () {}
 }

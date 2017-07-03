@@ -54,10 +54,9 @@ export default {
       .getters
       .tasks
       .map(t => Object.assign({}, t, {checked: true}))
-
     if (!tasks || tasks.length === 0) {
-      this.$destroy()
       this.$router.replace({ name: 'todo-list' })
+      setTimeout(() => this.$destroy(), 1)
     } else {
       this.tasks = [].concat(tasks)
     }

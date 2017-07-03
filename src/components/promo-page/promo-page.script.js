@@ -41,7 +41,7 @@ const pluses = [
       en: 'Sowing Calendar based on the Zodiac Signs'
     },
     text: {
-      ru: 'Запланируйте пол ребенка заранее! Лунный календарь зачатия всегда подскажет, в "мужском" или "женском" Знаке Зодиака находится Луна',
+      ru: 'Какие растения высаживать в зависимости от Знака Зодиака, в котором находится Луна? Используйте списки овощных, пряно-зеленых, плодово-ягодных, полевых, цветущих и комнатных растений для посадки на каждый день!',
       en: 'Which plants to plant, depending on the Zodiac Sign in which the Moon is located? Use the lists of vegetables, spices & greenery, fruit & berry, field crops, flowering and houseplants which are good for planting for every day!'
     },
     url: require('../../assets/promo-paid-icons/sprout.png')
@@ -52,7 +52,7 @@ const pluses = [
       en: 'Conception Calendar based on the Zodiac Signs'
     },
     text: {
-      ru: 'Узнайте, как день лунного цикла, в который Вы родились, повлиял на Вас и на Вашу судьбу. Измените свою жизнь к лучшему, зная свои сильные и слабые стороны!',
+      ru: 'Запланируйте пол ребенка заранее! Лунный календарь зачатия всегда подскажет, в "мужском" или "женском" Знаке Зодиака находится Луна',
       en: 'Plan the sex of the baby in advance! Conception lunar calendar always tells you, in which Zodiac Sign the Moon is now - the "male" or "female"'
     },
     url: require('../../assets/promo-paid-icons/newborn.png')

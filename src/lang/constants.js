@@ -604,6 +604,10 @@ const lang = {
   personalLunarCalendar: {
     ru: 'Персональный Лунный Календарь',
     en: 'Personal Lunar Calendar'
+  },
+  logOut: {
+    ru: 'Выйти',
+    en: 'Log out'
   }
 }
 
