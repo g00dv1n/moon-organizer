@@ -21,7 +21,7 @@ export default {
         this.$emit('close')
       }
     },
-    open  (weekDay: string) {
+    open  (weekDay) {
       this.$emit('open')
       this.debounce = false
       this.weekDay = this.weekDays[weekDay]

@@ -9,3 +9,4 @@ selenium-debug.log
 yarn.lock*
 yarn-error*
 flow-typed
+package-lock.json

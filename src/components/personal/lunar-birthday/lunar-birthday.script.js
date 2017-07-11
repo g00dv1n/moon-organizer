@@ -1,3 +1,4 @@
+// @flow
 import { MoonCard } from '../../moon-card'
 import { mapGetters } from 'vuex'
 import lunarDays from '../../../helpers/lunardays'
