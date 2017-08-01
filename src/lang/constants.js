@@ -608,6 +608,38 @@ const lang = {
   logOut: {
     ru: 'Выйти',
     en: 'Log out'
+  },
+  activateDescription: {
+    ru: 'Нажатие на эту кнопку приведет Вас на страницу регистрации. После оплаты Вы получите доступ к Персональному календарю, и данные для входа будут отправлены на Вашу почту.',
+    en: 'Clicking on this button will take you to the registration page. After payment, you will have access to the Personal Calendar, and the login information will be sent to your mail.'
+  },
+  termOfUse: {
+    ru: 'Правила использования',
+    en: 'Terms of Use'
+  },
+  privacyPolicy: {
+    ru: 'Конфиденциальность',
+    en: 'Privacy Policy'
+  },
+  refundPolicy: {
+    ru: 'Политика возврата',
+    en: 'Refund Policy'
+  },
+  termOfUseLink: {
+    ru: 'https://moonorganizer.com/ru/pravila-ispolzovanija/',
+    en: 'https://moonorganizer.com/en/terms-of-use/'
+  },
+  privacyPolicyLink: {
+    ru: 'https://moonorganizer.com/ru/politika-konfidencialnosti/',
+    en: 'https://moonorganizer.com/en/privacy-policy/'
+  },
+  refundPolicyLink: {
+    ru: 'https://moonorganizer.com/ru/politika-vozvrata-denezhnuh-sredstv/',
+    en: 'https://moonorganizer.com/en/refund-policy/'
+  },
+  contactsLink: {
+    ru: 'https://moonorganizer.com/ru/kontaktu/',
+    en: 'https://moonorganizer.com/en/contacts/'
   }
 }
 
