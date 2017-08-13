@@ -44,7 +44,7 @@
   
       <div class="registration_block__email">
         <h3 class="profile__input">Email</h3>
-        <el-input placeholder="" v-model="newUser.email.model">
+        <el-input placeholder="" v-model="newUser.email.model" :class="{'is-error': newUser.email.error}">
         </el-input>
       </div>
   
