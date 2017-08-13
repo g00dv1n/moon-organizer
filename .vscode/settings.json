@@ -1,6 +1,11 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-   "javascript.validate.enable": false,
-   "flow.useNPMPackagedFlow": true,
-   "eslint.autoFixOnSave": true
+    "javascript.validate.enable": false,
+    "flow.useNPMPackagedFlow": true,
+    "eslint.autoFixOnSave": true,
+    "emmet.useNewEmmet": false,
+    "emmet.syntaxProfiles": {
+        "vue-html": "html",
+        "vue": "html"
+    }
 }

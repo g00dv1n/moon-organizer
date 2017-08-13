@@ -58,7 +58,10 @@
                 </md-tooltip>
             </div>
             <a class="contacts-link" :href="constants.contactsLink">
-                <md-icon class="md-size-1x md-raised">mail_outline</md-icon> 
+                <md-icon class="md-size-1x md-raised">mail</md-icon> 
+                <md-tooltip md-delay="400" md-direction="bottom">
+                    <div style="font-size: 15px;">{{constants.contactUs}}</div>
+                </md-tooltip>
             </a>  
             <md-button-toggle id="lang-switcher" md-single class="md-primary">
                 <md-button v-for="l in locales" :class="{'md-toggle': isLocale(l)}" @click.native="setLocale(l)">{{l}}</md-button>
@@ -146,6 +149,10 @@ body {
     background-color: transparent;
     cursor: pointer;
     margin-left: 25px;
+}
+
+.contacts-link:hover {
+    text-decoration: none !important;
 }
 
 

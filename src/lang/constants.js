@@ -640,6 +640,18 @@ const lang = {
   contactsLink: {
     ru: 'https://moonorganizer.com/ru/kontaktu/',
     en: 'https://moonorganizer.com/en/contacts/'
+  },
+  contactUs: {
+    ru: 'Свяжитесь с нами',
+    en: 'Contact us'
+  },
+  registration: {
+    ru: 'Регистрация',
+    en: 'Registration'
+  },
+  checkout: {
+    ru: 'Перейти к оплате',
+    en: 'Checkout'
   }
 }
 

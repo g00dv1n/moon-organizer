@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Main from '../components/Main'
-import Day from '../components/Day'
-import Profile from '../components/personal/Profile'
+import Main from '../components/Main.vue'
+import Day from '../components/Day.vue'
+import Profile from '../components/personal/Profile.vue'
 import Reviews from '../components/Reviews.vue'
 import store from '../store'
 import Calc from '../components/personal/Calc.vue'
@@ -12,6 +12,7 @@ import { LunarBirthday } from '../components/personal/lunar-birthday'
 import { ZodiacBirthday } from '../components/personal/zodiac-birthday'
 import { Biorhythms } from '../components/personal/biorhythms'
 import { PromoPage } from '../components/promo-page'
+import { Registration } from '../components/registration'
 
 Vue.use(Router)
 
@@ -97,6 +98,11 @@ const router = new Router({
       path: '/promo/about',
       name: 'promo-page',
       component: PromoPage
+    },
+    {
+      path: '/me/registration',
+      name: 'registration',
+      component: Registration
     }
   ]
 })

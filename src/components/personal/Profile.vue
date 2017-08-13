@@ -16,7 +16,7 @@
                 <div class="profile__field">
                     <el-input placeholder="" v-model="newUser.surname.model" :class="{'is-error': newUser.surname.error}">
                     </el-input>
-                    <div class="el-form-item__error" v-if="newUser.surname.error">TEST</div>
+                    <div class="el-form-item__error" v-if="newUser.surname.error">{{constants.enterName}}</div>
                 </div>
                 <h3 class="profile__input">{{constants.birthday}}</h3>
                 <div class="profile__daytime">
