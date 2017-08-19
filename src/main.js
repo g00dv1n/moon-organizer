@@ -46,8 +46,12 @@ Vue.use(VueAnalytics, {router, id: 'UA-91648464-1'})
 
 async function boot () {
   const locales = {en, ru}
-  await store.dispatch('loadClientInfo')
-  await store.dispatch('checkAuth')
+  try {
+    await store.dispatch('checkAuth')
+    await store.dispatch('loadClientInfo')
+  } catch (err) {
+    console.log(err.message)
+  }
 
   // install ELEMENT UI WITH LOCALE
   Vue.use(ElementUI, {locale: locales[store.state.locale] || en})

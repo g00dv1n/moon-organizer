@@ -51,6 +51,22 @@
           <div class="sidenav__item">{{constants.lunarDaysCalc}}</div>
         </router-link>
       </md-list-item>
+      <hr>
+      <md-list-item>
+        <a :href="constants.termOfUseLink">
+          <div class="sidenav__item">{{constants.termOfUse}}</div>
+        </a>
+      </md-list-item>
+      <md-list-item>
+        <a :href="constants.privacyPolicyLink">
+          <div class="sidenav__item">{{constants.privacyPolicy}}</div>
+        </a>
+      </md-list-item>
+      <md-list-item>
+        <a :href="constants.refundPolicyLink">
+          <div class="sidenav__item">{{constants.termOfUse}}</div>
+        </a>
+      </md-list-item>
     </md-list>
   </div>
 </template>
@@ -61,33 +77,33 @@ export default script
 </script>
 
 <style lang="css">
-  .logo {
-    cursor: pointer;
-  }
+.logo {
+  cursor: pointer;
+}
 
-  .sidenav__list {
-    margin-left: 15px;
-  }
+.sidenav__list {
+  margin-left: 15px;
+}
 
-  .sidenav__item {
-    font-size: 14px;
-    font-weight: 500;
-    color: black;
-    text-transform: uppercase;
-  }
+.sidenav__item {
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  text-transform: uppercase;
+}
 
-  .sidenav__child {
-    font-size: 13px;
-    font-weight: 500;
-    padding-left: 10px;
-  }
+.sidenav__child {
+  font-size: 13px;
+  font-weight: 500;
+  padding-left: 10px;
+}
 
-  .sidenav__client {
-    font-size: 16px;
-    font-weight: 700;
-    color: #3f51b5;
-    text-transform: uppercase;
-    width: 100%;
-    text-align: left;
-  }
+.sidenav__client {
+  font-size: 16px;
+  font-weight: 700;
+  color: #3f51b5;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: left;
+}
 </style>
