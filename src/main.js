@@ -49,6 +49,7 @@ async function boot () {
   try {
     await store.dispatch('checkAuth')
     await store.dispatch('loadClientInfo')
+    await store.dispatch('setupPrice')
   } catch (err) {
     console.log(err.message)
   }

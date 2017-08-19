@@ -32,6 +32,7 @@ const state = {
   lastClickedDay: null,
   today: null,
   geo: {},
+  productInfo: {},
   user: null,
   authorized: false,
   personal: false,

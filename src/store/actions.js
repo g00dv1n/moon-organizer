@@ -190,6 +190,14 @@ const actions = {
     const axios = state.axios
     const lang = state.locale
     return axios.post('/public/reset-password', {email, lang})
+  },
+  async setupPrice ({state}) {
+    const axios = state.axios
+    const {country} = state.geo
+    const res = await axios.get('/purchase/price/' + country)
+    state.productInfo = res.data
+    console.log(res.data)
+    return true
   }
 }
 

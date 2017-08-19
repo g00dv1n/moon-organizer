@@ -6,7 +6,9 @@
         <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 promo__description" v-html="constants.promoDesk">
         </div>
         <div class="promo__buyblock">
-            <div class="text">* {{constants.promoBuyText}} >></div>
+            <div class="text">
+                * {{constants.promoBuyText}} {{productInfo.productPrice}} {{productInfo.currency}} >>
+            </div>
             <md-button class="md-raised md-primary btn" @click.native="goToRegistration()">
                 {{constants.activate}}
             </md-button>
@@ -29,19 +31,20 @@
             </div>
         </moon-card>
         <div class="promo__buyblock">
-            <div class="text">* {{constants.promoBuyText}} >></div>
+            <div class="text">
+                * {{constants.promoBuyText}} {{productInfo.productPrice}} {{productInfo.currency}} >>
+            </div>
             <md-button class="md-raised md-primary btn" @click.native="goToRegistration()">
                 {{constants.activate}}
             </md-button>
-            
+
         </div>
         <div class="promo__activate-desc">
-            <div class="desc">* {{constants.activateDescription}}</div> 
+            <div class="desc">* {{constants.activateDescription}}</div>
         </div>
-    
+
         <div class="promo__end">
-            {{constants.supportTeam}} {{constants.supportTeamText}}:
-            moon.organizer@gmail.com / +38 (050) 860-46-24
+            {{constants.supportTeam}} {{constants.supportTeamText}}: moon.organizer@gmail.com / +38 (050) 860-46-24
         </div>
     </div>
 </template>
@@ -179,6 +182,7 @@ export default script
 .promo__end i:hover {
     text-decoration: underline;
 }
+
 
 
 /* Extra Small Devices, Phones */

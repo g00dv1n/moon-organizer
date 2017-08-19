@@ -6,7 +6,7 @@ const getters = {
     return state.calendarTypes.map((type) => {
       let text = type.text[state.locale]
       let name = type.name
-      return {name, text}
+      return { name, text }
     })
   },
   constants (state: any) {
@@ -45,6 +45,9 @@ const getters = {
   },
   axios (state: any) {
     return state.axios
+  },
+  productInfo (state: any) {
+    return state.productInfo
   },
   lastClickedDay (state: any) {
     return state.lastClickedDay

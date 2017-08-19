@@ -578,8 +578,8 @@ const lang = {
     en: 'From now on, Lunar Calendar takes into account <b>Your</b> preferences, selects the best dates for <b>Your</b> plans and passes you the stars\'tips, based on the date and time of <b>Your</b> birth!'
   },
   promoBuyText: {
-    ru: 'Активируйте Персональный Календарь всего за 79,99 грн.',
-    en: 'Activate Personal Calendar for $3 only'
+    ru: 'Активируйте Персональный Календарь всего за',
+    en: 'Activate Personal Calendar for '
   },
   activate: {
     ru: 'Активировать',

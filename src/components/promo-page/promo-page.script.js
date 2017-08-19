@@ -103,7 +103,7 @@ export default {
     MoonCard
   },
   computed: {
-    ...mapGetters(['constants', 'locale'])
+    ...mapGetters(['constants', 'locale', 'productInfo'])
   },
   methods: {
     goToRegistration () {

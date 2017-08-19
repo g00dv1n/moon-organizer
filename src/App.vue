@@ -14,7 +14,7 @@
                     <div class="logo" v-if="isCalendarView" @click="logoClick">
                         <img :src="logoPath">
                     </div>
-    
+
                     <router-link class="logo" to="/" v-else>
                         <img :src="logoPath">
                     </router-link>
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </md-sidenav>
-    
+
         <md-toolbar class="header">
             <md-button id="menu-btn" class="md-icon-button" @click.native="toggleLeftSidenav" v-if="isMobile">
                 <md-icon>menu</md-icon>
@@ -58,11 +58,11 @@
                 </md-tooltip>
             </div>
             <a class="contacts-link" :href="constants.contactsLink">
-                <md-icon class="md-size-1x md-raised">mail</md-icon> 
+                <md-icon class="md-size-1x md-raised">mail</md-icon>
                 <md-tooltip md-delay="400" md-direction="bottom">
                     <div style="font-size: 15px;">{{constants.contactUs}}</div>
                 </md-tooltip>
-            </a>  
+            </a>
             <md-button-toggle id="lang-switcher" md-single class="md-primary">
                 <md-button v-for="l in locales" :class="{'md-toggle': isLocale(l)}" @click.native="setLocale(l)">{{l}}</md-button>
             </md-button-toggle>
@@ -78,9 +78,9 @@
         <md-dialog-alert :md-title="constants.addToBookmarks" :md-content-html="constants.addToBookmarksText" ref="bookmarks">
         </md-dialog-alert>
         <!-- for modals tests
-                            <md-button class="md-raised" @click.native="openBookmarksModal">bookmarks</md-button>
-                            <md-button class="md-raised" @click.native="openFeedbackModal">reviews</md-button>
-                            -->
+                                <md-button class="md-raised" @click.native="openBookmarksModal">bookmarks</md-button>
+                                <md-button class="md-raised" @click.native="openFeedbackModal">reviews</md-button>
+                                -->
     </div>
 </template>
 
@@ -148,7 +148,7 @@ body {
     color: gainsboro !important;
     background-color: transparent;
     cursor: pointer;
-    margin-left: 25px;
+    margin-left: 15px;
 }
 
 .contacts-link:hover {
@@ -166,7 +166,14 @@ body {
 }
 
 
-
+.login-btn {
+    position: absolute;
+    right: 90px;
+    top: 15px;
+    display: block;
+    width: 36px;
+    cursor: pointer;
+}
 
 
 
@@ -190,6 +197,12 @@ body {
     }
     .today-btn {
         margin-left: 80px;
+    }
+    .login-btn {
+        right: 135px;
+    }
+    .contacts-link {
+        margin-left: 25px;
     }
 }
 
@@ -221,6 +234,7 @@ body {
 .main-title {
     margin-left: 30px !important;
 }
+
 
 
 
@@ -282,19 +296,11 @@ body {
 
 
 
+
 /* end tooltips styles */
 
 .header {
     position: relative;
-}
-
-.login-btn {
-    position: absolute;
-    right: 135px;
-    top: 15px;
-    display: block;
-    width: 36px;
-    cursor: pointer;
 }
 
 .login-modal__content {
