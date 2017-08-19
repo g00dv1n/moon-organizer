@@ -255,6 +255,10 @@ const lang = {
     ru: 'Неверный email',
     en: 'Invalid email'
   },
+  emailAlreadyExists: {
+    ru: 'Пользователь с таким email\'ом уже существует',
+    en: 'User with this email already exists'
+  },
   invalidLogin: {
     ru: 'Неправильный email или пароль',
     en: 'Invalid email or password '

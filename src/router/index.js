@@ -24,6 +24,11 @@ const checkRigths = (to, from, next) => {
   }
 }
 
+const forceScrollTop = (to, from, next) => {
+  document.body.scrollTop = 0
+  next()
+}
+
 const router = new Router({
   // mode: 'history',
   routes: [
@@ -97,7 +102,8 @@ const router = new Router({
     {
       path: '/promo/about',
       name: 'promo-page',
-      component: PromoPage
+      component: PromoPage,
+      beforeEnter: forceScrollTop
     },
     {
       path: '/me/registration',

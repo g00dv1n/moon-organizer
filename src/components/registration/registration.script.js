@@ -41,7 +41,7 @@ export default {
     DaytimePicker
   },
   computed: {
-    ...mapGetters(['constants', 'axios', 'geo'])
+    ...mapGetters(['constants', 'axios', 'geo', 'locale'])
   },
   methods: {
     validate () {
@@ -59,30 +59,41 @@ export default {
         .keys(u)
         .reduce((result, k) => Object
           .assign(result, { [k]: u[k].normalizer ? u[k].normalizer(u[k].model) : u[k].model }), {})
-      if (nu.newPassword) {
-        nu.password = nu.newPassword
-      }
-      delete nu.newPassword
-      console.log(nu)
+      nu.locale = this.locale
+      nu.geo = this.geo
+
       return nu
     },
     loadform () {
       return this
         .axios
-        .post('/purchase/checkout', {user: this.getUserModel(this.newUser), locale: this.geo.country})
+        .post('/purchase/checkout', { user: this.getUserModel(this.newUser), locale: this.geo.country })
         .then(({ data }) => {
           const container = document.getElementById('hidden-purchase-form')
           container.innerHTML = data.htmlForm
           // return Form
           return Promise.resolve(container.children[0])
         })
+        .catch((err) => {
+          // console.log(JSON.parse(JSON.stringify(err)))
+          this.$notify({
+            title: this.constants.oopsTitle,
+            message: err.response.data === 'emailAlreadyExists' ? this.constants.emailAlreadyExists : this.constants.oopsMsg,
+            type: 'error'
+          })
+          return Promise.resolve(null)
+        })
     },
-    async submitForm () {
+    submitForm () {
       if (!this.validate()) {
         return
       }
-      const form = await this.loadform()
-      form.submit()
+      this.loadform()
+        .then(form => {
+          if (form) {
+            form.submit()
+          }
+        })
     }
   },
   created () {

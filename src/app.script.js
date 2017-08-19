@@ -128,16 +128,12 @@ export default {
     if (firstTime && isCalendarView) {
       this.showDayTooltip()
     }
-
-    /* if (this.isNoLeaveFeedback) {
-      document.documentElement.addEventListener('mouseleave', (e) => {
-        if (e.clientY < 0 && this.isNoLeaveFeedback) {
-          this.openFeedbackModal()
-        }
-      })
-     } */
     if (this.isNoLeaveFeedback) {
       setTimeout(() => this.openFeedbackModal(), 60000)
+    }
+
+    if (this.$route.query.forcelogin) {
+      setTimeout(() => this.openLoginModal(), 1)
     }
   }
 }

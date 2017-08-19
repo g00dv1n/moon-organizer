@@ -7,7 +7,9 @@
         </div>
         <div class="promo__buyblock">
             <div class="text">* {{constants.promoBuyText}} >></div>
-            <md-button class="md-raised md-primary btn">{{constants.activate}}</md-button>
+            <md-button class="md-raised md-primary btn" @click.native="goToRegistration()">
+                {{constants.activate}}
+            </md-button>
         </div>
         <moon-card class="promo__card col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
             <div slot="title" class="card__title">
@@ -28,7 +30,10 @@
         </moon-card>
         <div class="promo__buyblock">
             <div class="text">* {{constants.promoBuyText}} >></div>
-            <md-button class="md-raised md-primary btn">{{constants.activate}}</md-button>
+            <md-button class="md-raised md-primary btn" @click.native="goToRegistration()">
+                {{constants.activate}}
+            </md-button>
+            
         </div>
         <div class="promo__activate-desc">
             <div class="desc">* {{constants.activateDescription}}</div> 

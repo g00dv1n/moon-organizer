@@ -105,6 +105,11 @@ export default {
   computed: {
     ...mapGetters(['constants', 'locale'])
   },
-  methods: {},
-  created () {}
+  methods: {
+    goToRegistration () {
+      this.$router.push({name: 'registration'})
+    }
+  },
+  created () {
+  }
 }

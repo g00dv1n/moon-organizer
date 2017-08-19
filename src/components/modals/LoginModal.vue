@@ -44,7 +44,7 @@
             </md-button>
             <md-button
                     class="md-raised md-primary"
-                    @click.native="reset()"
+                    @click.native="isResetDone ? close() : reset()"
                     :disabled="isEmailInvalid"
                     v-if="isReset">
                 OK
@@ -68,6 +68,7 @@
         showResetTooltip: false,
         notFoundMail: false,
         isLoginError: false,
+        isResetDone: false,
         user: {
           email: null,
           password: null
@@ -123,10 +124,12 @@
           .then((res) => {
             this.showResetTooltip = true
             this.notFoundMail = false
+            this.isResetDone = true
           })
           .catch((err) => {
             if (err.response.status === 404) {
               this.notFoundMail = true
+              this.isResetDone = false
             }
           })
       },

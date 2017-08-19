@@ -23,6 +23,7 @@ const promoContent = {
 }
 
 export const getRandomPromo = (categoryName) => {
-  const content = promoContent[categoryName || 'main']
+  const content = promoContent[categoryName]
+   ? promoContent[categoryName] : promoContent['main']
   return content[_.random(0, content.length - 1)]
 }
