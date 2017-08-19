@@ -13,6 +13,7 @@ import { ZodiacBirthday } from '../components/personal/zodiac-birthday'
 import { Biorhythms } from '../components/personal/biorhythms'
 import { PromoPage } from '../components/promo-page'
 import { Registration } from '../components/registration'
+import { ThankyouPage } from '../components/thankyou-page'
 
 Vue.use(Router)
 
@@ -109,6 +110,11 @@ const router = new Router({
       path: '/me/registration',
       name: 'registration',
       component: Registration
+    },
+    {
+      path: '/me/thank-you',
+      name: 'thankyou-page',
+      component: ThankyouPage
     }
   ]
 })

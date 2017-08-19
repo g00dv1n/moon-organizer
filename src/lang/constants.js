@@ -656,6 +656,14 @@ const lang = {
   checkout: {
     ru: 'Перейти к оплате',
     en: 'Checkout'
+  },
+  thanksTitle: {
+    ru: 'Спасибо, что выбрали нас!',
+    en: ' Thank you for choosing us!'
+  },
+  thanksDesc: {
+    ru: 'Данные для входа в Ваш Персональный календарь\n отправлены на указанную Вами почту.',
+    en: 'Login information for your Personal Calendar\n has been sent to the email you specified.'
   }
 }
 
