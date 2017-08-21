@@ -53,7 +53,7 @@ const getters = {
     return state.lastClickedDay
   },
   userAvatar (state: any) {
-    return state.user.avatarUrl
+    return state.user && state.user.avatarUrl
       ? config.API_ROOT + 'public/avatar/' + state.user.avatarUrl : require('../assets/avatar.png')
   },
   user (state: any): User | null {
@@ -62,7 +62,7 @@ const getters = {
     return user
   },
   tasks (state: any): TodoTask[] {
-    return state.user.tasks || []
+    return state.user && state.user.tasks || []
   }
 }
 
