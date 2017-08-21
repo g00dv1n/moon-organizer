@@ -58,7 +58,7 @@
 </template>
 
 <script>
-  import emailValidator from 'email-validator'
+  // import emailValidator from 'email-validator'
 
   export default {
     data () {
@@ -77,7 +77,8 @@
     },
     computed: {
       isEmailInvalid () {
-        return this.user.email === null ? false : !emailValidator.validate(this.user.email)
+        // return this.user.email === null ? false : !emailValidator.validate(this.user.email)
+        return false
       },
       isPasswordInvalid () {
         return this.user.password === null ? false : this.user.password.length < 8
