@@ -123,14 +123,15 @@ export default {
   created () {
     window.addEventListener('resize', onResizeFabric(this))
 
-    const firstTime = this.$store.state.notFirstTime === 'no'
+    // DISABLE TOOLTIPS && POPUPS
+    /* const firstTime = this.$store.state.notFirstTime === 'no'
     const isCalendarView = this.isCalendarView
     if (firstTime && isCalendarView) {
       this.showDayTooltip()
     }
     if (this.isNoLeaveFeedback) {
       setTimeout(() => this.openFeedbackModal(), 60000)
-    }
+    } */
 
     if (this.$route.query.forcelogin) {
       setTimeout(() => this.openLoginModal(), 1)
