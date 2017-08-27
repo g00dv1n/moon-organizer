@@ -3,6 +3,7 @@ import LoginModal from './components/modals/LoginModal'
 import { onCategory, onDefault } from './helpers/dayclicker'
 import FeedbackModal from './components/modals/FeedbackModal.vue'
 import {PersonalSidenav} from './components/personal/sidenav'
+import { PromoBtn } from './components/promo-btn'
 
 const isMobile = () => {
   return document && document.documentElement && document.documentElement.clientWidth < 1024
@@ -26,7 +27,8 @@ export default {
   components: {
     LoginModal,
     FeedbackModal,
-    PersonalSidenav
+    PersonalSidenav,
+    PromoBtn
   },
   head: {
     meta: [
