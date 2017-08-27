@@ -9,7 +9,7 @@ export default {
   },
   components: {},
   computed: {
-    ...mapGetters(['user']),
+    ...mapGetters(['user', 'constants']),
     isVisible () {
       return !(this.excludePages.includes(this.$route.name) || this.user)
     }

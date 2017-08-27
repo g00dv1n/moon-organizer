@@ -103,7 +103,10 @@ export default {
     MoonCard
   },
   computed: {
-    ...mapGetters(['constants', 'locale', 'productInfo'])
+    ...mapGetters(['constants', 'locale', 'productInfo']),
+    isUSD () {
+      return this.productInfo && this.productInfo.currency === 'USD'
+    }
   },
   methods: {
     goToRegistration () {

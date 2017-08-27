@@ -579,7 +579,7 @@ const lang = {
   },
   promoBuyText: {
     ru: 'Активируйте Персональный Календарь всего за',
-    en: 'Activate Personal Calendar for '
+    en: 'Hurry up to activate Personal Calendar for only '
   },
   activate: {
     ru: 'Активировать',
@@ -664,6 +664,10 @@ const lang = {
   thanksDesc: {
     ru: 'Данные для входа в Ваш Персональный календарь\n отправлены на указанную Вами почту.',
     en: 'Login information for your Personal Calendar\n has been sent to the email you specified.'
+  },
+  promoBtnText: {
+    ru: 'Ваш подарок!',
+    en: '40% off discount'
   }
 }
 

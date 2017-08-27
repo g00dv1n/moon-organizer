@@ -1,6 +1,6 @@
 <template>
   <div id="promo-btn" @click="onClick" v-if="isVisible">
-    <div class="desc">Вам подарок!>></div>
+    <div class="desc">{{constants.promoBtnText}}>></div>
     <img src="../../assets/gift.png" alt="">
   </div>
 </template>

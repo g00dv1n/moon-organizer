@@ -7,7 +7,9 @@
         </div>
         <div class="promo__buyblock">
             <div class="text">
-                * {{constants.promoBuyText}} {{productInfo.productPrice}} {{productInfo.currency}} >>
+                <i class="fa fa-gift fa-lg" aria-hidden="true"></i> {{constants.promoBuyText}} 
+                <i class="strikethrough" v-if="isUSD">4.99 USD</i> 
+                <i class="price">{{productInfo.amount}} {{productInfo.currency}}</i></i> >>
             </div>
             <md-button class="md-raised md-primary btn" @click.native="goToRegistration()">
                 {{constants.activate}}
@@ -32,7 +34,9 @@
         </moon-card>
         <div class="promo__buyblock">
             <div class="text">
-                * {{constants.promoBuyText}} {{productInfo.productPrice}} {{productInfo.currency}} >>
+                <i class="fa fa-gift fa-lg" aria-hidden="true"></i> {{constants.promoBuyText}} 
+                <i class="strikethrough" v-if="isUSD">4.99 USD</i> 
+                <i class="price">{{productInfo.amount}} {{productInfo.currency}}</i></i> >>
             </div>
             <md-button class="md-raised md-primary btn" @click.native="goToRegistration()">
                 {{constants.activate}}
@@ -98,7 +102,7 @@ export default script
 
 .promo__buyblock .text {
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 52px;
     vertical-align: middle;
 }
@@ -198,4 +202,25 @@ export default script
         margin-top: 150px;
     }
 }
+
+.strikethrough {
+    position: relative;
+}
+
+.strikethrough:before {
+    border-bottom: 1px solid red;
+    position: absolute;
+    content: "";
+    transform: rotate(-7deg);
+    top : -50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.price {
+    font-weight: bold;
+    font-style: normal;
+}
+
 </style>
