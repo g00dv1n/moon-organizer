@@ -3,6 +3,7 @@
         <login-modal ref="loginModal" id="login-modal">
         </login-modal>
         <promo-btn></promo-btn>
+        <gift-modal ref="giftModal"></gift-modal>
         <md-sidenav class="main-sidenav md-left md-fixed" md-swipeable ref="leftSidenav">
             <div class="closeBtn" v-if="isMobile" @click="toggleLeftSidenav()">
                 <i class="material-icons">clear</i>
