@@ -3,7 +3,11 @@
 import suncalc from 'suncalc'
 import lune from 'lune'
 import moment from 'moment'
-import _ from 'lodash'
+import map from 'lodash/map'
+import head from 'lodash/head'
+import drop from 'lodash/drop'
+import range from 'lodash/range'
+import filter from 'lodash/filter'
 
 const isDayBetween = (start, end, day) => {
   return moment(day).startOf('day').isBetween(moment(start), moment(end)) ||
@@ -11,7 +15,7 @@ const isDayBetween = (start, end, day) => {
 }
 
 const daysRange = (startDate, numberOfDays) => {
-  return _.map(_.range(0, numberOfDays + 1), i => moment(moment(startDate).startOf('day').add(i, 'days')))
+  return map(range(0, numberOfDays + 1), i => moment(moment(startDate).startOf('day').add(i, 'days')))
 }
 
 const recentNewMoon = (date) => {
@@ -41,13 +45,13 @@ const lunarDays = (date: moment$Moment, latitude: number, longitude: number) => 
 
   // check if first rist before new moon delete IT
   let rises = moonRises(days, latitude, longitude)
-  if (moment(_.head(rises)).isSameOrBefore(newMoon)) {
-    rises = _.drop(rises)
+  if (moment(head(rises)).isSameOrBefore(newMoon)) {
+    rises = drop(rises)
   }
   let moonDays = [{
     number: 1,
     start: newMoon,
-    end: _.head(rises)
+    end: head(rises)
   }]
 
   for (let i = 0; i < rises.length - 1; i++) {
@@ -58,7 +62,7 @@ const lunarDays = (date: moment$Moment, latitude: number, longitude: number) => 
       end: rises[i + 1]
     })
   }
-  let res = _.filter(moonDays, ({start, end}) => isDayBetween(start, end, date))
+  let res = filter(moonDays, ({start, end}) => isDayBetween(start, end, date))
   return res
 }
 

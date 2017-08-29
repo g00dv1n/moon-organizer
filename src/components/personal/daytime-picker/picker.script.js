@@ -1,5 +1,5 @@
 import { mapGetters } from 'vuex'
-import _ from 'lodash'
+import rangeRight from 'lodash/rangeRight'
 import moment from 'moment'
 
 export default {
@@ -33,11 +33,11 @@ export default {
       return this.$store.state.locale
     },
     years () {
-      return _.rangeRight(1945, moment().year() + 1)
+      return rangeRight(1945, moment().year() + 1)
     },
     months () {
       const lm = moment().locale(this.locale).localeData().months()
-      return _.rangeRight(0, 12)
+      return rangeRight(0, 12)
         .map(i => {
           return {
             number: i + 1,
@@ -51,9 +51,9 @@ export default {
         let daysInMonth = moment()
           .month(this.month - 1)
           .daysInMonth()
-        days = _.rangeRight(1, daysInMonth + 1)
+        days = rangeRight(1, daysInMonth + 1)
       } else {
-        days = _.rangeRight(1, 32)
+        days = rangeRight(1, 32)
       }
       return days
     }

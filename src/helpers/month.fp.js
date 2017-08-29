@@ -1,7 +1,7 @@
 // @flow
 
 import moment from 'moment'
-import _ from 'lodash'
+import maxBy from 'lodash/maxBy'
 import lunarDays from './lunardays'
 import moonPhase from './moonphase'
 import zodiacSign from './zodiacsign'
@@ -63,7 +63,7 @@ const maxDurationDay = (date, ld: Array<LunarDay>) => {
     let duration = moment.duration(diff).asMilliseconds()
     return Object.assign({}, d, {duration})
   })
-  return _.maxBy(newLd, d => d.duration)
+  return maxBy(newLd, d => d.duration)
 }
 
 const calculateDayInfo = (currentDay: moment$Moment, locale: string, latitude: number, longitude: number): Day => {

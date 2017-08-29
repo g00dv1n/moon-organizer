@@ -10,8 +10,8 @@
     "flow"
   ],
   "plugins": [
-    "transform-runtime",
     "lodash",
+    "transform-runtime",
     [
       "component",
       [{"libraryName": "element-ui", "styleLibraryName": "theme-default"}]

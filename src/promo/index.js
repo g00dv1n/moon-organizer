@@ -8,7 +8,7 @@ import { lucky } from './lucky'
 import { relationship } from './relationship'
 import { shopping } from './shopping'
 
-import _ from 'lodash'
+import random from 'lodash/random'
 
 const promoContent = {
   main,
@@ -25,5 +25,5 @@ const promoContent = {
 export const getRandomPromo = (categoryName) => {
   const content = promoContent[categoryName]
    ? promoContent[categoryName] : promoContent['main']
-  return content[_.random(0, content.length - 1)]
+  return content[random(0, content.length - 1)]
 }
