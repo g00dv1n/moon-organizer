@@ -23,7 +23,7 @@
                             :loading="loading">
                         <el-option
                                 v-for="city in cities"
-                                :key="city"
+                                :key="city.defaultName"
                                 :label="city[locale]"
                                 :value="city">
                         </el-option>

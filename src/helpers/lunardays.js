@@ -25,11 +25,10 @@ const daysBetween = (start, end) => {
 }
 
 const moonRises = (days, latitude, longitude) => {
-  return _.chain(days)
+  return days
     .map(day => suncalc.getMoonTimes(moment(day).toDate(), latitude, longitude).rise)
     .filter(rise => Boolean(rise))
     .map(rise => moment(rise))
-    .value()
 }
 
 const lunarDays = (date: moment$Moment, latitude: number, longitude: number) => {

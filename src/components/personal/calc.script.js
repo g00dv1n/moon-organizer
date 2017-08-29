@@ -31,7 +31,8 @@ export default {
             this.loading = false
           })
       }
-      if (query !== '' && query.length > 2) {
+      console.log(query)
+      if (query && query.length > 2) {
         this.loading = true
         _loadCities()
       } else {

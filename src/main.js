@@ -1,36 +1,79 @@
-// @flow
-
 import Vue from 'vue'
 import App from './App'
 import VueMaterial from 'vue-material'
 import store from './store'
 import router from './router'
 import themesConfig from './themes.config'
-// $FlowIgnore
 import 'vue-material/dist/vue-material.css'
 import capitalize from './filters/capitalize'
 import SocialSharing from 'vue-social-sharing'
-import VueHead from 'vue-head'
-// $FlowIgnore
 import VueAnalytics from 'vue-analytics'
-// $FlowIgnore
-import ElementUI from 'element-ui'
-// $FlowIgnore
 import 'element-ui/lib/theme-default/index.css'
-// $FlowIgnore
 import 'croppie/croppie.css'
-// $FlowIgnore
-import en from 'element-ui/lib/locale/lang/en'
-// $FlowIgnore
-import ru from 'element-ui/lib/locale/lang/ru-RU'
-// $FlowIgnore
 import VueCharts from 'vue-charts'
+
+/* START ELEMENT UI */
+
+import {
+  // Autocomplete,
+  Input,
+  InputNumber,
+  Checkbox,
+  Select,
+  Button,
+  DatePicker,
+  TimePicker,
+  Icon,
+  Upload,
+  Progress,
+  Spinner,
+  Badge,
+  Rate,
+  Option,
+  Carousel,
+  Collapse,
+  CollapseItem,
+  Loading,
+  Notification,
+  Tooltip,
+  CarouselItem,
+  TimeSelect,
+  Alert
+} from 'element-ui'
+
+// Vue.use(Autocomplete)
+Vue.use(Input)
+Vue.use(InputNumber)
+Vue.use(Checkbox)
+Vue.use(Select)
+Vue.use(Button)
+Vue.use(DatePicker)
+Vue.use(TimePicker)
+Vue.use(Tooltip)
+Vue.use(Icon)
+Vue.use(Upload)
+Vue.use(Progress)
+Vue.use(Spinner)
+Vue.use(Badge)
+Vue.use(Rate)
+Vue.use(Carousel)
+Vue.use(CarouselItem)
+Vue.use(Collapse)
+Vue.use(CollapseItem)
+Vue.use(Option)
+Vue.use(TimeSelect)
+Vue.use(Alert)
+
+Vue.use(Loading.directive)
+
+Vue.prototype.$loading = Loading.service
+Vue.prototype.$notify = Notification
+
+/* END ELEMENT UI */
 
 Vue.use(VueCharts)
 
 Vue.use(SocialSharing)
-
-Vue.use(VueHead)
 
 Vue.use(VueMaterial)
 
@@ -42,10 +85,9 @@ if (process.env.NODE_ENV === 'development') {
 
 Vue.material.registerTheme(themesConfig)
 
-Vue.use(VueAnalytics, {router, id: 'UA-91648464-1'})
+Vue.use(VueAnalytics, { router, id: 'UA-91648464-1' })
 
 async function boot () {
-  const locales = {en, ru}
   try {
     await store.dispatch('checkAuth')
     await store.dispatch('loadClientInfo')
@@ -53,17 +95,13 @@ async function boot () {
   } catch (err) {
     console.log(err.message)
   }
-
-  // install ELEMENT UI WITH LOCALE
-  Vue.use(ElementUI, {locale: locales[store.state.locale] || en})
-
   /* eslint-disable no-new */
   new Vue({
     el: '#app',
     router,
     store,
     template: '<App/>',
-    components: {App}
+    components: { App }
   })
 }
 
