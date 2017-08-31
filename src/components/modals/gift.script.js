@@ -18,7 +18,7 @@ export default {
     STORAGE_KEY: 'clickToPromoPopup_1'
   }),
   computed: {
-    ...mapGetters(['constants', 'locale'])
+    ...mapGetters(['constants', 'locale', 'user'])
   },
   methods: {
     fireCloseEvent    () {
@@ -44,7 +44,7 @@ export default {
       this.setFlag()
     },
     canOpen () {
-      return !this.getFlag() && this.locale === 'ru'
+      return !this.getFlag() && this.locale === 'ru' && !this.user
     },
     getFlag () {
       return window.localStorage.getItem(this.STORAGE_KEY)
@@ -54,8 +54,8 @@ export default {
     }
   },
   mounted () {
-    if (this.canOpen()) {
-      setTimeout(() => this.open(), this.DELAY)
-    }
+    setTimeout(() => {
+      if (this.canOpen()) this.open()
+    }, this.DELAY)
   }
 }

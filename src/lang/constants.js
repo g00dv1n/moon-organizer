@@ -570,8 +570,8 @@ const lang = {
     en: 'Your mail was not found in our database. Please, try again.'
   },
   promoTitle: {
-    ru: 'Персональный Лунный Календарь - Ваш ЛИЧНЫЙ астролог и помощник на каждый день',
-    en: 'Personal Lunar Calendar is your PERSONAL astrologer and an assistant, ready for work every single day'
+    ru: 'Активируйте Персональный Лунный Календарь прямо сейчас и получите в подарок книгу "Правильное питание по Луне. 145 рецептов"',
+    en: 'Hurry up to grab your 40% off discount for the Personal Lunar Calendar!'
   },
   promoDesk: {
     ru: 'Теперь Лунный Календарь учитывает <b>Ваши</b> предпочтения, сам подбирает лучшие даты для <b>Ваших</b> дел и передает <b>Вам</b> советы звезд, основываясь на дате и времени <b>Вашего</b> рождения!',
@@ -582,8 +582,8 @@ const lang = {
     en: 'Hurry up to activate Personal Calendar for only '
   },
   activate: {
-    ru: 'Активировать',
-    en: 'Activate'
+    ru: 'Активировать за',
+    en: 'Activate for'
   },
   promoCardTitle: {
     ru: '8 преимуществ Персонального Лунного Календаря',
@@ -662,7 +662,7 @@ const lang = {
     en: ' Thank you for choosing us!'
   },
   thanksDesc: {
-    ru: 'Данные для входа в Ваш Персональный календарь\n отправлены на указанную Вами почту.',
+    ru: 'Данные для входа в Ваш Персональный календарь и подарок\n отправлены на указанную Вами почту.',
     en: 'Login information for your Personal Calendar\n has been sent to the email you specified.'
   },
   loading: {
@@ -674,7 +674,7 @@ const lang = {
     en: 'Nothing found'
   },
   promoBtnText: {
-    ru: 'Ваш подарок!',
+    ru: 'Вам подарок!',
     en: '40% off discount'
   }
 }

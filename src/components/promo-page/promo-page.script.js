@@ -103,9 +103,12 @@ export default {
     MoonCard
   },
   computed: {
-    ...mapGetters(['constants', 'locale', 'productInfo']),
+    ...mapGetters(['constants', 'locale', 'productInfo', 'geo']),
     isUSD () {
       return this.productInfo && this.productInfo.currency === 'USD'
+    },
+    isBookShowed () {
+      return this.locale === 'ru'
     }
   },
   methods: {

@@ -88,6 +88,15 @@ Vue.material.registerTheme(themesConfig)
 
 Vue.use(VueAnalytics, { router, id: 'UA-91648464-1' })
 
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  router,
+  store,
+  template: '<App/>',
+  components: { App }
+})
+
 async function boot () {
   try {
     await store.dispatch('checkAuth')
@@ -96,14 +105,6 @@ async function boot () {
   } catch (err) {
     console.log(err.message)
   }
-  /* eslint-disable no-new */
-  new Vue({
-    el: '#app',
-    router,
-    store,
-    template: '<App/>',
-    components: { App }
-  })
 }
 
 boot()

@@ -4,7 +4,7 @@ export default {
   name: 'promot-btn',
   data () {
     return {
-      excludePages: ['promo-page', 'registration']
+      excludePages: ['promo-page', 'registration', 'thankyou-page']
     }
   },
   components: {},

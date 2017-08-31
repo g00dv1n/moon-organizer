@@ -8,7 +8,7 @@
 
         <md-dialog-content>
             <div class="start-text">
-                Активируйте Персональный Лунный Календарь прямо сейчас</br> и получите совершенно бесплатно:
+                Активируйте Персональный Лунный Календарь прямо сейчас</br> и получите в подарок:
             </div>
             <div class="book">
                 <el-carousel :interval="2000" indicator-position="none" arrow="never" class="carousel" height="250px">
@@ -18,25 +18,29 @@
                     <el-carousel-item class="slide">
                         <img src="../../assets/gift-screens/2.jpg">
                     </el-carousel-item>
+                    <el-carousel-item class="slide">
+                        <img src="../../assets/gift-screens/3.jpg">
+                    </el-carousel-item>
                 </el-carousel>
                 <div class="book__desc">
                     <div class="title">
-                        электронную книгу
+                         <i class="fa fa-gift fa-lg" aria-hidden="true"></i>
+                         книгу рецептов
                     </div>
                     <div class="name">
-                        "Питание по Луне" <i class="fa fa-gift fa-lg" aria-hidden="true"></i>
+                        "Правильное питание по Луне"
                     </div>
                     <div class="plus">
                         <i class="fa fa-check" aria-hidden="true"></i>
-                        150 рецептов на каждый лунный день
+                        145 рецептов
                     </div>
                     <div class="plus">
                         <i class="fa fa-check" aria-hidden="true"></i>
-                        100 + страниц
+                        основные блюда, десерты и напитки
                     </div>
                     <div class="plus">
                         <i class="fa fa-check" aria-hidden="true"></i>
-                        Блюда на любой вкус
+                        меню на каждый лунный день!
                     </div>
                 </div>
             </div>
@@ -44,7 +48,7 @@
         </md-dialog-content>
         <md-dialog-actions class="actions">
             <md-button class="md-raised md-primary gift-btn" @click.native="goToPromo()">
-                Получить подарок!
+                Получить подарок
             </md-button>
         </md-dialog-actions>
         <div class="closeBtn" @click="close()">
@@ -58,7 +62,7 @@ import script from './gift.script'
 export default script
 </script>
 <style lang="scss" scoped>
-$carousel-width: 150px;
+$carousel-width: 180px;
 $carousel-height: 250px;
 
 .carousel {
@@ -71,6 +75,7 @@ $carousel-height: 250px;
     img {
         width: 100%;
         height: 100%;
+        border: 1px solid gainsboro;
     }
 }
 
@@ -82,21 +87,20 @@ $carousel-height: 250px;
 
 .book {
     display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
     &__desc {
         margin-left: 50px;
         font-size: 16px;
         .title {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
             margin-bottom: 10px;
         }
         .name {
             font-size: 22px;
             font-weight: bold;
-            margin-bottom: 10px;
-            i {
-                font-size: 22px;
-            }
+            margin-bottom: 60px;
         }
         .plus {
             margin: 20px 0;
