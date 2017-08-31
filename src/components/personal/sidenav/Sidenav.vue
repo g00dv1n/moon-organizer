@@ -64,7 +64,7 @@
       </md-list-item>
       <md-list-item>
         <a :href="constants.refundPolicyLink">
-          <div class="sidenav__item">{{constants.termOfUse}}</div>
+          <div class="sidenav__item">{{constants.refundPolicy}}</div>
         </a>
       </md-list-item>
     </md-list>
