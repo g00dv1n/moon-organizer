@@ -14,7 +14,7 @@
             <div class="try-again" v-else>
                 <div class="text-center">{{constants['tryAgain']}}</div>
             </div>
-            <div v-if="isLastClickToday" class="promo__modal">
+            <div class="promo__modal">
                 <div class="promo__separator"></div>
                 <div v-if="promo.paragraphs" v-for="p in promo.paragraphs" v-html="p[locale]">
                 </div>

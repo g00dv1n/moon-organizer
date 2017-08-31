@@ -2,7 +2,9 @@ import { mapGetters, mapActions } from 'vuex'
 import LoginModal from './components/modals/LoginModal'
 import { onCategory, onDefault } from './helpers/dayclicker'
 import FeedbackModal from './components/modals/FeedbackModal.vue'
+import GiftModal from './components/modals/GiftModal.vue'
 import {PersonalSidenav} from './components/personal/sidenav'
+import { PromoBtn } from './components/promo-btn'
 
 const isMobile = () => {
   return document && document.documentElement && document.documentElement.clientWidth < 1024
@@ -26,7 +28,9 @@ export default {
   components: {
     LoginModal,
     FeedbackModal,
-    PersonalSidenav
+    GiftModal,
+    PersonalSidenav,
+    PromoBtn
   },
   head: {
     meta: [
@@ -136,5 +140,6 @@ export default {
     if (this.$route.query.forcelogin) {
       setTimeout(() => this.openLoginModal(), 1)
     }
+    // setTimeout(() => this.$refs.giftModal.open(), 1)
   }
 }

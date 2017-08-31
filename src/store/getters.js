@@ -58,7 +58,7 @@ const getters = {
   },
   user (state: any): User | null {
     const user = Object.assign({}, state.user)
-    if (!user) return null
+    if (!state.user) return null
     return user
   },
   tasks (state: any): TodoTask[] {
