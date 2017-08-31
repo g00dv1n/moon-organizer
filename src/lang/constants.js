@@ -664,6 +664,14 @@ const lang = {
   thanksDesc: {
     ru: 'Данные для входа в Ваш Персональный календарь\n отправлены на указанную Вами почту.',
     en: 'Login information for your Personal Calendar\n has been sent to the email you specified.'
+  },
+  loading: {
+    ru: 'Загрузка...',
+    en: 'Loading...'
+  },
+  nothingFound: {
+    ru: 'Ничего не найдено',
+    en: 'Nothing found'
   }
 }
 
