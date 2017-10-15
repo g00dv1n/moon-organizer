@@ -676,6 +676,14 @@ const lang = {
   promoBtnText: {
     ru: 'Вам подарок!',
     en: '40% off discount'
+  },
+  blurActivate: {
+    ru: 'Активировать',
+    en: 'Activate'
+  },
+  blurText: {
+    ru: 'Информация по этой категории доступна только в Персональном Лунном Календаре',
+    en: 'Information on this category is available only in the Personal Lunar Calendar'
   }
 }
 

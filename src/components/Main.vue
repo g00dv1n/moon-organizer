@@ -24,8 +24,14 @@
             </div>
         </category-modal>
         <div class="container" id="calendar-container">
-            <calendar :locale="locale" :geo="geo" :day-click-handler="dayClickHandler()"
-                      :is-colored-handler="isColoredHandler()" v-if="geo"></calendar>
+            <div class="calendar-wraper">
+                <promo-blur-block v-if="isShowBlurPromo(currentType)">
+                </promo-blur-block>
+                <calendar :locale="locale" :geo="geo" :day-click-handler="dayClickHandler()"
+                        :is-colored-handler="isColoredHandler()" v-if="geo" 
+                        :class="{'promo-blur': isShowBlurPromo(currentType)}">
+                </calendar>               
+            </div>
         </div>
     </div>
 </template>
@@ -57,6 +63,12 @@
         .container {
             width: 100%
         }
+    }
+
+    .calendar-wraper{
+        position: relative;
+        width: 100%;
+        height: 100%;
     }
 
     .container {

@@ -15,6 +15,17 @@ const pluses = [
   },
   {
     title: {
+      ru: 'Информация по всем категориям',
+      en: 'Useful tips on all categories'
+    },
+    text: {
+      ru: 'Получайте полезные советы по всем интересующим Вас категориям без ограничений!',
+      en: 'Get information on all categories you are interested in without any restrictions!'
+    },
+    url: require('../../assets/promo-paid-icons/calendar.png')
+  },
+  {
+    title: {
       ru: 'Мои Биоритмы',
       en: 'My Biorhythms'
     },
@@ -78,17 +89,6 @@ const pluses = [
       en: 'Lunar Zodiac Sign is no less influential than "Solar" one. What will be your lunar horoscope?'
     },
     url: require('../../assets/promo-paid-icons/solar-system.png')
-  },
-  {
-    title: {
-      ru: 'Соберите Календарь на Свой Вкус',
-      en: 'Build Your Own Lunar Calendar'
-    },
-    text: {
-      ru: 'Выберите только те категории, которые Вам интересны, для отображения в Персональном Лунном Календаре!',
-      en: 'Select only those categories that you are interested in, to display in Personal Lunar Calendar!'
-    },
-    url: require('../../assets/promo-paid-icons/calendar.png')
   }
 ]
 

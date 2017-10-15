@@ -6,7 +6,8 @@ export default {
   },
   methods: {
     isShowBlurPromo (categoryName) {
-      return this.bluredCategories.includes(categoryName)
+      const isPersonal = this.$store.state.personal
+      return !isPersonal && this.bluredCategories.includes(categoryName)
     }
   }
 }

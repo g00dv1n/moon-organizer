@@ -20,7 +20,6 @@ const state = {
     'house',
     'shopping',
     'garden',
-    'shopping',
     'fishing'
   ],
   bluredCategories: [],

@@ -110,14 +110,8 @@
             </div>
             <div class="day-category col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1"
                  v-for="(c, index) in categories">
-                <div class="promo-block-hider" v-if="isShowBlurPromo(c.name)">
-                    <div class="text">
-                         Информация по этой категории доступна только в Персональном Лунном Календаре
-                    </div>
-                     <md-button class="md-raised md-primary">
-                         Активировать
-                    </md-button>
-                </div>
+                <promo-blur-block v-if="isShowBlurPromo(c.name)">
+                </promo-blur-block>
                 <div class="img-container">
                     <img :src="c.path">
                 </div>
@@ -125,7 +119,7 @@
                     <div class="category-name">{{constants[c.name] | capitalize}}</div>
                 </div>
                 <div class="category-content"
-                :class="{'pre-last': index === categories.length - 2, ' promo-blur': isShowBlurPromo(c.name)}">
+                :class="{'pre-last': index === categories.length - 2, 'promo-blur': isShowBlurPromo(c.name)}">
                     <div class="plus" v-for="p in c.plus">
                         <div class="category-icon"><i class="material-icons">add_circle</i></div>
                         <div>{{p}}</div>
