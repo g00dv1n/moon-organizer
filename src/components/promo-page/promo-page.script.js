@@ -4,17 +4,6 @@ import { MoonCard } from '../moon-card'
 const pluses = [
   {
     title: {
-      ru: 'Список Дел',
-      en: 'To-do list'
-    },
-    text: {
-      ru: 'Составьте список Ваших дел и Лунный Календарь сам предложит Вам лучшие даты для их выполнения и, если пожелаете, напомнит Вам о них!',
-      en: 'Make a list of your to-dos and the Lunar Calendar will independently offer you the best dates for their fulfillment! And, if you wish, remind you of your plans in advance!'
-    },
-    url: require('../../assets/promo-paid-icons/clipboard.png')
-  },
-  {
-    title: {
       ru: 'Информация по всем категориям',
       en: 'Useful tips on all categories'
     },
@@ -23,6 +12,17 @@ const pluses = [
       en: 'Get information on all categories you are interested in without any restrictions!'
     },
     url: require('../../assets/promo-paid-icons/calendar.png')
+  },
+  {
+    title: {
+      ru: 'Список Дел',
+      en: 'To-do list'
+    },
+    text: {
+      ru: 'Составьте список Ваших дел и Лунный Календарь сам предложит Вам лучшие даты для их выполнения и, если пожелаете, напомнит Вам о них!',
+      en: 'Make a list of your to-dos and the Lunar Calendar will independently offer you the best dates for their fulfillment! And, if you wish, remind you of your plans in advance!'
+    },
+    url: require('../../assets/promo-paid-icons/clipboard.png')
   },
   {
     title: {
