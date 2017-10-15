@@ -128,12 +128,12 @@ export default {
     window.addEventListener('resize', onResizeFabric(this))
 
     // DISABLE TOOLTIPS && POPUPS
-    /* const firstTime = this.$store.state.notFirstTime === 'no'
+    const firstTime = this.$store.state.notFirstTime === 'no'
     const isCalendarView = this.isCalendarView
     if (firstTime && isCalendarView) {
       this.showDayTooltip()
     }
-    if (this.isNoLeaveFeedback) {
+    /* if (this.isNoLeaveFeedback) {
       setTimeout(() => this.openFeedbackModal(), 60000)
     } */
 
