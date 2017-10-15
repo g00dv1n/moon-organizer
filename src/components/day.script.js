@@ -7,6 +7,7 @@ import { getTasksForDay } from '../todo-tasks'
 import { getChildConception } from '../child-conception'
 import {getLunarBirthdayContent} from '../lunar-birthday'
 import { getRandomPromo } from '../promo'
+import PromoBlurMixin from './promo-blur/promo-blur.mixin'
 
 const isEnableGoTop = (): boolean => {
   const MAX_HEIGTH_FOR_SCROLL = 500
@@ -23,6 +24,7 @@ const onScrollFabric = (self): Function => {
 
 export default {
   name: 'day',
+  mixins: [PromoBlurMixin],
   data () {
     return {
       isEnableGoTop: isEnableGoTop()

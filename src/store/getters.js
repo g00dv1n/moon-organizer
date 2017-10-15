@@ -63,6 +63,9 @@ const getters = {
   },
   tasks (state: any): TodoTask[] {
     return state.user && state.user.tasks || []
+  },
+  bluredCategories (state: any): string[] {
+    return state.bluredCategories || []
   }
 }
 

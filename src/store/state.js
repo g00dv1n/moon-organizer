@@ -23,6 +23,7 @@ const state = {
     'shopping',
     'fishing'
   ],
+  bluredCategories: [],
   locale: 'ru',
   notFirstTime: localStorage.getItem('NOT_FIRST_TIME') || 'no',
   isLeaveFeedback: '',

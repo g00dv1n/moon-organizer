@@ -38,7 +38,7 @@ export default {
     ]
   },
   methods: {
-    ...mapActions(['showTooltips', 'showDayTooltip']),
+    ...mapActions(['showTooltips', 'showDayTooltip', 'setupPromoBlurCategories']),
     toggleLeftSidenav () {
       this.$refs.leftSidenav.toggle()
     },
@@ -141,5 +141,6 @@ export default {
       setTimeout(() => this.openLoginModal(), 1)
     }
     // setTimeout(() => this.$refs.giftModal.open(), 1)
+    this.setupPromoBlurCategories(this.$route.params)
   }
 }

@@ -13,6 +13,7 @@ import VueCharts from './components/vue-charts/main'
 import 'vue-material/dist/vue-material.css'
 import 'croppie/croppie.css'
 import 'element-ui/lib/theme-default/index.css'
+import './main.css'
 /* START ELEMENT UI */
 
 import {

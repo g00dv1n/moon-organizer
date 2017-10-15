@@ -198,6 +198,17 @@ const actions = {
     state.productInfo = res.data
     console.log(res.data)
     return true
+  },
+  setupPromoBlurCategories ({state}, routeParams) {
+    const allBlured = ['beauty', 'relationship', 'health', 'shopping']
+    let exeptBlurCategory
+    if (window.localStorage.getItem('exeptBlurCategory')) {
+      exeptBlurCategory = window.localStorage.getItem('exeptBlurCategory')
+    } else {
+      exeptBlurCategory = routeParams && routeParams.category && routeParams.category.toLowerCase() || 'none'
+      window.localStorage.setItem('exeptBlurCategory', exeptBlurCategory)
+    }
+    state.bluredCategories = allBlured.filter(c => c.toLowerCase() !== exeptBlurCategory)
   }
 }
 
