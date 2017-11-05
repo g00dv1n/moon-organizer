@@ -38,7 +38,7 @@ export default {
     ]
   },
   methods: {
-    ...mapActions(['showTooltips', 'showDayTooltip', 'setupPromoBlurCategories']),
+    ...mapActions(['showTooltips', 'setupPromoBlurCategories']),
     toggleLeftSidenav () {
       this.$refs.leftSidenav.toggle()
     },
@@ -127,12 +127,6 @@ export default {
   created () {
     window.addEventListener('resize', onResizeFabric(this))
 
-    // DISABLE TOOLTIPS && POPUPS
-    const firstTime = this.$store.state.notFirstTime === 'no'
-    const isCalendarView = this.isCalendarView
-    if (firstTime && isCalendarView) {
-      this.showDayTooltip()
-    }
     /* if (this.isNoLeaveFeedback) {
       setTimeout(() => this.openFeedbackModal(), 60000)
     } */

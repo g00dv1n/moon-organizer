@@ -100,11 +100,17 @@ new Vue({
 
 async function boot () {
   try {
-    await store.dispatch('checkAuth')
     await store.dispatch('loadClientInfo')
+    await store.dispatch('checkAuth')
     await store.dispatch('setupPrice')
   } catch (err) {
     console.log(err.message)
+  } finally {
+    // Show Day tooltip after load geo info
+    const firstTime = store.state.notFirstTime === 'no'
+    if (firstTime) {
+      await store.dispatch('showDayTooltip')
+    }
   }
 }
 

@@ -200,7 +200,7 @@ const actions = {
     return true
   },
   setupPromoBlurCategories ({state}, routeParams) {
-    const allBlured = ['beauty', 'relationship', 'health', 'shopping']
+    const allBlured = ['beauty', 'health', 'shopping']
     let exeptBlurCategory
     if (window.localStorage.getItem('exeptBlurCategory')) {
       exeptBlurCategory = window.localStorage.getItem('exeptBlurCategory')
