@@ -1,4 +1,8 @@
 const lang = {
+  lunarCalendar: {
+    ru: 'Лунный Календарь',
+    en: 'Lunar Calendar'
+  },
   relationship: {
     ru: 'отношения',
     en: 'relationship'

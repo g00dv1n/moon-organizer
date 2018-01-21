@@ -5,6 +5,7 @@ import FeedbackModal from './components/modals/FeedbackModal.vue'
 import GiftModal from './components/modals/GiftModal.vue'
 import {PersonalSidenav} from './components/personal/sidenav'
 import { PromoBtn } from './components/promo-btn'
+import { FreeSidenav } from './components/free-version/sidenav'
 
 const isMobile = () => {
   return document && document.documentElement && document.documentElement.clientWidth < 1024
@@ -30,7 +31,8 @@ export default {
     FeedbackModal,
     GiftModal,
     PersonalSidenav,
-    PromoBtn
+    PromoBtn,
+    FreeSidenav
   },
   methods: {
     ...mapActions(['showTooltips', 'setupPromoBlurCategories']),
