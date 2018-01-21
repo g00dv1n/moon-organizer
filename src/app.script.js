@@ -32,11 +32,6 @@ export default {
     PersonalSidenav,
     PromoBtn
   },
-  head: {
-    meta: [
-      // {property: 'og:image', content: require('./assets/category-icons/default.png')}
-    ]
-  },
   methods: {
     ...mapActions(['showTooltips', 'setupPromoBlurCategories']),
     toggleLeftSidenav () {

@@ -25,11 +25,11 @@
         </category-modal>
         <div class="container" id="calendar-container">
             <div class="calendar-wraper">
+                <!-- Promo category blur
                 <promo-blur-block v-if="isShowBlurPromo(currentType)">
-                </promo-blur-block>
+                </promo-blur-block> -->
                 <calendar :locale="locale" :geo="geo" :day-click-handler="dayClickHandler()"
-                        :is-colored-handler="isColoredHandler()" v-if="geo" 
-                        :class="{'promo-blur': isShowBlurPromo(currentType)}">
+                        :is-colored-handler="isColoredHandler()" v-if="geo" >
                 </calendar>               
             </div>
         </div>
