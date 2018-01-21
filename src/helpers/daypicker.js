@@ -1,10 +1,11 @@
 // @flow
 
-import _ from 'lodash'
+import map from 'lodash/map'
+import orderBy from 'lodash/orderBy'
 import days from '../days'
 
 const processCategoryContent = (contentArray, locale) => {
-  return _.map([...contentArray], (c) => c[locale])
+  return map([...contentArray], (c) => c[locale])
 }
 
 const getCategoryOrder = (name) => {
@@ -35,16 +36,11 @@ const getDayContent = (numberOfDay: number, locale: string = 'ru'): DayContent =
   const _categories = days[numberOfDay].categories
   // main day info
   const _main = days[numberOfDay].main
-  const categories = _.chain(_categories)
-    .keys()
-    .map(k => newCategoryObject(k, _categories, locale))
-    .sortBy('order')
-    .value()
+  const categories = orderBy(Object.keys(_categories)
+    .map(k => newCategoryObject(k, _categories, locale)), 'order')
 
-  const main = _.chain(_main)
-    .keys()
+  const main = Object.keys(_main)
     .map(k => newMainObject(k, _main, locale))
-    .value()
 
   return {
     categories,

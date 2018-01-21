@@ -7,6 +7,8 @@ import { mapGetters } from 'vuex'
 import { onCategory, onDefault } from '../helpers/dayclicker'
 import { isTaskInDay } from '../todo-tasks'
 import { getRandomPromo } from '../promo'
+import PromoBlurMixin from './promo-blur/promo-blur.mixin'
+import PromoBlurBlock from './promo-blur/PromoBlurBlock.vue'
 
 const extractCategoryContentByDayObject = function (type: string, locale: string, day: Day): ?Category {
   let categories = null
@@ -29,8 +31,10 @@ export default {
   name: 'main',
   components: {
     Calendar,
-    CategoryModal
+    CategoryModal,
+    PromoBlurBlock
   },
+  mixins: [PromoBlurMixin],
   data () {
     return {}
   },

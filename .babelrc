@@ -1,14 +1,28 @@
 {
   "presets": [
-    ["es2015", { "modules": false }],
+    [
+      "es2015",
+      {
+        "modules": false
+      }
+    ],
     "stage-2",
     "flow"
   ],
-  "plugins": ["transform-runtime"],
+  "plugins": [
+    "lodash",
+    "transform-runtime",
+    [
+      "component",
+      [{"libraryName": "element-ui", "styleLibraryName": "theme-default"}]
+    ]
+  ],
   "comments": false,
   "env": {
     "test": {
-      "plugins": [ "istanbul" ]
+      "plugins": [
+        "istanbul"
+      ]
     }
   }
 }

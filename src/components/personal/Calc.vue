@@ -18,12 +18,15 @@
                             v-model="selectCity"
                             filterable
                             remote
+                            :loading-text="constants.loading"
+                            :no-match-text="constants.nothingFound"
+                            :no-data-text="constants.nothingFound"
                             :placeholder="constants.startWriteCity"
                             :remote-method="loadCities"
                             :loading="loading">
                         <el-option
                                 v-for="city in cities"
-                                :key="city"
+                                :key="city.defaultName"
                                 :label="city[locale]"
                                 :value="city">
                         </el-option>

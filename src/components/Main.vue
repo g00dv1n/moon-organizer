@@ -14,7 +14,7 @@
             <div class="try-again" v-else>
                 <div class="text-center">{{constants['tryAgain']}}</div>
             </div>
-            <div v-if="isLastClickToday" class="promo__modal">
+            <div class="promo__modal">
                 <div class="promo__separator"></div>
                 <div v-if="promo.paragraphs" v-for="p in promo.paragraphs" v-html="p[locale]">
                 </div>
@@ -24,8 +24,14 @@
             </div>
         </category-modal>
         <div class="container" id="calendar-container">
-            <calendar :locale="locale" :geo="geo" :day-click-handler="dayClickHandler()"
-                      :is-colored-handler="isColoredHandler()" v-if="geo"></calendar>
+            <div class="calendar-wraper">
+                <promo-blur-block v-if="isShowBlurPromo(currentType)">
+                </promo-blur-block>
+                <calendar :locale="locale" :geo="geo" :day-click-handler="dayClickHandler()"
+                        :is-colored-handler="isColoredHandler()" v-if="geo" 
+                        :class="{'promo-blur': isShowBlurPromo(currentType)}">
+                </calendar>               
+            </div>
         </div>
     </div>
 </template>
@@ -57,6 +63,12 @@
         .container {
             width: 100%
         }
+    }
+
+    .calendar-wraper{
+        position: relative;
+        width: 100%;
+        height: 100%;
     }
 
     .container {

@@ -97,5 +97,6 @@ export default {
     }
   },
   created () {
+    window.yaCounter.reachGoal('on_registration')
   }
 }

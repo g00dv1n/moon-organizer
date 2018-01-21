@@ -1,0 +1,26 @@
+.promo-block-hider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 22;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.promo-block-hider .text {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: normal;
+    max-width: 600px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.promo-blur {
+    filter: blur(10px);
+}

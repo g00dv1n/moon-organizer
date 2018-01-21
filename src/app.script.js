@@ -2,7 +2,9 @@ import { mapGetters, mapActions } from 'vuex'
 import LoginModal from './components/modals/LoginModal'
 import { onCategory, onDefault } from './helpers/dayclicker'
 import FeedbackModal from './components/modals/FeedbackModal.vue'
+import GiftModal from './components/modals/GiftModal.vue'
 import {PersonalSidenav} from './components/personal/sidenav'
+import { PromoBtn } from './components/promo-btn'
 
 const isMobile = () => {
   return document && document.documentElement && document.documentElement.clientWidth < 1024
@@ -26,7 +28,9 @@ export default {
   components: {
     LoginModal,
     FeedbackModal,
-    PersonalSidenav
+    GiftModal,
+    PersonalSidenav,
+    PromoBtn
   },
   head: {
     meta: [
@@ -34,7 +38,7 @@ export default {
     ]
   },
   methods: {
-    ...mapActions(['showTooltips', 'showDayTooltip']),
+    ...mapActions(['showTooltips', 'setupPromoBlurCategories']),
     toggleLeftSidenav () {
       this.$refs.leftSidenav.toggle()
     },
@@ -123,18 +127,14 @@ export default {
   created () {
     window.addEventListener('resize', onResizeFabric(this))
 
-    // DISABLE TOOLTIPS && POPUPS
-    /* const firstTime = this.$store.state.notFirstTime === 'no'
-    const isCalendarView = this.isCalendarView
-    if (firstTime && isCalendarView) {
-      this.showDayTooltip()
-    }
-    if (this.isNoLeaveFeedback) {
+    /* if (this.isNoLeaveFeedback) {
       setTimeout(() => this.openFeedbackModal(), 60000)
     } */
 
     if (this.$route.query.forcelogin) {
       setTimeout(() => this.openLoginModal(), 1)
     }
+    // setTimeout(() => this.$refs.giftModal.open(), 1)
+    this.setupPromoBlurCategories(this.$route.params)
   }
 }

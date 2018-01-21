@@ -20,9 +20,9 @@ const state = {
     'house',
     'shopping',
     'garden',
-    'shopping',
     'fishing'
   ],
+  bluredCategories: [],
   locale: 'ru',
   notFirstTime: localStorage.getItem('NOT_FIRST_TIME') || 'no',
   isLeaveFeedback: '',
