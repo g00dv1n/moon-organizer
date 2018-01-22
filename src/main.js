@@ -10,6 +10,8 @@ import VueAnalytics from 'vue-analytics'
 // import VueCharts from 'vue-charts'
 import VueCharts from './components/vue-charts/main'
 
+import './helpers/vue.prototype'
+
 import 'vue-material/dist/vue-material.css'
 import 'croppie/croppie.css'
 import 'element-ui/lib/theme-default/index.css'

@@ -23,6 +23,21 @@
           </md-list>
         </md-list-expand>
       </md-list-item>
+      <md-list-item>
+        <router-link :to="{ name: 'biorhythms' }">
+          <div class="sidenav__item">{{constants.myBiorhythms}}</div>
+        </router-link>
+      </md-list-item>
+      <md-list-item>
+        <router-link :to="{ name: 'todo-list' }">
+          <div class="sidenav__item">{{constants.myTodoList}}</div>
+        </router-link>
+      </md-list-item>
+      <md-list-item>
+        <router-link :to="{ name: 'calc' }">
+          <div class="sidenav__item">{{constants.lunarDaysCalc}}</div>
+        </router-link>
+      </md-list-item>
     </md-list>
 
   </div>

@@ -60,6 +60,7 @@ export default {
   },
   methods: {},
   created () {
+    this.$redirectToPromo('biorhythms')
     window.addEventListener('resize', () => {
       const chart = this.$refs.bioChart
       console.log(chart)
