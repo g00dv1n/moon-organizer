@@ -54,8 +54,5 @@ export default {
     }
   },
   mounted () {
-    setTimeout(() => {
-      if (this.canOpen()) this.open()
-    }, this.DELAY)
   }
 }
