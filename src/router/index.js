@@ -14,19 +14,11 @@ import { Biorhythms } from '../components/personal/biorhythms'
 import { PromoPage } from '../components/promo-page'
 import { Registration } from '../components/registration'
 import { ThankyouPage } from '../components/thankyou-page'
-import { PromoCalc, PromoTodo } from '../components/promo-specific'
+import { PromoCalc, PromoTodo, PromoBiorhythms } from '../components/promo-specific'
 
 import {checkRigths, setCategory} from './hooks'
 
 Vue.use(Router)
-
-/* const checkRigths = (to, from, next) => {
-  if (store.state.authorized === false) {
-    router.replace({name: 'default'})
-  } else {
-    next()
-  }
-} */
 
 const forceScrollTop = (to, from, next) => {
   document.body.scrollTop = 0
@@ -115,6 +107,11 @@ const router = new Router({
       path: '/promo/calc',
       name: 'promo-calc',
       component: PromoCalc
+    },
+    {
+      path: '/promo/biorhythms',
+      name: 'promo-biorhythms',
+      component: PromoBiorhythms
     },
     {
       path: '/promo/todo',

@@ -25,17 +25,25 @@
       </md-list-item>
       <md-list-item>
         <router-link :to="{ name: 'biorhythms' }">
-          <div class="sidenav__item">{{constants.myBiorhythms}}</div>
+          <div class="sidenav__item">
+            {{constants.myBiorhythms}}
+          </div>
         </router-link>
       </md-list-item>
       <md-list-item>
         <router-link :to="{ name: 'todo-list' }">
-          <div class="sidenav__item">{{constants.myTodoList}}</div>
+          <div class="sidenav__item">
+            {{constants.myTodoList}}
+            <i class="fa fa-bell promo-icon" aria-hidden="true"></i>
+          </div>
         </router-link>
       </md-list-item>
       <md-list-item>
         <router-link :to="{ name: 'calc' }">
-          <div class="sidenav__item">{{constants.lunarDaysCalc}}</div>
+          <div class="sidenav__item">
+            {{constants.lunarDaysCalc}}
+            <i class="fa fa-bell promo-icon" aria-hidden="true"></i>
+          </div>
         </router-link>
       </md-list-item>
     </md-list>
@@ -59,4 +67,11 @@ export default script
   width: 100%;
   text-align: left;
 }
+
+i.fa.promo-icon {
+  color: orange;
+  transform: rotate(-30deg);
+  padding-left: 5px;
+}
+
 </style>

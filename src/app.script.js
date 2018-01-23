@@ -124,14 +124,18 @@ export default {
   created () {
     window.addEventListener('resize', onResizeFabric(this))
 
+    if (this.$route.query.forcelogin) {
+      setTimeout(() => this.openLoginModal(), 1)
+    }
+
+    // feedback modal
     /* if (this.isNoLeaveFeedback) {
       setTimeout(() => this.openFeedbackModal(), 60000)
     } */
 
-    if (this.$route.query.forcelogin) {
-      setTimeout(() => this.openLoginModal(), 1)
-    }
+    // gift modal
     // setTimeout(() => this.$refs.giftModal.open(), 1)
-    this.setupPromoBlurCategories(this.$route.params)
+    // blur categories
+    // this.setupPromoBlurCategories(this.$route.params)
   }
 }

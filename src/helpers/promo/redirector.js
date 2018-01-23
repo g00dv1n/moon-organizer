@@ -1,3 +1,6 @@
+import router from '../../router'
+import store from '../../store'
+
 function getFullPromoUrl (baseName) {
   return '/promo/' + baseName
 }
@@ -9,7 +12,7 @@ const config = {
 }
 
 function isAuth () {
-  return this.$store.state.authorized === true
+  return store.state.authorized === true
 }
 
 export function redirectToPromo (actionName) {
@@ -21,7 +24,7 @@ export function redirectToPromo (actionName) {
   if (!url) {
     throw new Error(`Cannot get promo url for action=${actionName}`)
   }
-  this.$router.replace(url)
+  router.replace(url)
   return true
 }
 
