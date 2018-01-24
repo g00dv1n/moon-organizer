@@ -1,14 +1,15 @@
 import { mapGetters } from 'vuex'
 import { MoonCard } from '../moon-card'
+import { PromoActivateBtn } from '../promo-activate-btn'
 
 const pluses = [
   {
     title: {
-      ru: 'Информация по всем категориям',
+      ru: 'Бесплатный личный астропрогноз',
       en: 'Useful tips on all categories'
     },
     text: {
-      ru: 'Получайте полезные советы по всем интересующим Вас категориям без ограничений!',
+      ru: 'Получите ответ от звезд на любой волнующий вас вопрос: совместимость с партнером, открытие бизнеса, реализация своих талантов и так далее.',
       en: 'Get information on all categories you are interested in without any restrictions!'
     },
     url: require('../../assets/promo-paid-icons/calendar.png')
@@ -100,7 +101,8 @@ export default {
     }
   },
   components: {
-    MoonCard
+    MoonCard,
+    PromoActivateBtn
   },
   computed: {
     ...mapGetters(['constants', 'locale', 'productInfo', 'geo']),

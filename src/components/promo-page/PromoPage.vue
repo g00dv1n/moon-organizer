@@ -4,12 +4,7 @@
         <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 promo__title">
             <div class="promo__text">
                 <div> {{constants.promoTitle}} </div>
-
-                <md-button class="md-raised md-primary btn" @click.native="goToRegistration()">
-                    {{constants.activate}}
-                    <i class="strikethrough" v-if="isUSD">4.99 USD</i>
-                    <i class="price">{{productInfo.amount}} {{productInfo.currency}}</i>
-                </md-button>
+                <promo-activate-btn class="btn"></promo-activate-btn>  
             </div>
             <div class="promo__screen" v-if="isBookShowed">
                 <img src="../../assets/gift-screens/1.jpg">
@@ -33,11 +28,7 @@
             </div>
         </moon-card>
         <div class="promo__buyblock">
-            <md-button class="md-raised md-primary btn" @click.native="goToRegistration()">
-                {{constants.activate}}
-                <i class="strikethrough" v-if="isUSD">4.99 USD</i>
-                <i class="price">{{productInfo.amount}} {{productInfo.currency}}</i>
-            </md-button>
+            <promo-activate-btn class="btn"></promo-activate-btn> 
         </div>
         <div class="promo__activate-desc">
             <div class="desc">* {{constants.activateDescription}}</div>

@@ -1,7 +1,7 @@
 <template>
   <md-button class="md-raised md-primary" @click.native="goToRegistration">
       {{constants.activate}}
-      <i class="strikethrough" v-if="isUSD">4.99 USD</i>
+      <i class="strikethrough" v-if="isUSD">19.95 USD</i>
       <i class="price">{{productInfo.amount}} {{productInfo.currency}}</i>
   </md-button>
 </template>
