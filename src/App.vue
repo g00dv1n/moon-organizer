@@ -12,36 +12,7 @@
                 <personal-sidenav></personal-sidenav>
             </div>
             <div v-else>
-                <md-toolbar md-theme="white">
-                    <div class="logo" v-if="isCalendarView" @click="logoClick">
-                        <img :src="logoPath">
-                    </div>
-
-                    <router-link class="logo" to="/" v-else>
-                        <img :src="logoPath">
-                    </router-link>
-                </md-toolbar>
-                <div class="categories">
-                    <md-button @click.native="goToCalendar(t.name)" :class="['md-primary', 'category', {'active': isCurrentType(t.name)}]" v-for="t in types">
-                        {{t.text}}
-                    </md-button>
-                    <hr>
-                    <a :href="constants.termOfUseLink">
-                        <md-button class="md-primary category">
-                            {{constants.termOfUse}}
-                        </md-button>
-                    </a>
-                    <a :href="constants.privacyPolicyLink">
-                        <md-button class="md-primary category">
-                            {{constants.privacyPolicy}}
-                        </md-button>
-                    </a>
-                    <a :href="constants.refundPolicyLink">
-                        <md-button class="md-primary category">
-                            {{constants.refundPolicy}}
-                        </md-button>
-                    </a>
-                </div>
+                <free-sidenav @category="goToCalendar"></free-sidenav>
             </div>
         </md-sidenav>
 

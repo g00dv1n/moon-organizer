@@ -39,6 +39,10 @@ export default {
       incPer()
     },
     saveTasks () {
+      if (this.$redirectToPromo('todo')) {
+        return
+      }
+
       let selected: any[] = this.getSelected()
       saveTasks(selected)
         .then(() => this.runProgressbar())

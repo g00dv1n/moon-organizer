@@ -44,6 +44,10 @@ export default {
         this.isCityValid = false
         return
       }
+      if (this.$redirectToPromo('calc')) {
+        return
+      }
+
       this.isCityValid = true
       const day = moment.unix(parseInt(this.day))
       const city: City = this.selectCity

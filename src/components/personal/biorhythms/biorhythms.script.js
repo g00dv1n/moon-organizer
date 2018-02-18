@@ -1,5 +1,6 @@
 import { mapGetters } from 'vuex'
 import { getBiorhytms } from '../../../biorhythms'
+import { redirectToPromo } from '../../../helpers/promo/redirector'
 import moment from 'moment'
 
 export default {
@@ -8,6 +9,11 @@ export default {
     return {}
   },
   components: {},
+  beforeRouteEnter (_, __, next) {
+    if (!redirectToPromo('biorhythms')) {
+      next()
+    }
+  },
   computed: {
     ...mapGetters(['constants', 'locale', 'user']),
     biorhythms () {
@@ -60,6 +66,7 @@ export default {
   },
   methods: {},
   created () {
+    // this.$redirectToPromo('biorhythms')
     window.addEventListener('resize', () => {
       const chart = this.$refs.bioChart
       console.log(chart)

@@ -4,7 +4,7 @@ import Main from '../components/Main.vue'
 import Day from '../components/Day.vue'
 import Profile from '../components/personal/Profile.vue'
 import Reviews from '../components/Reviews.vue'
-import store from '../store'
+// import store from '../store'
 import Calc from '../components/personal/Calc.vue'
 import { TodoList } from '../components/personal/todo-list'
 import { TodoMy } from '../components/personal/todo-my'
@@ -14,16 +14,11 @@ import { Biorhythms } from '../components/personal/biorhythms'
 import { PromoPage } from '../components/promo-page'
 import { Registration } from '../components/registration'
 import { ThankyouPage } from '../components/thankyou-page'
+import { PromoCalc, PromoTodo, PromoBiorhythms } from '../components/promo-specific'
+
+import {checkRigths, setCategory} from './hooks'
 
 Vue.use(Router)
-
-const checkRigths = (to, from, next) => {
-  if (store.state.authorized === false) {
-    router.replace({name: 'default'})
-  } else {
-    next()
-  }
-}
 
 const forceScrollTop = (to, from, next) => {
   document.body.scrollTop = 0
@@ -47,7 +42,8 @@ const router = new Router({
     {
       path: '/:category',
       name: 'category-calendar',
-      component: Main
+      component: Main,
+      beforeEnter: setCategory
     },
     {
       path: '/me/profile',
@@ -58,14 +54,14 @@ const router = new Router({
     {
       path: '/me/calc',
       name: 'calc',
-      component: Calc,
-      beforeEnter: checkRigths
+      component: Calc
+      // beforeEnter: checkRigths
     },
     {
       path: '/me/todo-list',
       name: 'todo-list',
-      component: TodoList,
-      beforeEnter: checkRigths
+      component: TodoList
+      // beforeEnter: checkRigths
     },
     {
       path: '/me/todo-my',
@@ -92,8 +88,8 @@ const router = new Router({
       path: '/me/biorhythms',
       name: 'biorhythms',
       component: Biorhythms,
-      props: true,
-      beforeEnter: checkRigths
+      props: true
+      // beforeEnter: checkRigths
     },
     {
       path: '/reviews/show',
@@ -106,6 +102,22 @@ const router = new Router({
       component: PromoPage,
       beforeEnter: forceScrollTop
     },
+
+    {
+      path: '/promo/calc',
+      name: 'promo-calc',
+      component: PromoCalc
+    },
+    {
+      path: '/promo/biorhythms',
+      name: 'promo-biorhythms',
+      component: PromoBiorhythms
+    },
+    {
+      path: '/promo/todo',
+      name: 'promo-todo',
+      component: PromoTodo
+    },
     {
       path: '/me/registration',
       name: 'registration',
@@ -117,12 +129,6 @@ const router = new Router({
       component: ThankyouPage
     }
   ]
-})
-
-// update type
-router.beforeEach((to, from, next) => {
-  store.dispatch('updateType', to.params.category)
-  next()
 })
 
 export default router

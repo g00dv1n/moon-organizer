@@ -2,8 +2,8 @@ const calendarTypes = [
   {
     name: 'default',
     text: {
-      ru: 'Лунный календарь 2018',
-      en: 'Lunar calendar 2018'
+      ru: 'Общий лунный календарь',
+      en: 'General lunar calendar'
     }
   },
   {

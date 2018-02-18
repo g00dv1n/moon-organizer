@@ -7,7 +7,6 @@ import { getTasksForDay } from '../todo-tasks'
 import { getChildConception } from '../child-conception'
 import {getLunarBirthdayContent} from '../lunar-birthday'
 import { getRandomPromo } from '../promo'
-import PromoBlurMixin from './promo-blur/promo-blur.mixin'
 import PromoBlurBlock from './promo-blur/PromoBlurBlock.vue'
 
 const isEnableGoTop = (): boolean => {
@@ -25,7 +24,6 @@ const onScrollFabric = (self): Function => {
 
 export default {
   name: 'day',
-  mixins: [PromoBlurMixin],
   components: {
     PromoBlurBlock: PromoBlurBlock
   },

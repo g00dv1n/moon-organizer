@@ -51,22 +51,6 @@
           <div class="sidenav__item">{{constants.lunarDaysCalc}}</div>
         </router-link>
       </md-list-item>
-      <hr>
-      <md-list-item>
-        <a :href="constants.termOfUseLink">
-          <div class="sidenav__item">{{constants.termOfUse}}</div>
-        </a>
-      </md-list-item>
-      <md-list-item>
-        <a :href="constants.privacyPolicyLink">
-          <div class="sidenav__item">{{constants.privacyPolicy}}</div>
-        </a>
-      </md-list-item>
-      <md-list-item>
-        <a :href="constants.refundPolicyLink">
-          <div class="sidenav__item">{{constants.refundPolicy}}</div>
-        </a>
-      </md-list-item>
     </md-list>
   </div>
 </template>
