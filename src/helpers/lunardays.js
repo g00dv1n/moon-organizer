@@ -19,7 +19,15 @@ const daysRange = (startDate, numberOfDays) => {
 }
 
 const recentNewMoon = (date) => {
-  let recentPhases = lune.phase_hunt(moment(date).endOf('day').toDate())
+  let endOfDate = moment(date).endOf('day').toDate()
+  let startOfDate = moment(date).startOf('day').toDate()
+
+  let recentPhases = lune.phase_hunt(endOfDate)
+
+  if (recentPhases.new_date > endOfDate) {
+    recentPhases = lune.phase_hunt(startOfDate)
+  }
+
   let newMoon = moment(recentPhases.new_date)
   return newMoon
 }
