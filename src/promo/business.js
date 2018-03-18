@@ -9,7 +9,8 @@ const t1 = {
       en: 'Observe your biorhythms online with <i>the Personal Lunar Calendar</i>'
     }
   ],
-  btn: 'learnMore'
+  btn: 'learnMore',
+  textCode: 't1'
 }
 
 const t2 = {
@@ -17,7 +18,8 @@ const t2 = {
     ru: 'Поручите лунному календарю подобрать лучшие даты для Вашего списка дел!',
     en: 'Entrust the picking of the best dates for your to-do list to lunar calendar!'
   },
-  btn: 'personalLunarCalendar'
+  btn: 'personalLunarCalendar',
+  textCode: 't2'
 }
 
 export const business = [t1, t2]

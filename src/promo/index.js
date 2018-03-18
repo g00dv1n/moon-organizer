@@ -22,8 +22,28 @@ const promoContent = {
   shopping
 }
 
+const buildVPLink = (categoryName, content) => {
+  const prefix = '/calendar/'
+  const queryParams = {
+    location: categoryName || 'day',
+    title: content.titleConst || null,
+    textCode: content.textCode || 't1',
+    btn: content.btnLangConst || content.btn || 'learnMore'
+  }
+
+  const queryString = Object
+    .keys(queryParams)
+    .filter(key => !!queryParams[key])
+    .map(key => `${key}=${queryParams[key]}`)
+    .join('&')
+
+  return `${prefix}vp-promo-hints?${queryString}`
+}
+
 export const getRandomPromo = (categoryName) => {
   const content = promoContent[categoryName]
    ? promoContent[categoryName] : promoContent['main']
-  return content[random(0, content.length - 1)]
+  const randomContent = content[random(0, content.length - 1)]
+  randomContent.virtualPage = buildVPLink(categoryName, randomContent)
+  return randomContent
 }

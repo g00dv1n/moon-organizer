@@ -3,7 +3,8 @@ const t1 = {
     ru: 'Как привлечь удачу в Вашу жизнь, исходя из того, в какой лунный день Вы родились?',
     en: 'How to attract luck to your life, based on the lunar day you were born on?'
   },
-  btn: 'personalLunarCalendar'
+  btn: 'personalLunarCalendar',
+  textCode: 't1'
 }
 
 export const lucky = [t1]

@@ -50,6 +50,7 @@ export default {
       return this.$route.params && this.$route.params.dayNumber || this.day.showedLunarDay.number
     },
     goToPromo () {
+      this.$ga.page(this.promo.virtualPage)
       this.$router.push({name: 'promo-page'})
     }
   },

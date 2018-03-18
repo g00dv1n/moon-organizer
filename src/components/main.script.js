@@ -74,10 +74,6 @@ export default {
       if (!day || this.isDefault) return null
 
       return extractCategoryContentByDayObject(this.currentType, this.locale, day)
-    },
-    goToPromo () {
-      this.modal.close()
-      this.$router.push({name: 'promo-page'})
     }
   },
   methods: {
@@ -95,6 +91,11 @@ export default {
         return VIEWED_TYPES.includes(this.currentType)
           ? isColoredByCalendarType(this.currentType, this.locale) : () => false
       }
+    },
+    goToPromo () {
+      this.$ga.page(this.promo.virtualPage)
+      this.modal.close()
+      this.$router.push({name: 'promo-page'})
     }
   },
   mounted () {

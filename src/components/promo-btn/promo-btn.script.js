@@ -16,6 +16,7 @@ export default {
   },
   methods: {
     onClick () {
+      this.$ga.page('/calendar/vp-gift-btn')
       this.$router.push({name: 'promo-page'})
     }
   },

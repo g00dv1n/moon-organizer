@@ -9,7 +9,8 @@ const t1 = {
       en: 'Observe your biorhythms online with <i>the Personal Lunar Calendar</i>'
     }
   ],
-  btn: 'learnMore'
+  btn: 'learnMore',
+  textCode: 't1'
 }
 
 const t2 = {
@@ -17,7 +18,8 @@ const t2 = {
     ru: 'Мечтаете о дочке-принцессе или о сыночке-наследнике? Выберите пол будущего ребенка заранее с <i>Персональным Лунным Календарем!</i>',
     en: 'Do you dream of daughter-princess or son, little heir? Choose the sex of your future child in advance with <i>the Personal Lunar Calendar!</i>'
   },
-  btn: 'learnMore'
+  btn: 'learnMore',
+  textCode: 't2'
 }
 
 export const health = [t1, t2]

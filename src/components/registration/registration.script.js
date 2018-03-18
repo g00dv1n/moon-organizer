@@ -91,12 +91,15 @@ export default {
       this.loadform()
         .then(form => {
           if (form) {
+            this.$ga.page('/calendar/vp-user-registred')
             form.submit()
           }
         })
     }
   },
   created () {
-    window.yaCounter.reachGoal('on_registration')
+    if (window.yaCounter) {
+      window.yaCounter.reachGoal('on_registration')
+    }
   }
 }

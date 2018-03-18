@@ -27,7 +27,8 @@ const t1 = {
     }
   ],
   btnLangConst: 'learnMore',
-  icon: require('../assets/promo-paid-icons/birthday-cake.png')
+  icon: require('../assets/promo-paid-icons/birthday-cake.png'),
+  textCode: 't1'
 }
 
 const t2 = {
@@ -37,7 +38,8 @@ const t2 = {
     en: 'What hidden talents your Lunar Zodiac Sign has given to you?'
   },
   btnLangConst: 'personalLunarCalendar',
-  icon: require('../assets/promo-paid-icons/solar-system.png')
+  icon: require('../assets/promo-paid-icons/solar-system.png'),
+  textCode: 't2'
 }
 
 const t3 = {
@@ -47,7 +49,8 @@ const t3 = {
     en: 'What lunar day was at the day of your parents\' wedding, and what will be when your baby goes to school? Calculate any date with <i>the Personal Lunar Calendar!</i>'
   },
   btnLangConst: 'learnMore',
-  icon: require('../assets/promo-paid-icons/calculator.png')
+  icon: require('../assets/promo-paid-icons/calculator.png'),
+  textCode: 't3'
 }
 
 export const main = [t1, t2, t3]
