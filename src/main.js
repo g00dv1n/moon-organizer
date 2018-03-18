@@ -6,9 +6,8 @@ import router from './router'
 import themesConfig from './themes.config'
 import capitalize from './filters/capitalize'
 import SocialSharing from 'vue-social-sharing'
-import VueAnalytics from 'vue-analytics'
-// import VueCharts from 'vue-charts'
 import VueCharts from './components/vue-charts/main'
+import MountGoogleAnalytics from './mount-ga'
 
 import './helpers/vue.prototype'
 
@@ -89,7 +88,9 @@ if (process.env.NODE_ENV === 'development') {
 
 Vue.material.registerTheme(themesConfig)
 
-Vue.use(VueAnalytics, { router, id: 'UA-91648464-1' })
+// MOUNT GOOGLE ANALYTICS USING 'vue-analytics'
+
+MountGoogleAnalytics(Vue, router)
 
 /* eslint-disable no-new */
 new Vue({
