@@ -24,3 +24,54 @@
 .promo-blur {
     filter: blur(10px);
 }
+
+@keyframes init-preloader {
+    0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+@-webkit-keyframes init-preloader {
+    0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+
+.init-preloader div,
+.init-preloader div:after {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border: 20px solid #337ab7;
+    border-top-color: transparent;
+    border-radius: 50%;
+}
+.init-preloader div {
+    -webkit-animation: init-preloader 1s linear infinite;
+    animation: init-preloader 1s linear infinite;
+    top: 100px;
+    left: 100px;
+}
+.init-preloader div:after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.init-preloader {
+    position: fixed;
+    width: 200px !important;
+    height: 200px !important;
+    left: calc(50% - 100px);
+    top: calc(50% - 100px);
+    -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+    transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+}
