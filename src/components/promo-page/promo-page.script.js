@@ -5,12 +5,12 @@ import { PromoActivateBtn } from '../promo-activate-btn'
 const pluses = [
   {
     title: {
-      ru: 'Бесплатный личный астропрогноз',
-      en: 'Useful tips on all categories'
+      ru: 'Соберите Календарь на Свой Вкус',
+      en: 'Build Your Own Lunar Calendar'
     },
     text: {
-      ru: 'Получите ответ от звезд на любой волнующий вас вопрос: совместимость с партнером, открытие бизнеса, реализация своих талантов и так далее.',
-      en: 'Get information on all categories you are interested in without any restrictions!'
+      ru: 'Выберите только те категории, которые Вам интересны, для отображения в Персональном Лунном Календаре!',
+      en: 'Select only those categories that you are interested in, to display in Personal Lunar Calendar!'
     },
     url: require('../../assets/promo-paid-icons/calendar.png')
   },
