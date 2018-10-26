@@ -110,10 +110,10 @@ async function boot () {
     console.log(err.message)
   } finally {
     // Show Day tooltip after load geo info
-    const firstTime = store.state.notFirstTime === 'no'
+    /* const firstTime = store.state.notFirstTime === 'no'
     if (firstTime) {
       await store.dispatch('showDayTooltip')
-    }
+    } */
   }
 }
 
