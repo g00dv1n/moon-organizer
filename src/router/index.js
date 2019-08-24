@@ -16,7 +16,7 @@ import { Registration } from '../components/registration'
 import { ThankyouPage } from '../components/thankyou-page'
 import { PromoCalc, PromoTodo, PromoBiorhythms } from '../components/promo-specific'
 
-import {checkRigths, setCategory} from './hooks'
+import {checkRigths} from './hooks'
 
 Vue.use(Router)
 
@@ -31,19 +31,22 @@ const router = new Router({
     {
       path: '/',
       name: 'default',
-      component: Main
+      component: Main,
+      beforeEnter: checkRigths
     },
     {
       path: '/lunar-day/:dayNumber',
       name: 'lunar-day',
       component: Day,
-      props: true
+      props: true,
+      beforeEnter: checkRigths
     },
     {
       path: '/:category',
       name: 'category-calendar',
       component: Main,
-      beforeEnter: setCategory
+      // beforeEnter: setCategory
+      beforeEnter: checkRigths
     },
     {
       path: '/me/profile',
@@ -54,14 +57,14 @@ const router = new Router({
     {
       path: '/me/calc',
       name: 'calc',
-      component: Calc
-      // beforeEnter: checkRigths
+      component: Calc,
+      beforeEnter: checkRigths
     },
     {
       path: '/me/todo-list',
       name: 'todo-list',
-      component: TodoList
-      // beforeEnter: checkRigths
+      component: TodoList,
+      beforeEnter: checkRigths
     },
     {
       path: '/me/todo-my',
@@ -88,8 +91,8 @@ const router = new Router({
       path: '/me/biorhythms',
       name: 'biorhythms',
       component: Biorhythms,
-      props: true
-      // beforeEnter: checkRigths
+      props: true,
+      beforeEnter: checkRigths
     },
     {
       path: '/reviews/show',
@@ -106,17 +109,20 @@ const router = new Router({
     {
       path: '/promo/calc',
       name: 'promo-calc',
-      component: PromoCalc
+      component: PromoCalc,
+      beforeEnter: checkRigths
     },
     {
       path: '/promo/biorhythms',
       name: 'promo-biorhythms',
-      component: PromoBiorhythms
+      component: PromoBiorhythms,
+      beforeEnter: checkRigths
     },
     {
       path: '/promo/todo',
       name: 'promo-todo',
-      component: PromoTodo
+      component: PromoTodo,
+      beforeEnter: checkRigths
     },
     {
       path: '/me/registration',

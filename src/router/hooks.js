@@ -3,7 +3,7 @@ import router from './index'
 
 export function checkRigths (to, from, next) {
   if (store.state.authorized === false) {
-    router.replace({name: 'default'})
+    router.replace({name: 'registration'})
   } else {
     next()
   }

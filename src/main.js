@@ -92,15 +92,6 @@ Vue.material.registerTheme(themesConfig)
 
 MountGoogleAnalytics(Vue, router)
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  store,
-  template: '<App/>',
-  components: { App }
-})
-
 async function boot () {
   try {
     await store.dispatch('loadClientInfo')
@@ -114,6 +105,15 @@ async function boot () {
     if (firstTime) {
       await store.dispatch('showDayTooltip')
     } */
+
+    /* eslint-disable no-new */
+    new Vue({
+      el: '#app',
+      router,
+      store,
+      template: '<App/>',
+      components: { App }
+    })
   }
 }
 
