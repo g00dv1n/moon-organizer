@@ -15,7 +15,7 @@
     "flow:typed": "./node_modules/.bin/flow-typed install --overwrite",
     "flow:watch": "./node_modules/.bin/nodemon --watch ./src/ --exec 'npm -s run flow'",
     "g00dv1n": "rm -rf ../g00dv1n.github.io/* &&  cp -rf dist/* ../g00dv1n.github.io/ && cd ../g00dv1n.github.io/ && git add -A && git commit -m 'update' && git push -u origin master",
-    "server:push": "npm run build && rm -rf ../moon-organizer-server/frontend/* &&  cp -rf dist/* ../moon-organizer-server/frontend/ && cd ../moon-organizer-server/ && git add -A && git commit -m 'update frontend' && git push -u origin master"
+    "server:push": "npm run build && rm -rf ../moon-organizer-server/frontend/* &&  cp -rf dist/* ../moon-organizer-server/frontend/ && cd ../moon-organizer-server/ && git add -A && git commit -m 'update frontend'"
   },
   "dependencies": {
     "axios": "^0.15.3",
@@ -37,7 +37,7 @@
     "suncalc": "^1.8.0",
     "tween.js": "^16.6.0",
     "vue": "^2.3.3",
-    "vue-analytics": "^5.9.1",
+    "vue-analytics": "^5.17.2",
     "vue-charts": "^0.2.1",
     "vue-head": "^2.0.10",
     "vue-i18n": "^6.1.3",

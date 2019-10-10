@@ -2,6 +2,7 @@ import clientGeo from '../helpers/clientgeo'
 import calendarTypes from '../lang/calendarTypes'
 import Vue from 'vue'
 import mutationTypes from './mutationTypes'
+import { event, set } from 'vue-analytics'
 
 const actions = {
   loadClientInfo ({commit}) {
@@ -167,6 +168,10 @@ const actions = {
           state.personal = true
           console.log('User:')
           console.log(JSON.parse(JSON.stringify(user)))
+
+          // setup google analytics USER ID
+          set('userId', user.email)
+          event('authentication', 'login', user.email)
         }
       } catch (err) {
         console.error(err)

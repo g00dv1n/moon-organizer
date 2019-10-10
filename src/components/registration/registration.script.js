@@ -96,10 +96,5 @@ export default {
           }
         })
     }
-  },
-  created () {
-    if (window.yaCounter) {
-      window.yaCounter.reachGoal('on_registration')
-    }
   }
 }
