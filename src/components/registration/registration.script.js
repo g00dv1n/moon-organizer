@@ -67,7 +67,11 @@ export default {
     loadform () {
       return this
         .axios
-        .post('/purchase/checkout', { user: this.getUserModel(this.newUser), locale: this.geo.country })
+        .post('/purchase/checkout', {
+          user: this.getUserModel(this.newUser),
+          locale: this.geo.country,
+          plan: this.$route.query.plan || 'month'
+        })
         .then(({ data }) => {
           const container = document.getElementById('hidden-purchase-form')
           container.innerHTML = data.htmlForm
