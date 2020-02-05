@@ -117,8 +117,5 @@ export default {
     goToRegistration () {
       this.$router.push({name: 'registration'})
     }
-  },
-  created () {
-    window.yaCounter.reachGoal('on_promo')
   }
 }
