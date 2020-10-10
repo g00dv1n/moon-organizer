@@ -12,7 +12,7 @@ import { LunarBirthday } from '../components/personal/lunar-birthday'
 import { ZodiacBirthday } from '../components/personal/zodiac-birthday'
 import { Biorhythms } from '../components/personal/biorhythms'
 import { PromoPage } from '../components/promo-page'
-import { Registration } from '../components/registration'
+import { Registration, GuestCheckout, Login } from '../components/registration'
 import { ThankyouPage } from '../components/thankyou-page'
 import { PromoCalc, PromoTodo, PromoBiorhythms } from '../components/promo-specific'
 
@@ -133,6 +133,16 @@ const router = new Router({
       path: '/me/thank-you',
       name: 'thankyou-page',
       component: ThankyouPage
+    },
+    {
+      path: '/me/guest-checkout',
+      name: 'guest-checkout',
+      component: GuestCheckout
+    },
+    {
+      path: '/me/login',
+      name: 'login',
+      component: Login
     }
   ]
 })
