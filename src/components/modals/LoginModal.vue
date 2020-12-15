@@ -52,14 +52,12 @@
         </md-dialog-actions>
         <div class="some-actions" v-if="isNormal">
             <div class="reset-link" @click="resetPasswordState">{{constants.forgetPassword}}</div>
-            <div class="singup-link" @click="goToPromo()">{{constants.signUp}}</div>
+            <div class="singup-link" @click="goToRegistration()">{{constants.signUp}}</div>
         </div>
     </md-dialog>
 </template>
 
 <script>
-  // import emailValidator from 'email-validator'
-
   export default {
     data () {
       return {
@@ -77,7 +75,6 @@
     },
     computed: {
       isEmailInvalid () {
-        // return this.user.email === null ? false : !emailValidator.validate(this.user.email)
         return false
       },
       isPasswordInvalid () {
@@ -134,9 +131,9 @@
             }
           })
       },
-      goToPromo () {
+      goToRegistration () {
         this.close()
-        this.$router.push({name: 'promo-page'})
+        this.$router.push({name: 'registration'})
       },
       submit () {
         const self = this

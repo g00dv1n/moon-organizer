@@ -1,15 +1,16 @@
 import axios from 'axios'
 
 const devGeoData = {
-  ip: '31.43.145.164',
-  hostname: 'nastya.corbina.com.ua',
-  city: 'Kyiv',
-  region: 'Kyiv City',
-  country: 'UA',
-  loc: '50.4547,30.5238',
-  org: 'AS48438 Corbina Telecom Llc.',
-  postal: '03027',
-  readme: 'https://ipinfo.io/missingauth'
+  city: 'Amsterdam',
+  country: 'NL',
+  hostname: 'test.some.name',
+  ip: '5.84.6.191',
+  loc: '51.3700,6.1681',
+  org: 'Some Hosting',
+  postal: '5911',
+  readme: 'https://ipinfo.io/missingauth',
+  region: 'Limburg',
+  timezone: 'Europe/Amsterdam'
 }
 
 const getClientGeo = () => {

@@ -247,6 +247,10 @@ const lang = {
     ru: 'Войти',
     en: 'Log In'
   },
+  logInToCalendar: {
+    ru: 'Войдите в ваш Лунный календарь',
+    en: 'Log in to your Moon Calendar'
+  },
   enterEmail: {
     ru: 'Введите email',
     en: 'Enter email'
@@ -356,7 +360,7 @@ const lang = {
         <div class="bookmarks-modal">
             <div>
                 Нажмите <strong>Ctrl + D</strong>,<br/> чтобы не потерять Лунный Календарь.
-            </div> 
+            </div>
             <div class="bookmarks-modal__thanks">
                 Мы будем рады увидеть Вас снова! <i class="fa fa-smile-o" aria-hidden="true"></i>
             </div>
@@ -366,7 +370,7 @@ const lang = {
         <div class="bookmarks-modal">
             <div>
                 Press <strong>Ctrl + D</strong>,<br/> to save Lunar Calendar.
-            </div> 
+            </div>
             <div class="bookmarks-modal__thanks">
                 We will be glad to see You again! <i class="fa fa-smile-o" aria-hidden="true"></i>
             </div>

@@ -4,7 +4,6 @@ import { onCategory, onDefault } from './helpers/dayclicker'
 import FeedbackModal from './components/modals/FeedbackModal.vue'
 import GiftModal from './components/modals/GiftModal.vue'
 import {PersonalSidenav} from './components/personal/sidenav'
-import { PromoBtn } from './components/promo-btn'
 import { FreeSidenav } from './components/free-version/sidenav'
 
 const isMobile = () => {
@@ -31,7 +30,6 @@ export default {
     FeedbackModal,
     GiftModal,
     PersonalSidenav,
-    PromoBtn,
     FreeSidenav
   },
   methods: {
@@ -116,6 +114,9 @@ export default {
     },
     isCalendarView () {
       return this.$route.name !== 'lunar-day'
+    },
+    isLoginView () {
+      return this.$route.name === 'login'
     },
     isNoLeaveFeedback () {
       return this.$store.state.isLeaveFeedback === 'no'
